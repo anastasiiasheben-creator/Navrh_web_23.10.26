@@ -233,6 +233,26 @@
     .rev-who i { width: 40px; height: 40px; border-radius: 50%; background: var(--oak); color: var(--white); display: grid; place-items: center; font-style: normal; font-weight: 700; }
     .rev-who span { color: var(--muted); display: block; font-size: 13px; }
 
+    /* Gallery CTA */
+    .gallery-cta { margin-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; background: var(--bg-alt); border-radius: var(--radius); padding: 22px 26px; }
+    .gallery-cta p { font-size: 17px; }
+
+    /* Team */
+    .team { background: var(--white); border-top: 1px solid var(--line); }
+    .team-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .team-points { list-style: none; margin-top: 26px; display: grid; gap: 12px; font-weight: 600; }
+    .team-points li { display: flex; gap: 12px; align-items: center; }
+    .team-points svg { width: 20px; height: 20px; color: var(--ok); flex: none; }
+    .team-cards { display: grid; gap: 14px; }
+    .member { display: flex; gap: 16px; align-items: center; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+    .member i { width: 56px; height: 56px; border-radius: 50%; background: var(--oak); color: var(--white); display: grid; place-items: center; font: 600 22px "Fraunces", serif; font-style: normal; flex: none; }
+    .member i svg { width: 26px; height: 26px; }
+    .member b { display: block; font-size: 17px; }
+    .member span { color: var(--muted); font-size: 15px; }
+    .member-cta { background: #EAF6EE; border-color: #CBE7D4; transition: .2s; }
+    .member-cta i { background: #25A35A; }
+    .member-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
     /* FAQ */
     .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; }
     details { border-bottom: 1px solid var(--line); padding: 20px 0; }
@@ -308,7 +328,8 @@
     }
     @media (max-width: 900px) {
       section { padding: 64px 0; }
-      .hero-grid, .offer-box, .faq-grid, .lead-grid { grid-template-columns: 1fr; }
+      .hero-grid, .offer-box, .faq-grid, .lead-grid, .team-grid { grid-template-columns: 1fr; }
+      .team-grid { gap: 32px; }
       .hero-media { order: -1; }
       .hero-card { left: 12px; bottom: 12px; min-width: 0; }
       .services-grid, .rev-grid { grid-template-columns: 1fr 1fr; }
@@ -604,6 +625,10 @@
           <figure class="project" data-c="byty"><img src="images/byt_nahlad-770x650.webp" alt="Menší byt – Dúbravka" loading="lazy" /><figcaption><b>Menší byt</b><span>Dúbravka · kuchyňa, chodba · 1 mesiac</span></figcaption></figure>
           <figure class="project" data-c="firmy"><img src="images/ilustracny-1-770x892.jpeg" alt="Kozmetický salón Anima" loading="lazy" /><figcaption><b>Kozmetický salón Anima</b><span>skrine, minikuchynka · 3 týždne</span></figcaption></figure>
         </div>
+        <div class="gallery-cta">
+          <p><b>Páči sa vám niektorá realizácia?</b> Navrhneme podobnú presne do vášho priestoru.</p>
+          <a class="btn btn-primary" href="#dopyt">Chcem podobný návrh zdarma</a>
+        </div>
       </div>
     </section>
 
@@ -615,11 +640,12 @@
           <h2>Od prvého stretnutia po hotový nábytok za 3–6 týždňov</h2>
         </div>
         <div class="process-grid">
-          <div class="p-step"><div class="p-num">1</div><h3>Poradenstvo a zameranie</h3><p>Porozprávame sa o vašich predstavách, rozpočte a zameriame priestor.</p><span class="p-time">ozveme sa do 24 h</span></div>
-          <div class="p-step"><div class="p-num">2</div><h3>Návrh a vizualizácia</h3><p>Náš dizajnér pripraví 3D návrh a fixnú cenovú ponuku.</p><span class="p-time">do 7 dní</span></div>
-          <div class="p-step"><div class="p-num">3</div><h3>Výroba</h3><p>Po schválení návrhu vyrábame — každý detail starostlivo spracovaný.</p><span class="p-time">2–5 týždňov</span></div>
-          <div class="p-step"><div class="p-num">4</div><h3>Doprava a montáž</h3><p>Nábytok dovezieme, namontujeme a po sebe upraceme.</p><span class="p-time">1–2 dni</span></div>
+          <div class="p-step"><div class="p-num">1</div><h3>Prvé stretnutie a zameranie</h3><p>30–60 minút u vás doma alebo online. Zadarmo a nezáväzne — prejdeme predstavy, rozpočet a zameriame priestor.</p><span class="p-time">ozveme sa do 24 h</span></div>
+          <div class="p-step"><div class="p-num">2</div><h3>3D návrh a fixná cena</h3><p>Dizajnér pripraví 3D vizualizáciu a cenu. Upravujeme, kým nebudete spokojní.</p><span class="p-time">do 7 dní</span></div>
+          <div class="p-step"><div class="p-num">3</div><h3>Výroba</h3><p>Pred výrobou ešte raz skontrolujeme rozmery na mieste, aby všetko sedelo na milimeter.</p><span class="p-time">2–5 týždňov</span></div>
+          <div class="p-step"><div class="p-num">4</div><h3>Montáž a odovzdanie</h3><p>Nábytok dovezieme, namontujeme, nastavíme a po sebe upraceme.</p><span class="p-time">1–2 dni</span></div>
         </div>
+        <div class="center" style="margin-top:44px"><a class="btn btn-primary" href="#dopyt">Dohodnúť prvé stretnutie zdarma</a></div>
       </div>
     </section>
 
@@ -637,6 +663,7 @@
           <div class="cmp-row"><div>Termín montáže</div><div><svg class="yes"><use href="#i-check"/></svg>V zmluve</div><div><svg class="no"><use href="#i-x"/></svg>„Keď to bude hotové“</div></div>
           <div class="cmp-row"><div>3D návrh</div><div><svg class="yes"><use href="#i-check"/></svg>Zdarma</div><div><svg class="no"><use href="#i-x"/></svg>100–200 €</div></div>
           <div class="cmp-row"><div>Upratanie a odvoz starého nábytku</div><div><svg class="yes"><use href="#i-check"/></svg>V cene</div><div><svg class="no"><use href="#i-x"/></svg>Za príplatok</div></div>
+          <div class="cmp-row"><div>Záruka</div><div><svg class="yes"><use href="#i-check"/></svg>5 rokov na materiál aj prácu</div><div><svg class="no"><use href="#i-x"/></svg>Zákonné 2 roky</div></div>
           <div class="cmp-row"><div>Návrh od vlastného dizajnéra</div><div><svg class="yes"><use href="#i-check"/></svg>Áno</div><div><svg class="no"><use href="#i-x"/></svg>Často len predajca</div></div>
         </div>
       </div>
@@ -648,8 +675,29 @@
         <div class="guar-grid">
           <div class="guar"><svg><use href="#i-lock"/></svg><h3>Fixná cena</h3><p>Cena v zmluve platí. Žiadne „ešte treba doplatiť“.</p></div>
           <div class="guar"><svg><use href="#i-calendar"/></svg><h3>Termín v zmluve</h3><p>Dátum montáže dostanete písomne pri podpise.</p></div>
-          <div class="guar"><svg><use href="#i-shield"/></svg><h3>Overené materiály</h3><p>Kovanie Blum, dosky Egger, drezy BLANCO — nábytok, ktorý vydrží roky.</p></div>
+          <div class="guar"><svg><use href="#i-shield"/></svg><h3>Záruka 5 rokov</h3><p>Na materiál aj prácu. Kovanie Blum a dosky Egger vydržia roky.</p></div>
           <div class="guar"><svg><use href="#i-broom"/></svg><h3>Čisto po montáži</h3><p>Odvezieme obaly, odpad aj starú kuchyňu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KTO SME -->
+    <section class="team">
+      <div class="wrap team-grid">
+        <div>
+          <span class="eyebrow">Kto sme</span>
+          <h2>Nehovoríte s predajcom, ale priamo s dizajnérom</h2>
+          <p class="lead">Nie sme reťazec s desiatkami predajní. Váš projekt od prvého stretnutia až po montáž vedie jeden človek — ten, ktorý ho aj navrhuje.</p>
+          <ul class="team-points">
+            <li><svg><use href="#i-check"/></svg>Jeden kontakt počas celej zákazky</li>
+            <li><svg><use href="#i-check"/></svg>Realizujeme aj podľa návrhu vášho architekta</li>
+            <li><svg><use href="#i-check"/></svg>Bratislava a okolie do 50 km</li>
+          </ul>
+        </div>
+        <div class="team-cards">
+          <div class="member"><i>J</i><div><b>Jozef</b><span>Návrh, konzultácie a vedenie projektov</span></div></div>
+          <div class="member"><i>D</i><div><b>Dušan</b><span>Návrh a 3D vizualizácie</span></div></div>
+          <a class="member member-cta" href="https://wa.me/421918638713" target="_blank" rel="noopener"><i><svg><use href="#i-chat"/></svg></i><div><b>Napíšte nám na WhatsApp</b><span>Pošlite fotku priestoru a odpovieme ešte dnes</span></div></a>
         </div>
       </div>
     </section>
@@ -706,7 +754,7 @@
           </ul>
           <div class="person">
             <i>JK</i>
-            <div><b>Jozef Kutalek</b>Návrh a konzultácie — ozvem sa vám osobne<br /><a href="tel:+421918638713">+421 918 638 713</a></div>
+            <div><b>Jozef Kutalek</b>Návrh a konzultácie — ozvem sa vám osobne<br /><a href="tel:+421918638713">+421 918 638 713</a> · <a href="https://wa.me/421918638713" target="_blank" rel="noopener">WhatsApp</a></div>
           </div>
         </div>
 
@@ -780,7 +828,7 @@
         </div>
         <div>
           <h4>Kontakt</h4>
-          <ul><li><a href="tel:+421918638713">+421 918 638 713</a></li><li><a href="mailto:info@imajstri.sk">info@imajstri.sk</a></li><li>Po – Pi: 9:00 – 17:00</li><li>So – Ne: individuálne</li></ul>
+          <ul><li><a href="tel:+421918638713">+421 918 638 713</a></li><li><a href="https://wa.me/421918638713" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@imajstri.sk">info@imajstri.sk</a></li><li>Po – Pi: 9:00 – 17:00</li><li>So – Ne: individuálne</li></ul>
         </div>
         <div>
           <h4>Firma</h4>
