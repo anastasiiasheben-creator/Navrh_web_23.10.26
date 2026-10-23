@@ -5,9 +5,10 @@
 .nav-links a.active { color: var(--accent); }
 .nav-icon { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; border: 1px solid var(--line); color: var(--accent); }
 .nav-icon svg { width: 18px; height: 18px; }
-@media (max-width: 1080px) {
+.nav-links { gap: 24px; }
+@media (max-width: 1200px) {
   .burger { display: block; }
-  .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(46, 30, 18, .08); flex-direction: column; gap: 0; padding: 8px 20px 16px; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px rgba(46, 30, 18, .08); flex-direction: column; gap: 0; padding: 8px 20px 16px; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
   .nav-links a:last-child { border-bottom: 0; }
@@ -142,4 +143,11 @@
   .cta-band .btns, .cta-band .btn { width: 100%; }
   .photo-band .btn { width: 100%; }
   .nav-icon { display: none; }
+}
+
+/* Accessibility */
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }

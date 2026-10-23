@@ -19,6 +19,7 @@ const NAV = [
   ['sluzby.html', 'Služby'],
   ['realizacie.html', 'Realizácie'],
   ['blog/index.html', 'Blog'],
+  ['objednavka.html', 'Objednávka'],
   ['kontakt.html', 'Kontakt'],
 ];
 
@@ -27,7 +28,7 @@ const NAV = [
 const projects = [
   { img: 'imajstri_homepage.webp', cat: 'byty', t: 'Moderný byt na mieru', loc: 'Záhorská Bystrica', time: '1 mesiac', d: 'Obývačková stena s lamelami, kuchyňa s lamelami a ostrovčekom, vstavaná skriňa s komodou, chodbová skriňa so sedením a skrinka do kúpeľne.' },
   { img: 'grob_kuchyna.jpg', pos: '30% center', cat: 'byty', t: 'Celý dom na mieru', loc: 'Chorvátsky Grob', time: '5 týždňov', by: 'Dušan', d: 'Drevodekorová kuchyňa, chodba, spálňa so šatníkom, kúpeľňa, minimalistická obývačka a detská izba pre dvoch súrodencov.' },
-  { img: 'vinicne_1-770x892.webp', cat: 'kuchyne', t: 'Kuchyňa drevo + čierno-biela', loc: 'Viničné', time: '6 týždňov', by: 'Jozef', d: 'Prírodný dekor dreva s čierno-bielymi prvkami, veľké zásuvky, rohový výsuvný systém LeMans a vstavané spotrebiče.' },
+  { img: 'vinicne_3_full.webp', pos: 'center 62%', cat: 'kuchyne', t: 'Kuchyňa drevo + čierno-biela', loc: 'Viničné', time: '6 týždňov', by: 'Jozef', d: 'Prírodný dekor dreva s čierno-bielymi prvkami, veľké zásuvky, rohový výsuvný systém LeMans a vstavané spotrebiče.' },
   { img: '1_kuchyna_nivy_nahlad-770x892.webp', cat: 'kuchyne', t: 'Kuchyňa a obývačka pri Nivách', loc: 'Bratislava – Nivy', time: '1 mesiac', by: 'Jozef', d: 'Systém Smart-Cube s podsvietením, čierne dvierka s tmavým sklom Lacobel a pracovný kút v obývačke.' },
   { img: '2-770x892.webp', cat: 'izby', t: 'Detská izba pre dvoch súrodencov', loc: 'Chorvátsky Grob', time: '5 týždňov', by: 'Dušan', d: 'Čalúnená posteľ na poschodí, schodisko s úložným priestorom, vstavaná skriňa a písací stôl.' },
   { img: 'vydrica_kuchyna_1-770x892.jpg', cat: 'byty', t: 'Zariadenie bytu Vydrica', loc: 'Bratislava – Vydrica', time: '5 týždňov', by: 'Jozef', d: 'Kuchyňa, minimalistická stena do obývačky, vstavaná skriňa v spálni a čelo postele s nočnými stolíkmi.' },
@@ -39,7 +40,7 @@ const projects = [
 ];
 
 const services = [
-  { id: 'kuchyne', typ: 't1', img: 'grob_kuchyna.jpg', pos: '30% center', t: 'Kuchyne na mieru', short: 'Rovné, do L, U aj s ostrovčekom. Kovanie Blum, dosky Egger, drezy BLANCO.', price: '3 900 €',
+  { id: 'kuchyne', typ: 't1', img: 'vinicne_3_full.webp', pos: 'center 62%', t: 'Kuchyne na mieru', short: 'Rovné, do L, U aj s ostrovčekom. Kovanie Blum, dosky Egger, drezy BLANCO.', price: '3 900 €',
     p: 'Kuchyňa je srdce domova. Navrhneme ju presne do vášho priestoru — od malej linky do bytu až po veľkú kuchyňu s ostrovčekom v rodinnom dome.',
     li: ['Rovné, rohové, do U aj s ostrovčekom', 'Rohové výsuvné systémy LeMans a Smart-Cube s podsvietením', 'Kovanie Blum, dosky Egger, drezy BLANCO, sklo Lacobel', 'Vstavané spotrebiče podľa vášho výberu'] },
   { id: 'skrine', typ: 't2', img: 'byt_nahlad-770x650.webp', t: 'Vstavané skrine a šatníky', short: 'Do spálne, hosťovskej izby aj chodby. Každý centimeter využitý.', price: '990 €',
@@ -122,7 +123,7 @@ const footer = (p, b) => `
         </div>
         <div>
           <h4>Rýchle odkazy</h4>
-          <ul>${NAV.map(([href, label]) => `<li><a href="${b}${href}">${label}</a></li>`).join('')}<li><a href="${b}objednavka.html">Objednávka</a></li></ul>
+          <ul>${NAV.map(([href, label]) => `<li><a href="${b}${href}">${label}</a></li>`).join('')}</ul>
         </div>
         <div>
           <h4>Kontakt</h4>
@@ -409,12 +410,12 @@ ${partners(b)}
     </section>
 
     <section class="photo-band">
-      <img src="${b}images/grob_kuchyna.jpg" alt="Kuchyňa v rodinnom dome – Chorvátsky Grob" loading="lazy" style="object-position:30% 60%" />
+      <img src="${b}images/vinicne_1_full.webp" alt="Kuchyňa drevo a čierno-biela – Viničné" loading="lazy" style="object-position:center 62%" />
       <div class="wrap">
         <div>
-          <span class="eyebrow" style="color:#F0B98E">Realizácia · Chorvátsky Grob</span>
-          <h2>Celý dom na mieru za 5 týždňov</h2>
-          <p>Kuchyňa, chodba, spálne, kúpeľňa, obývačka aj detská izba — jeden návrh, jeden tím.</p>
+          <span class="eyebrow" style="color:#F0B98E">Realizácia · Viničné</span>
+          <h2>Kuchyňa na mieru za 6 týždňov</h2>
+          <p>Drevo v kombinácii s čierno-bielym dizajnom, rohový systém LeMans a vstavané spotrebiče.</p>
         </div>
         <a class="btn btn-primary" href="${b}realizacie.html">Pozrieť realizácie</a>
       </div>
