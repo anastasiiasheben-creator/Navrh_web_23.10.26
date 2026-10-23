@@ -207,7 +207,7 @@ ${sprite}`;
 
 const header = (pg, b) => `
 <header class="site-header">
-  <div class="container header-row">
+  <div class="container container--wide header-row">
     <a href="${link(b, '')}" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img src="${b}images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span></a>
     <nav class="nav" id="nav" aria-label="Hlavná navigácia">
       ${NAV.map(([p, label]) => `<a href="${link(b, p)}"${pg.section === p ? ' aria-current="page"' : ''}>${label}</a>`).join('\n      ')}
@@ -412,7 +412,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
     const v = P.vinicne;
     return `
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container container--wide hero-grid">
       <div class="hero-text">
         <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
         <h1>Kuchyne a nábytok na mieru<span>od návrhu až po montáž.</span></h1>
