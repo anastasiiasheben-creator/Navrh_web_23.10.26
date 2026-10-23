@@ -4,9 +4,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sprite = fs.readFileSync(path.join(root, '_src', 'sprite.html'), 'utf8');
+// Appended to asset URLs so browsers fetch fresh CSS/JS after every change
+const ver = (rel) => crypto.createHash('md5').update(fs.readFileSync(path.join(root, rel))).digest('hex').slice(0, 8);
+const CSS_V = ver('css/site.css');
+const JS_V = ver('js/main.js');
 
 const SITE = 'https://www.imajstri.sk';          // canonical / sitemap domain (production)
 const PREVIEW_BASE = '/Navrh_web_23.10.26/';     // where 404.html is served on GitHub Pages
@@ -178,7 +183,7 @@ const head = (pg, b) => {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${b}css/site.css">${pg.preload ? `\n  <link rel="preload" as="image" href="${b}images/${pg.preload}" fetchpriority="high">` : ''}${pg.jsonld ? `\n  <script type="application/ld+json">${JSON.stringify(pg.jsonld)}</script>` : ''}
+  <link rel="stylesheet" href="${b}css/site.css?v=${CSS_V}">${pg.preload ? `\n  <link rel="preload" as="image" href="${b}images/${pg.preload}" fetchpriority="high">` : ''}${pg.jsonld ? `\n  <script type="application/ld+json">${JSON.stringify(pg.jsonld)}</script>` : ''}
 </head>
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
@@ -240,7 +245,7 @@ const footer = (b) => `
   <a class="btn btn-outline" href="tel:${PHONE}">${ic('phone')}Zavolať</a>
   <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka</a>
 </div>
-<script src="${b}js/main.js" defer></script>
+<script src="${b}js/main.js?v=${JS_V}" defer></script>
 </body>
 </html>
 `;
@@ -585,12 +590,15 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
   title: 'Náš tím | Interiéroví majstri',
   desc: 'Ľudia za nábytkom na mieru od Interiérových majstrov — návrh, vizualizácia, výroba a montáž v Bratislave a okolí.',
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Náš tím']])}
-      <h1>Ľudia, ktorí váš nábytok navrhnú aj dotiahnu do konca</h1>
-      <p class="lead">S vaším projektom pracuje priamo dizajnér, ktorý ho navrhuje — od prvej konzultácie až po montáž.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Náš tím']])}
+        <h1>Ľudia, ktorí váš nábytok navrhnú aj dotiahnu do konca</h1>
+        <p class="lead">S vaším projektom pracuje priamo dizajnér, ktorý ho navrhuje — od prvej konzultácie až po montáž.</p>
+        <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      </div>
+      ${img(P.nivy.photos[5], b, 'Knižnica cez celú stenu v byte pri Nivách', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
 
@@ -622,12 +630,15 @@ pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby
   title: 'Služby — nábytok na mieru Bratislava | Interiéroví majstri',
   desc: 'Kuchyne na mieru, vstavané skrine, obývačky, detské izby, kompletné a komerčné interiéry. Návrh, výroba a montáž v Bratislave a okolí.',
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Služby']])}
-      <h1>Nábytok na mieru do každej miestnosti</h1>
-      <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem bezplatnú konzultáciu ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Služby']])}
+        <h1>Nábytok na mieru do každej miestnosti</h1>
+        <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
+        <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem bezplatnú konzultáciu ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      </div>
+      ${img(P['zahorska-bystrica'].photos[1], b, 'Obývačka a kuchyňa na mieru v Záhorskej Bystrici', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
   <section class="section">
@@ -725,12 +736,15 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
   title: 'Realizácie nábytku na mieru | Interiéroví majstri',
   desc: 'Naše realizácie: kuchyne, vstavané skrine, detské izby a celé byty na mieru v Bratislave, Chorvátskom Grobe, Viničnom a Sládkovičove.',
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Realizácie']])}
-      <h1>Skutočné príbehy, skutočné výsledky</h1>
-      <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem podobné riešenie ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Realizácie']])}
+        <h1>Skutočné príbehy, skutočné výsledky</h1>
+        <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
+        <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem podobné riešenie ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      </div>
+      ${img(P['chorvatsky-grob'].photos[0], b, 'Kuchyňa v rodinnom dome v Chorvátskom Grobe', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
   <section class="section">
@@ -759,12 +773,24 @@ projects.forEach((p, i) => {
     title: `${p.h1} | Interiéroví majstri`.replace(' — ', ', '),
     desc: `${p.task} Realizácia: ${p.loc}.`,
     body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [['realizacie/', 'Realizácie'], [null, p.title]])}
-      <div class="chips" style="margin-bottom:16px"><span class="chip">${p.type}</span><span class="chip">${p.loc}</span></div>
-      <h1>${p.h1}</h1>
-      <p class="lead">${p.task}</p>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [['realizacie/', 'Realizácie'], [null, p.title]])}
+        <div class="chips" style="margin-bottom:16px"><span class="chip">${p.type}</span><span class="chip">${p.loc}</span></div>
+        <h1>${p.h1}</h1>
+        <p class="lead">${p.task}</p>
+      </div>
+      <aside class="facts-card" aria-label="O projekte">
+        <h2>O projekte</h2>
+        <dl class="meta-table">
+          <div><dt>Lokalita</dt><dd>${p.loc}</dd></div>
+          <div><dt>Typ</dt><dd>${p.type}</dd></div>
+          <div><dt>Doba dodania</dt><dd>${p.time}</dd></div>
+          ${p.by ? `<div><dt>Návrh</dt><dd>${p.by}</dd></div>` : ''}
+        </dl>
+        <a class="btn btn-primary" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
+      </aside>
     </div>
   </section>
   <section class="section">
@@ -775,14 +801,7 @@ projects.forEach((p, i) => {
         </div>
       </div>
       <aside class="sticky-box">
-        <h2 style="font-size:24px">O projekte</h2>
-        <dl class="meta-table">
-          <div><dt>Lokalita</dt><dd>${p.loc}</dd></div>
-          <div><dt>Typ</dt><dd>${p.type}</dd></div>
-          <div><dt>Doba dodania</dt><dd>${p.time}</dd></div>
-          ${p.by ? `<div><dt>Návrh</dt><dd>${p.by}</dd></div>` : ''}
-        </dl>
-        <h3 style="font-size:19px;margin-top:24px">Riešenie</h3>
+        <h2 style="font-size:24px">Riešenie</h2>
         <ul class="check-list">${p.items.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
         <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
       </aside>
@@ -803,11 +822,14 @@ pages.push({ path: 'blog/', section: 'blog/', jsonld: breadcrumbLd([['blog/', 'B
   title: 'Blog — rady k nábytku na mieru | Interiéroví majstri',
   desc: 'Rady a inšpirácie ku kuchyniam, vstavaným skriniam a nábytku na mieru.',
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Blog']])}
-      <h1>Rady a inšpirácie k nábytku na mieru</h1>
-      <p class="lead">Praktické články, ktoré vám pomôžu naplánovať kuchyňu, skriňu či celý byt.</p>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Blog']])}
+        <h1>Rady a inšpirácie k nábytku na mieru</h1>
+        <p class="lead">Praktické články, ktoré vám pomôžu naplánovať kuchyňu, skriňu či celý byt.</p>
+      </div>
+      ${img(P.nivy.photos[0], b, 'Kuchyňa so systémom Smart-Cube pri Nivách', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
   <section class="section">
@@ -824,11 +846,14 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
   title: 'Nezáväzná ponuka a návrh | Interiéroví majstri',
   desc: 'Pošlite nám dopyt na kuchyňu, skriňu alebo nábytok na mieru. Stačí telefón alebo e-mail — ozveme sa vám.',
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Objednávka']])}
-      <h1>Nezáväzná ponuka a návrh nábytku</h1>
-      <p class="lead">Opíšte, čo plánujete. Vyplnenie trvá približne minútu — stačí telefón alebo e-mail.</p>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Objednávka']])}
+        <h1>Nezáväzná ponuka a návrh nábytku</h1>
+        <p class="lead">Opíšte, čo plánujete. Vyplnenie trvá približne minútu — stačí telefón alebo e-mail.</p>
+      </div>
+      ${img(P.vinicne.photos[2], b, 'Kuchyňa na mieru vo Viničnom', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
   <section class="section">
@@ -868,11 +893,14 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
   title: 'Kontakt a nezáväzná ponuka | Interiéroví majstri',
   desc: `Kontakt: ${PHONE_TXT}, ${MAIL}, Landauova 3146/20, Bratislava. Po – Pi 9:00 – 17:00.`,
   body: (b) => `
-  <section class="page-hero">
-    <div class="container">
-      ${crumbs(b, [[null, 'Kontakt']])}
-      <h1>Kontakt a bezplatná konzultácia</h1>
-      <p class="lead">Máte otázky ohľadom našej práce? Máte záujem o bezplatnú konzultáciu? Kontaktujte nás telefonicky alebo e-mailom. Odpovedáme v najkratšom možnom čase, väčšinou do 24 hodín.</p>
+  <section class="page-hero page-hero--media">
+    <div class="container ph-grid">
+      <div>
+        ${crumbs(b, [[null, 'Kontakt']])}
+        <h1>Kontakt a bezplatná konzultácia</h1>
+        <p class="lead">Máte otázky ohľadom našej práce? Máte záujem o bezplatnú konzultáciu? Kontaktujte nás telefonicky alebo e-mailom. Odpovedáme v najkratšom možnom čase, väčšinou do 24 hodín.</p>
+      </div>
+      ${img(P['dubravka-landauova'].photos[0], b, 'Knižnica a obývačka na mieru v Dúbravke', '(max-width: 1023px) 100vw, 50vw', true)}
     </div>
   </section>
   <section class="section">

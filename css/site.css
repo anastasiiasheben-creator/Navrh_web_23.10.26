@@ -232,6 +232,10 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
 .meta-table div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 16px; }
 .meta-table dt { color: var(--muted); }
 .meta-table dd { font-weight: 600; text-align: right; }
+/* Project facts card in the page hero */
+.facts-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+.facts-card h2 { font-size: 24px; }
+.facts-card .btn { width: 100%; margin-top: 24px; }
 .project-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start; }
 .sticky-box { position: sticky; top: calc(var(--header-h) + 24px); background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
 .pager { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
