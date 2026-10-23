@@ -351,13 +351,13 @@ const faqBlock = (items, h = 'Na čo sa nás najčastejšie pýtate') => `
     </div>
   </section>`;
 
-const projectCard = (p, b, cls = '') => `<article class="card${cls}" data-c="${p.cats.join(' ')}">
+const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" data-c="${p.cats.join(' ')}">
           <a class="card-img" href="${b}realizacie/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.coverImg, b, p.alt)}</a>
           <div class="card-body">
             <div class="chips"><span class="chip">${p.loc}</span><span class="chip">${ic('clock')}${p.time}</span></div>
             <h3><a class="card-link" href="${b}realizacie/${p.slug}/">${p.title}</a></h3>
             <p>${p.items[0]}.</p>
-            <div class="card-foot"><span class="from">${p.type}</span><span class="go">Pozrieť projekt ${ic('arrow')}</span></div>
+            <div class="card-foot"><span class="from">${p.type}</span><span class="go" aria-hidden="true">Pozrieť projekt ${ic('arrow')}</span></div>
           </div>
         </article>`;
 
