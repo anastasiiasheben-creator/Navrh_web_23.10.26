@@ -4,78 +4,71 @@
   var nav = document.getElementById('nav');
   if (!burger || !nav) return;
   burger.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
+    var open = nav.classList.toggle('is-open');
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 })();
 
-// Offer always runs to the end of the current month, so nobody has to update dates
-(function () {
-  var months = ['januára', 'februára', 'marca', 'apríla', 'mája', 'júna', 'júla', 'augusta', 'septembra', 'októbra', 'novembra', 'decembra'];
-  var now = new Date();
-  document.querySelectorAll('.js-month').forEach(function (el) { el.textContent = months[now.getMonth()]; });
-  var left = document.getElementById('days-left');
-  if (left) {
-    var end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-    var days = Math.max(1, Math.ceil((end - now) / 864e5));
-    left.textContent = days === 1 ? 'Posledný deň ponuky' : 'Zostáva ' + days + (days < 5 ? ' dni' : ' dní');
-  }
-})();
-
-// Gallery filter (works for both the home preview and the Realizácie page)
+// Realizácie filter
 (function () {
   var buttons = document.querySelectorAll('.filters button');
   var items = document.querySelectorAll('[data-c]');
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
-      buttons.forEach(function (x) { x.classList.remove('active'); });
-      b.classList.add('active');
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
       items.forEach(function (it) {
-        it.classList.toggle('hide', b.dataset.f !== 'all' && it.dataset.c !== b.dataset.f);
+        var cats = it.dataset.c.split(' ');
+        it.classList.toggle('is-hidden', b.dataset.f !== 'all' && cats.indexOf(b.dataset.f) === -1);
       });
     });
   });
 })();
 
-// Lead quiz
+// Lead forms
 (function () {
-  var form = document.getElementById('quiz');
-  if (!form) return;
-  var steps = form.querySelectorAll('.q-step');
-  var next = document.getElementById('q-next'), back = document.getElementById('q-back');
-  var err = document.getElementById('q-err'), bar = document.getElementById('q-bar'), lbl = document.getElementById('q-label');
-  var cur = 1;
+  var MAX_FILE = 10 * 1024 * 1024;
+  var TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+  var params = new URLSearchParams(location.search);
 
-  // Preselect the furniture type when coming from a service link (objednavka.html?typ=t1)
-  var typ = new URLSearchParams(location.search).get('typ');
-  if (typ && document.getElementById(typ)) document.getElementById(typ).checked = true;
+  document.querySelectorAll('form.lead-form').forEach(function (form) {
+    var err = form.querySelector('.form-error');
+    var btn = form.querySelector('button[type="submit"]');
 
-  function show(n) {
-    cur = n;
-    steps.forEach(function (s) { s.classList.toggle('active', +s.dataset.step === n); });
-    bar.style.width = Math.min(100, n * 33.4) + '%';
-    lbl.textContent = n <= 3 ? 'Krok ' + n + ' z 3' : 'Hotovo';
-    back.style.visibility = n > 1 && n <= 3 ? 'visible' : 'hidden';
-    next.innerHTML = n === 3 ? 'Odoslať dopyt' : 'Pokračovať <svg><use href="#i-arrow"/></svg>';
-    if (n === 4) document.getElementById('q-nav').style.display = 'none';
-    err.textContent = '';
-  }
+    // Preselect from links like objednavka/?typ=kuchyna or ?projekt=vinicne
+    var typ = params.get('typ');
+    if (typ && form.potreba) form.potreba.value = typ;
+    var projekt = params.get('projekt');
+    if (projekt && form.sprava && !form.sprava.value) form.sprava.value = 'Chcem podobné riešenie ako v projekte: ' + projekt + '. ';
 
-  function valid() {
-    if (cur === 1 && !form.querySelector('input[name="typ"]:checked')) return 'Vyberte aspoň jednu možnosť.';
-    if (cur === 3) {
-      if (!form.meno.value.trim()) return 'Zadajte, prosím, vaše meno.';
-      if (form.telefon.value.replace(/\D/g, '').length < 9) return 'Zadajte platné telefónne číslo.';
-      if (!document.getElementById('f-gdpr').checked) return 'Potvrďte súhlas so spracovaním údajov.';
+    function fail(msg, field) {
+      err.textContent = msg;
+      if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); }
+      return false;
     }
-    return '';
-  }
 
-  next.addEventListener('click', function () {
-    var e = valid();
-    if (e) { err.textContent = e; return; }
-    // Sending is connected in the final build (as on montwell.sk)
-    show(cur + 1);
+    form.addEventListener('input', function (e) { e.target.removeAttribute('aria-invalid'); err.textContent = ''; });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var tel = form.telefon ? form.telefon.value.trim() : '';
+      var mail = form.email ? form.email.value.trim() : '';
+      if (!tel && !mail) return fail('Zadajte telefón alebo e-mail, aby sme vás mohli kontaktovať.', form.telefon || form.email);
+      if (tel && tel.replace(/\D/g, '').length < 9) return fail('Skontrolujte telefónne číslo.', form.telefon);
+      if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) return fail('Skontrolujte e-mailovú adresu.', form.email);
+      if (form.foto && form.foto.files.length) {
+        for (var i = 0; i < form.foto.files.length; i++) {
+          var f = form.foto.files[i];
+          if (TYPES.indexOf(f.type) === -1) return fail('Fotografie môžu byť vo formáte JPG, PNG alebo WEBP.', form.foto);
+          if (f.size > MAX_FILE) return fail('Jedna fotografia môže mať najviac 10 MB.', form.foto);
+        }
+      }
+      if (form.suhlas && !form.suhlas.checked) return fail('Potvrďte, prosím, súhlas so spracovaním údajov.', form.suhlas);
+
+      // Prevent double submits; in production the success state is shown only after the server confirms.
+      btn.disabled = true;
+      btn.textContent = 'Odosielam…';
+      setTimeout(function () { form.classList.add('is-sent'); }, 600);
+    });
   });
-  back.addEventListener('click', function () { show(cur - 1); });
 })();

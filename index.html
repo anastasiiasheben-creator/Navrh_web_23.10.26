@@ -1,18 +1,28 @@
 <!doctype html>
 <html lang="sk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kuchyne a nábytok na mieru Bratislava | Interiéroví majstri</title>
-  <meta name="description" content="Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh, výroba a montáž od A po Z. Fixná cena v zmluve, 3D návrh zdarma." />
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pages.css" />
+  <meta name="description" content="Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh s 3D vizualizáciou, výroba, doprava a montáž od jedného tímu.">
+  <link rel="canonical" href="https://www.imajstri.sk/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:site_name" content="Interiéroví majstri">
+  <meta property="og:title" content="Kuchyne a nábytok na mieru Bratislava | Interiéroví majstri">
+  <meta property="og:description" content="Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh s 3D vizualizáciou, výroba, doprava a montáž od jedného tímu.">
+  <meta property="og:url" content="https://www.imajstri.sk/">
+  <meta property="og:image" content="https://www.imajstri.sk/images/hero-kuchyna.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="preload" as="image" href="images/hero-kuchyna.jpg" fetchpriority="high">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Interiéroví majstri","legalName":"BK Creative s. r. o.","url":"https://www.imajstri.sk/","logo":"https://www.imajstri.sk/images/logo.png","image":"https://www.imajstri.sk/images/hero-kuchyna.jpg","telephone":"+421918638713","email":"info@imajstri.sk","vatID":"SK2122278433","address":{"@type":"PostalAddress","streetAddress":"Landauova 3146/20","postalCode":"841 01","addressLocality":"Bratislava","addressCountry":"SK"},"areaServed":"Bratislava a okolie","openingHours":"Mo-Fr 09:00-17:00","sameAs":["https://www.instagram.com/imajstri/","https://www.facebook.com/profile.php?id=61573057973324"]}</script>
 </head>
 <body>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
@@ -48,290 +58,378 @@
     </defs>
   </svg>
 
-  <header>
-    <div class="wrap nav">
-      <a href="index.html" class="brand"><img src="images/logo.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102" /></a>
-      <nav class="nav-links" id="nav" aria-label="Hlavná navigácia">
-        <a href="sluzby.html#kuchyne">Kuchyne</a>
-        <a href="sluzby.html#skrine">Vstavané skrine</a>
-        <a href="sluzby.html">Nábytok na mieru</a>
-        <a href="realizacie.html">Realizácie</a>
-        <a href="o-nas.html">O nás</a>
-        <a href="kontakt.html">Kontakt</a>
-      </nav>
-      <div class="nav-cta">
-        <a class="nav-tel" href="tel:+421918638713" aria-label="Zavolať"><svg><use href="#i-phone"/></svg><span>+421 918 638 713</span></a>
-        <a class="btn btn-primary" href="objednavka.html">Nezáväzná ponuka <svg><use href="#i-arrow"/></svg></a>
-        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
+<header class="site-header">
+  <div class="container header-row">
+    <a href="./" class="brand"><img src="images/logo.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102"></a>
+    <nav class="nav" id="nav" aria-label="Hlavná navigácia">
+      <a href="./" aria-current="page">Domov</a>
+      <a href="o-nas/">O nás</a>
+      <a href="nas-tim/">Náš tím</a>
+      <a href="sluzby/">Služby</a>
+      <a href="realizacie/">Realizácie</a>
+      <a href="blog/">Blog</a>
+      <a href="objednavka/">Objednávka</a>
+      <a href="kontakt/">Kontakt</a>
+    </nav>
+    <div class="header-cta">
+      <a class="icon-btn" href="tel:+421918638713" aria-label="Zavolať +421 918 638 713"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+      <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
-  </header>
-
-  <main>
-    <section class="hero2">
-      <img class="hero2-img" src="images/hero-kuchyna.jpg" alt="Kuchyňa na mieru s výsuvnými zásuvkami a rohovým systémom – realizácia Viničné" width="1536" height="1024" fetchpriority="high" />
-      <div class="wrap">
-        <div class="hero2-text">
-          <div class="eyebrow-line">Bratislava a okolie</div>
-          <h1>Kuchyne a nábytok na mieru<span>od návrhu až po montáž.</span></h1>
-          <p class="sub">Jeden tím. Jasná cena. Interiér, ktorý vám skutočne uľahčí život.</p>
-          <div class="hero2-feats">
-            <div class="feat"><i><svg><use href="#i-ruler"/></svg></i>Zameranie a 3D návrh zdarma</div>
-            <div class="feat"><i><svg><use href="#i-doc"/></svg></i>Fixná cena v zmluve</div>
-            <div class="feat"><i><svg><use href="#i-gear"/></svg></i>Profesionálna výroba a montáž</div>
-          </div>
-          <div class="hero2-actions">
-            <a class="btn btn-primary" href="objednavka.html">Chcem 3D návrh zdarma <svg><use href="#i-arrow"/></svg></a>
-            <a class="play-link" href="realizacie.html"><i><svg><use href="#i-play"/></svg></i>Pozrieť realizácie</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="price-strip" aria-label="Orientačné ceny">
-      <div class="wrap">
-        <a class="ps-item" href="sluzby.html#kuchyne"><svg><use href="#i-kitchen2"/></svg><div><span>Kuchyne</span><b>od 3 900 €</b></div></a>
-        <a class="ps-item" href="sluzby.html#skrine"><svg><use href="#i-wardrobe2"/></svg><div><span>Vstavané skrine</span><b>od 990 €</b></div></a>
-        <a class="ps-item" href="sluzby.html#obyvacky"><svg><use href="#i-tv2"/></svg><div><span>Obývačky a TV steny</span><b>od 1 200 €</b></div></a>
-        <a class="ps-item" href="sluzby.html#byt"><svg><use href="#i-tools"/></svg><div><span>Nábytok do celého interiéru</span><b>na mieru</b></div></a>
-      </div>
-    </section>
-
-    <div class="partners">
-      <div class="wrap">
-        <p>Pracujeme s overenými materiálmi a kovaním</p>
-        <div class="partner-logos">
-          <img src="images/blum_imajstri.webp" alt="Blum" />
-          <img src="images/egger_imajstri.webp" alt="Egger" />
-          <img src="images/knauf_imajstri.webp" alt="Knauf" />
-          <img src="images/logo-benalexplus-imajstri.webp" alt="Benalex" />
-          <span style="font-weight:800;letter-spacing:.08em;color:#8A8077">BLANCO</span>
-          <span style="font-weight:800;letter-spacing:.08em;color:#8A8077">PEBE</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="offer" id="ponuka">
-      <div class="wrap">
-        <div class="offer-box">
-          <div class="offer-main">
-            <span class="offer-label"><svg width="16" height="16"><use href="#i-gift"/></svg><span>Ponuka mesiaca · platí do konca <span class="js-month">mesiaca</span></span></span>
-            <h2>Zameranie a 3D návrh zdarma + LED osvetlenie ako darček</h2>
-            <ul class="offer-list">
-              <li><span class="what"><svg><use href="#i-ruler"/></svg>Laserové zameranie u vás doma</span><span class="price"><s>60 €</s><b>0 €</b></span></li>
-              <li><span class="what"><svg><use href="#i-cube"/></svg>3D vizualizácia v 2 variantoch</span><span class="price"><s>150 €</s><b>0 €</b></span></li>
-              <li><span class="what"><svg><use href="#i-light"/></svg>LED podsvietenie pracovnej dosky pri objednávke kuchyne</span><span class="price"><s>250 €</s><b>darček</b></span></li>
-            </ul>
-            <div class="offer-total"><span>Ušetríte</span><span>až 460 €</span></div>
-          </div>
-          <div class="offer-side">
-            <div class="deadline">Platí do konca <span class="js-month">mesiaca</span><small id="days-left"></small></div>
-            <div class="slots"><b>Mesačne prijímame len obmedzený počet zákaziek</b> — aby sme dodržali každý termín v zmluve.</div>
-            <div class="guarantee"><svg><use href="#i-shield"/></svg><div><b>Garancia spokojnosti s návrhom</b>Ak sa vám 3D návrh nebude páčiť, neplatíte nič a nič nepodpisujete.</div></div>
-            <a class="btn btn-primary" href="objednavka.html">Rezervovať bezplatné zameranie</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sluzby">
-      <div class="wrap">
-        <div class="sec-head">
-          <div>
-            <span class="eyebrow">Čo vyrábame</span>
-            <h2>Nábytok na mieru do celého bytu</h2>
-            <p class="lead">Orientačné ceny vidíte hneď. Presnú cenu dostanete po zameraní — a tá sa už nezmení.</p>
-          </div>
-          <a class="link-more" href="sluzby.html">Všetky služby →</a>
-        </div>
-        <div class="services-grid">
-          <article class="service">
-            <a href="sluzby.html#kuchyne"><img src="images/vinicne_3_full.webp" alt="Kuchyne na mieru" loading="lazy" style="object-position:center 62%" /></a>
-            <div class="service-body">
-              <h3>Kuchyne na mieru</h3>
-              <p>Rovné, do L, U aj s ostrovčekom. Kovanie Blum, dosky Egger, drezy BLANCO.</p>
-              <div class="service-foot"><span class="from">od <b>3 900 €</b></span><a href="sluzby.html#kuchyne">Viac →</a></div>
-            </div>
-          </article>
-          <article class="service">
-            <a href="sluzby.html#skrine"><img src="images/byt_nahlad-770x650.webp" alt="Vstavané skrine a šatníky" loading="lazy" /></a>
-            <div class="service-body">
-              <h3>Vstavané skrine a šatníky</h3>
-              <p>Do spálne, hosťovskej izby aj chodby. Každý centimeter využitý.</p>
-              <div class="service-foot"><span class="from">od <b>990 €</b></span><a href="sluzby.html#skrine">Viac →</a></div>
-            </div>
-          </article>
-          <article class="service">
-            <a href="sluzby.html#obyvacky"><img src="images/Landanova-Obyvacka-interierovimajstri-770x892.webp" alt="Obývačky a TV steny" loading="lazy" /></a>
-            <div class="service-body">
-              <h3>Obývačky a TV steny</h3>
-              <p>Lamelové TV steny, knižnice a úložné priestory zladené s kuchyňou.</p>
-              <div class="service-foot"><span class="from">od <b>1 200 €</b></span><a href="sluzby.html#obyvacky">Viac →</a></div>
-            </div>
-          </article>
-          <article class="service">
-            <a href="sluzby.html#izby"><img src="images/2-770x892.webp" alt="Detské izby a spálne" loading="lazy" /></a>
-            <div class="service-body">
-              <h3>Detské izby a spálne</h3>
-              <p>Postele na poschodí, schody s úložným priestorom, šatníky.</p>
-              <div class="service-foot"><span class="from">od <b>1 500 €</b></span><a href="sluzby.html#izby">Viac →</a></div>
-            </div>
-          </article>
-          <article class="service">
-            <a href="sluzby.html#byt"><img src="images/full_vydrica_kuchyna_1.jpg" alt="Kompletný byt na kľúč" loading="lazy" /></a>
-            <div class="service-body">
-              <h3>Kompletný byt na kľúč</h3>
-              <p>Kuchyňa, skrine, obývačka aj chodba v jednom štýle.</p>
-              <div class="service-foot"><span class="from">od <b>8 900 €</b></span><a href="sluzby.html#byt">Viac →</a></div>
-            </div>
-          </article>
-          <article class="service">
-            <a href="sluzby.html#komercne"><img src="images/ilustracny-1-770x892.jpeg" alt="Komerčné interiéry" loading="lazy" /></a>
-            <div class="service-body">
-              <h3>Komerčné interiéry</h3>
-              <p>Salóny, kancelárie a prevádzky. Aj podľa návrhu architekta.</p>
-              <div class="service-foot"><span class="from"><b>individuálne</b></span><a href="sluzby.html#komercne">Viac →</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="photo-band">
-      <img src="images/imajstri_homepage.webp" alt="Obývačka s lamelovou stenou a kuchyňa s ostrovčekom – Záhorská Bystrica" loading="lazy" style="object-position:center 55%" />
-      <div class="wrap">
-        <div>
-          <span class="eyebrow" style="color:#E6C3A3">Realizácia · Záhorská Bystrica</span>
-          <h2>Celý byt na mieru za 1 mesiac</h2>
-          <p>Lamelová stena do obývačky, kuchyňa s ostrovčekom, vstavané skrine a chodba — v jednom štýle.</p>
-        </div>
-        <a class="btn btn-primary" href="realizacie.html">Pozrieť realizácie</a>
-      </div>
-    </section>
-
-    <section class="az">
-      <div class="wrap">
-        <div class="center">
-          <span class="eyebrow" style="color:var(--oak)">Komplet služby</span>
-          <h2>Všetko vybavíme za vás — od A po Z</h2>
-          <p class="lead">Nemusíte koordinovať stolára, dopravu, montážnikov ani elektrikára. Máte jeden kontakt a jednu zodpovednú firmu.</p>
-        </div>
-        <div class="az-steps">
-          <div class="az-step"><svg><use href="#i-chat"/></svg><b>Konzultácia</b><span>u vás alebo online</span></div>
-          <div class="az-step"><svg><use href="#i-ruler"/></svg><b>Zameranie</b><span>laserom, na milimeter</span></div>
-          <div class="az-step"><svg><use href="#i-cube"/></svg><b>3D návrh</b><span>uvidíte ho ešte pred výrobou</span></div>
-          <div class="az-step"><svg><use href="#i-factory"/></svg><b>Výroba</b><span>z overených materiálov</span></div>
-          <div class="az-step"><svg><use href="#i-truck"/></svg><b>Doprava</b><span>aj vynáška na poschodie</span></div>
-          <div class="az-step"><svg><use href="#i-wrench"/></svg><b>Montáž</b><span>vrátane spotrebičov</span></div>
-          <div class="az-step"><svg><use href="#i-broom"/></svg><b>Upratanie</b><span>a odvoz starého nábytku</span></div>
-        </div>
-        <div class="az-foot"><strong>Vy si len vyberiete. My sa postaráme o zvyšok.</strong><a class="btn btn-primary" href="objednavka.html">Začať 3D návrhom zdarma</a></div>
-      </div>
-    </section>
-
-    <section id="realizacie">
-      <div class="wrap">
-        <div class="sec-head">
-          <div>
-            <span class="eyebrow">Realizácie</span>
-            <h2>Skutočné projekty, skutočné byty</h2>
-          </div>
-          <a class="link-more" href="realizacie.html">Všetky realizácie →</a>
-        </div>
-        <div class="gallery">
-          <figure class="project wide" data-c="byty"><img src="images/imajstri_homepage.webp" alt="Moderný byt na mieru – Záhorská Bystrica" loading="lazy" /><figcaption><b>Moderný byt na mieru · Záhorská Bystrica</b><span>1 mesiac</span></figcaption></figure>
-          <figure class="project" data-c="kuchyne"><img src="images/vinicne_3_full.webp" alt="Kuchyňa drevo + čierno-biela – Viničné" loading="lazy" style="object-position:center 62%" /><figcaption><b>Kuchyňa drevo + čierno-biela · Viničné</b><span>6 týždňov</span></figcaption></figure>
-          <figure class="project" data-c="kuchyne"><img src="images/1_kuchyna_nivy_nahlad-770x892.webp" alt="Kuchyňa a obývačka pri Nivách – Bratislava – Nivy" loading="lazy" /><figcaption><b>Kuchyňa a obývačka pri Nivách · Bratislava – Nivy</b><span>1 mesiac</span></figcaption></figure>
-          <figure class="project" data-c="izby"><img src="images/2-770x892.webp" alt="Detská izba pre dvoch súrodencov – Chorvátsky Grob" loading="lazy" /><figcaption><b>Detská izba pre dvoch súrodencov · Chorvátsky Grob</b><span>5 týždňov</span></figcaption></figure>
-          <figure class="project" data-c="byty"><img src="images/vydrica_kuchyna_1-770x892.jpg" alt="Zariadenie bytu Vydrica – Bratislava – Vydrica" loading="lazy" /><figcaption><b>Zariadenie bytu Vydrica · Bratislava – Vydrica</b><span>5 týždňov</span></figcaption></figure>
-          <figure class="project wide" data-c="byty"><img src="images/grob_kuchyna.jpg" alt="Celý dom na mieru – Chorvátsky Grob" loading="lazy" style="object-position:30% center" /><figcaption><b>Celý dom na mieru · Chorvátsky Grob</b><span>5 týždňov</span></figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="team">
-      <div class="wrap team-grid">
-        <div>
-          <span class="eyebrow">Kto sme</span>
-          <h2>Nehovoríte s predajcom, ale priamo s dizajnérom</h2>
-          <p class="lead">Nie sme reťazec s desiatkami predajní. Váš projekt od prvého stretnutia až po montáž vedie jeden človek — ten, ktorý ho aj navrhuje.</p>
-          <ul class="team-points">
-            <li><svg><use href="#i-check"/></svg>Jeden kontakt počas celej zákazky</li>
-            <li><svg><use href="#i-check"/></svg>Realizujeme aj podľa návrhu vášho architekta</li>
-            <li><svg><use href="#i-check"/></svg>Bratislava a okolie do 50 km</li>
-          </ul>
-        </div>
-        <div class="team-cards">
-          <a class="member" href="nas-tim.html"><i>J</i><div><b>Jozef</b><span>Návrh, konzultácie a vedenie projektov</span></div></a>
-          <a class="member" href="nas-tim.html"><i>D</i><div><b>Dušan</b><span>Návrh a 3D vizualizácie</span></div></a>
-          <a class="member member-cta" href="https://wa.me/421918638713" target="_blank" rel="noopener"><i><svg><use href="#i-chat"/></svg></i><div><b>Napíšte nám na WhatsApp</b><span>Pošlite fotku priestoru a odpovieme ešte dnes</span></div></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="reviews" id="recenzie">
-      <div class="wrap">
-        <div class="rev-top">
-          <div>
-            <span class="eyebrow">Recenzie</span>
-            <h2>Čo hovoria naši zákazníci</h2>
-          </div>
-          <div class="g-badge"><span class="stars">★★★★★</span><div><b style="font-size:18px">Recenzie na Google</b><small>overené hodnotenia zákazníkov</small></div></div>
-        </div>
-        <div class="rev-grid">
-          <div class="rev"><span class="stars">★★★★★</span><p>„Kuchyňu sme mali hotovú za 6 týždňov, presne ako sme sa dohodli. Rohový výsuvný systém je geniálny — konečne využijeme celý roh.“</p><div class="rev-who"><i>L</i><div><b>Meno zákazníka</b><span>kuchyňa · Viničné</span></div></div></div>
-          <div class="rev"><span class="stars">★★★★★</span><p>„Zariadili nám celý dom — kuchyňu, spálne, detskú izbu aj kúpeľňu. Všetko ladí a riešili sme to s jedným človekom.“</p><div class="rev-who"><i>R</i><div><b>Meno zákazníka</b><span>celý dom · Chorvátsky Grob</span></div></div></div>
-          <div class="rev"><span class="stars">★★★★★</span><p>„Skrine do spálne, hosťovskej izby aj chodby boli hotové za 4 týždne. Rýchla komunikácia a čistá montáž.“</p><div class="rev-who"><i>Ľ</i><div><b>Meno zákazníka</b><span>vstavané skrine · Sládkovičovo</span></div></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-band">
-      <div class="wrap">
-        <div><h2>Získajte 3D návrh a cenu zdarma</h2><p>Do konca <span class="js-month">mesiaca</span>: zameranie (60 €) + 3D návrh (150 €) zdarma a LED osvetlenie kuchyne ako darček. Nepáči sa vám návrh? Neplatíte nič.</p></div>
-        <div class="btns">
-          <a class="btn btn-primary" href="objednavka.html">Chcem 3D návrh zdarma <svg><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-light" href="https://wa.me/421918638713" target="_blank" rel="noopener"><svg><use href="#i-chat"/></svg>WhatsApp</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <div class="foot-brand"><img src="images/logo-light.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102" /></div>
-          <p><b style="color:#fff">Vaša vízia, náš nábytok.</b> Kuchyne, skrine a nábytok na mieru v Bratislave a okolí. Návrh, výroba a montáž od A po Z.</p>
-          <div class="foot-social">
-            <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=61573057973324" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="https://wa.me/421918638713" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-chat"/></svg></a>
-          </div>
-        </div>
-        <div>
-          <h4>Rýchle odkazy</h4>
-          <ul><li><a href="index.html">Domov</a></li><li><a href="o-nas.html">O nás</a></li><li><a href="nas-tim.html">Náš tím</a></li><li><a href="sluzby.html">Služby</a></li><li><a href="realizacie.html">Realizácie</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="objednavka.html">Objednávka</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul><li><a href="tel:+421918638713">+421 918 638 713</a></li><li><a href="https://wa.me/421918638713" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@imajstri.sk">info@imajstri.sk</a></li><li>Landauova 3146/20, Bratislava</li><li>Po – Pi: 9:00 – 17:00</li></ul>
-        </div>
-        <div>
-          <h4>Máte otázky?</h4>
-          <p>Radi vám pripravíme nezáväznú ponuku a 3D návrh zdarma.</p>
-          <a class="btn btn-primary foot-cta" href="objednavka.html">Dopyt <svg><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
-      <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · Interiéroví majstri · IČO: 56343744</span><span>Bratislava a okolie do 50 km</span></div>
-    </div>
-  </footer>
-
-  <div class="m-bar">
-    <a class="btn btn-ghost" href="tel:+421918638713"><svg><use href="#i-phone"/></svg>Zavolať</a>
-    <a class="btn btn-primary" href="objednavka.html">3D návrh zdarma</a>
   </div>
+</header>
+<main id="obsah">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
+        <h1>Kuchyne a nábytok na mieru<span>od návrhu až po montáž.</span></h1>
+        <p class="hero-sub">Jeden tím. Jasná dohoda. Interiér presne pre vás.</p>
+        <ul class="hero-feats">
+          <li class="feat"><i><svg aria-hidden="true"><use href="#i-chat"/></svg></i>Bezplatná konzultácia</li>
+          <li class="feat"><i><svg aria-hidden="true"><use href="#i-cube"/></svg></i>Návrh a 3D vizualizácia</li>
+          <li class="feat"><i><svg aria-hidden="true"><use href="#i-gear"/></svg></i>Výroba, doprava a montáž</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="objednavka/">Chcem 3D návrh zdarma <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn-text play" href="realizacie/"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Pozrieť realizácie</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="images/hero-kuchyna.jpg" alt="Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans" width="1536" height="1024" fetchpriority="high">
+      </div>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
+  <section class="price-strip" aria-label="Orientačné ceny">
+    <div class="container ps-grid">
+      <a class="ps-item" href="kuchyne-na-mieru/"><svg aria-hidden="true"><use href="#i-kitchen2"/></svg><div><span>Kuchyne na mieru</span><b>od 3 900 €</b></div></a>
+      <a class="ps-item" href="vstavane-skrine/"><svg aria-hidden="true"><use href="#i-wardrobe2"/></svg><div><span>Vstavané skrine a šatníky</span><b>od 990 €</b></div></a>
+      <a class="ps-item" href="obyvacky-a-tv-steny/"><svg aria-hidden="true"><use href="#i-tv2"/></svg><div><span>Obývačky a TV steny</span><b>od 1 200 €</b></div></a>
+      <a class="ps-item" href="kompletne-interiery/"><svg aria-hidden="true"><use href="#i-tools"/></svg><div><span>Nábytok do celého interiéru</span><b>na mieru</b></div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head sec-head--center">
+        <span class="eyebrow eyebrow--line">Prečo si vybrať nás</span>
+        <h2>Všetko vybavíme za vás — od prvého náčrtu po hotovú kuchyňu</h2>
+        <p class="lead">Nemusíte hľadať návrhára, stolára a montážnikov zvlášť. Máte jeden kontakt a jeden tím, ktorý za výsledok ručí.</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><i><svg aria-hidden="true"><use href="#i-cube"/></svg></i><h3>Návrh, ktorý uvidíte vopred</h3><p>Nábytok si pozriete v 3D ešte pred výrobou. Upravujeme, kým nebude presne podľa vás.</p></div>
+        <div class="benefit"><i><svg aria-hidden="true"><use href="#i-ruler"/></svg></i><h3>Na milimeter do vášho priestoru</h3><p>Využijeme aj šikminy, výklenky a ťažko dostupné rohy. Žiadne kompromisy z katalógu.</p></div>
+        <div class="benefit"><i><svg aria-hidden="true"><use href="#i-truck"/></svg></i><h3>Výroba, doprava aj montáž</h3><p>Nábytok vyrobíme, dovezieme a namontujeme. Vy sa len tešíte z výsledku.</p></div>
+        <div class="benefit"><i><svg aria-hidden="true"><use href="#i-doc"/></svg></i><h3>Jasná dohoda</h3><p>Rozsah, materiály a cenu poznáte vopred — ešte predtým, ako sa začne vyrábať.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands" aria-label="Materiály a kovanie">
+    <div class="container">
+      <p>Pracujeme s materiálmi a kovaním</p>
+      <div class="brand-logos">
+        <img src="images/blum_imajstri.webp" alt="Blum" loading="lazy">
+        <img src="images/egger_imajstri.webp" alt="Egger" loading="lazy">
+        <img src="images/knauf_imajstri.webp" alt="Knauf" loading="lazy">
+        <img src="images/logo-benalexplus-imajstri.webp" alt="Benalex" loading="lazy">
+        <span>BLANCO</span><span>PEBE</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow eyebrow--line">Realizácie</span>
+          <h2>Skutočné príbehy, skutočné výsledky</h2>
+          <p class="lead">Pozrite sa, čo sme vyrobili pre zákazníkov v Bratislave a okolí — od jednej kuchyne po celý dom.</p>
+        </div>
+        <a class="link-more" href="realizacie/">Všetky realizácie →</a>
+      </div>
+      <div class="featured">
+        <div class="featured-media">
+          <img src="images/hero-kuchyna.jpg" alt="Kuchyňa vo Viničnom — výsuvné zásuvky a rohový systém" loading="lazy">
+          <img src="images/projekty/vinicne/kuchyna-na-mieru-vinicne-06-700.jpg" srcset="images/projekty/vinicne/kuchyna-na-mieru-vinicne-06-700.jpg 700w, images/projekty/vinicne/kuchyna-na-mieru-vinicne-06-1400.jpg 1400w" sizes="(max-width: 1023px) 50vw, 20vw" alt="Rohový výsuvný systém LeMans v kuchyni vo Viničnom" loading="lazy">
+          <img src="images/projekty/vinicne/kuchyna-na-mieru-vinicne-01-700.jpg" srcset="images/projekty/vinicne/kuchyna-na-mieru-vinicne-01-700.jpg 700w, images/projekty/vinicne/kuchyna-na-mieru-vinicne-01-1400.jpg 1400w" sizes="(max-width: 1023px) 50vw, 20vw" alt="Pracovná doska s LED osvetlením a varnou doskou" loading="lazy">
+        </div>
+        <div>
+          <span class="chip">Vybraná realizácia · Viničné · 6 týždňov</span>
+          <h3 style="font-size:clamp(26px,2.4vw,34px);margin-top:16px">Kuchyňa, v ktorej má všetko svoje miesto</h3>
+          <p class="lead">Moderná kuchyňa, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom a pritom ponúkne čo najviac praktického úložného priestoru.</p>
+          <ul class="check-list">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Rohový systém LeMans</b> — aj ťažko dostupný roh linky je plne využitý.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>LED osvetlenie pracovnej dosky</b> — svetlo presne tam, kde krájate a varíte.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Veľké zásuvky</b> na hrnce a riad, vstavané spotrebiče.</span></li>
+          </ul>
+          <div class="actions" style="margin-top:28px"><a class="btn btn-outline" href="realizacie/vinicne/">Pozrieť celý projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:56px">
+        <article class="card" data-c="byty kuchyne">
+          <a class="card-img" href="realizacie/zahorska-bystrica/" tabindex="-1" aria-hidden="true"><img src="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg" srcset="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg 700w, images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Bratislava – Záhorská Bystrica</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>1 mesiac</span></div>
+            <h3><a class="card-link" href="realizacie/zahorska-bystrica/">Moderný byt na mieru</a></h3>
+            <p>Obývačková stena s lamelami.</p>
+            <div class="card-foot"><span class="from">Celý byt</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+        <article class="card" data-c="byty kuchyne izby">
+          <a class="card-img" href="realizacie/chorvatsky-grob/" tabindex="-1" aria-hidden="true"><img src="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-700.jpg" srcset="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-700.jpg 700w, images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Kuchyňa a interiér rodinného domu v Chorvátskom Grobe" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Chorvátsky Grob</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>5 týždňov</span></div>
+            <h3><a class="card-link" href="realizacie/chorvatsky-grob/">Celý dom na mieru</a></h3>
+            <p>Drevodekorová kuchyňa s previazanou textúrou dvierok.</p>
+            <div class="card-foot"><span class="from">Celý dom</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+        <article class="card" data-c="kuchyne byty">
+          <a class="card-img" href="realizacie/nivy/" tabindex="-1" aria-hidden="true"><img src="images/projekty/nivy/kuchyna-a-obyvacka-nivy-01-700.jpg" srcset="images/projekty/nivy/kuchyna-a-obyvacka-nivy-01-700.jpg 700w, images/projekty/nivy/kuchyna-a-obyvacka-nivy-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Kuchyňa so systémom Smart-Cube a čiernou policou pri Nivách" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Bratislava – Nivy</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>1 mesiac</span></div>
+            <h3><a class="card-link" href="realizacie/nivy/">Kuchyňa a obývačka pri Nivách</a></h3>
+            <p>Kuchyňa so systémom Smart-Cube s podsvietením.</p>
+            <div class="card-foot"><span class="from">Kuchyňa a obývačka</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+        <article class="card" data-c="byty kuchyne skrine">
+          <a class="card-img" href="realizacie/vydrica/" tabindex="-1" aria-hidden="true"><img src="images/projekty/vydrica/zariadenie-bytu-vydrica-01-700.jpg" srcset="images/projekty/vydrica/zariadenie-bytu-vydrica-01-700.jpg 700w, images/projekty/vydrica/zariadenie-bytu-vydrica-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Svetlá kuchyňa na mieru v byte vo Vydrici" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Bratislava – Vydrica</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>5 týždňov</span></div>
+            <h3><a class="card-link" href="realizacie/vydrica/">Zariadenie bytu Vydrica</a></h3>
+            <p>Kuchyňa s otvorenými policami a LED osvetlením.</p>
+            <div class="card-foot"><span class="from">Celý byt</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+        <article class="card" data-c="skrine">
+          <a class="card-img" href="realizacie/sladkovicovo/" tabindex="-1" aria-hidden="true"><img src="images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-700.jpg" srcset="images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-700.jpg 700w, images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Vstavaná skriňa s posuvnými dverami a otvoreným vnútorným vybavením" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Sládkovičovo</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>4 týždne</span></div>
+            <h3><a class="card-link" href="realizacie/sladkovicovo/">Vstavané skrine</a></h3>
+            <p>Skriňa do spálne.</p>
+            <div class="card-foot"><span class="from">Vstavané skrine</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+        <article class="card" data-c="firmy skrine">
+          <a class="card-img" href="realizacie/salon-anima/" tabindex="-1" aria-hidden="true"><img src="images/projekty/salon-anima/kozmeticky-salon-anima-01-700.jpg" srcset="images/projekty/salon-anima/kozmeticky-salon-anima-01-700.jpg 700w, images/projekty/salon-anima/kozmeticky-salon-anima-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Vstavané skrine a recepcia v kozmetickom salóne Anima" loading="lazy"></a>
+          <div class="card-body">
+            <div class="chips"><span class="chip">Bratislava</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>3 týždne</span></div>
+            <h3><a class="card-link" href="realizacie/salon-anima/">Kozmetický salón Anima</a></h3>
+            <p>Vstavaná skriňa s veľkou úložnou kapacitou, dvere zakrývajú aj sokel.</p>
+            <div class="card-foot"><span class="from">Komerčný interiér</span><span class="go">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container split">
+      <img src="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg" srcset="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg 700w, images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-1400.jpg 1400w" sizes="(max-width: 1023px) 100vw, 50vw" alt="Obývačka a kuchyňa na mieru v Záhorskej Bystrici" loading="lazy">
+      <div>
+        <span class="eyebrow eyebrow--line">O nás</span>
+        <h2>Nábytok, ktorý sa prispôsobí vašim snom</h2>
+        <div class="prose" style="margin-top:18px">
+          <p>Každú objednávku berieme ako príležitosť vytvoriť jedinečný kúsok — presne podľa vašich predstáv, priestoru a spôsobu života.</p>
+          <p>S vaším projektom pracuje priamo dizajnér, ktorý ho navrhuje. Žiadne prehadzovanie medzi predajcom, stolárom a montážou — jeden tím od prvého stretnutia až po odovzdanie.</p>
+        </div>
+        <ul class="check-list">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Individuálny prístup</b> — návrh vzniká pre váš priestor, nie z katalógu.</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Skúsenosti z bytov aj domov</b> — Dúbravka, Nivy, Vydrica, Chorvátsky Grob, Sládkovičovo…</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Overené materiály</b> — Egger, Blum, BLANCO.</span></li>
+        </ul>
+        <div class="actions" style="margin-top:28px"><a class="btn btn-outline" href="o-nas/">Viac o nás <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn-text" href="nas-tim/">Náš tím <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow eyebrow--line">Ako prebieha spolupráca</span>
+          <h2>Od zamerania až po montáž v štyroch krokoch</h2>
+          <p class="lead">Viete, čo vás čaká v každom kroku. Celý projekt vedieme za vás.</p>
+        </div>
+        <a class="btn btn-light" href="objednavka/">Začať bezplatnou konzultáciou</a>
+      </div>
+
+      <ol class="steps">
+        <li class="step"><div class="step-num"><svg aria-hidden="true"><use href="#i-ruler"/></svg>01</div><h3>Konzultácia a zameranie</h3><p>Porozprávame sa o vašich predstavách a zameriame priestor. Prvá konzultácia je bezplatná.</p></li>
+        <li class="step"><div class="step-num"><svg aria-hidden="true"><use href="#i-cube"/></svg>02</div><h3>Návrh a vizualizácia</h3><p>Spoločne navrhneme nábytok, ktorý bude presne zodpovedať vašim požiadavkám a štýlu.</p></li>
+        <li class="step"><div class="step-num"><svg aria-hidden="true"><use href="#i-factory"/></svg>03</div><h3>Výroba a realizácia</h3><p>Po schválení návrhu prejdeme k výrobe, pričom každý detail je starostlivo spracovaný.</p></li>
+        <li class="step"><div class="step-num"><svg aria-hidden="true"><use href="#i-truck"/></svg>04</div><h3>Doprava a montáž</h3><p>Váš nový nábytok doručíme a namontujeme priamo u vás doma, aby ste sa mohli ihneď tešiť z výsledku.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow eyebrow--line">Služby</span>
+          <h2>Čo pre vás vyrobíme</h2>
+          <p class="lead">Kuchyne, skrine, obývačky, detské izby aj celé interiéry — všetko na mieru.</p>
+        </div>
+        <a class="link-more" href="sluzby/">Všetky služby →</a>
+      </div>
+      <div class="grid-3">
+        <a class="card" href="kuchyne-na-mieru/">
+          <div class="card-img"><img src="images/hero-kuchyna.jpg" alt="Kuchyne na mieru" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Kuchyne na mieru</h3>
+            <p>Rovné, do L, do U aj s ostrovčekom. Kovanie Blum, dosky Egger, drezy BLANCO.</p>
+            <div class="card-foot"><span class="from">orientačne od <b>3 900 €</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card" href="vstavane-skrine/">
+          <div class="card-img"><img src="images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-700.jpg" srcset="images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-700.jpg 700w, images/projekty/sladkovicovo/vstavane-skrine-sladkovicovo-02-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Vstavané skrine a šatníky" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Vstavané skrine a šatníky</h3>
+            <p>Do spálne, chodby aj podkrovia. Každý centimeter využitý.</p>
+            <div class="card-foot"><span class="from">orientačne od <b>990 €</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card" href="obyvacky-a-tv-steny/">
+          <div class="card-img"><img src="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-03-700.jpg" srcset="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-03-700.jpg 700w, images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-03-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Obývačky a TV steny" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Obývačky a TV steny</h3>
+            <p>Lamelové TV steny, knižnice a úložné priestory zladené s kuchyňou.</p>
+            <div class="card-foot"><span class="from">orientačne od <b>1 200 €</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card" href="detske-izby-a-spalne/">
+          <div class="card-img"><img src="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-04-700.jpg" srcset="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-04-700.jpg 700w, images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-04-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Detské izby a spálne" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Detské izby a spálne</h3>
+            <p>Postele na poschodí, schody s úložným priestorom, šatníky.</p>
+            <div class="card-foot"><span class="from">orientačne od <b>1 500 €</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card" href="kompletne-interiery/">
+          <div class="card-img"><img src="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg" srcset="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg 700w, images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Kompletné interiéry" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Kompletné interiéry</h3>
+            <p>Celý byt alebo dom v jednom štýle — jeden návrh, jeden tím.</p>
+            <div class="card-foot"><span class="from">orientačne od <b>8 900 €</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card" href="komercne-interiery/">
+          <div class="card-img"><img src="images/projekty/salon-anima/kozmeticky-salon-anima-01-700.jpg" srcset="images/projekty/salon-anima/kozmeticky-salon-anima-01-700.jpg 700w, images/projekty/salon-anima/kozmeticky-salon-anima-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Komerčné interiéry" loading="lazy"></div>
+          <div class="card-body">
+            <h3>Komerčné interiéry</h3>
+            <p>Salóny, kancelárie a prevádzky. Aj podľa návrhu architekta.</p>
+            <div class="card-foot"><span class="from"><b>individuálne</b></span><span class="go">Viac <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow eyebrow--line">Recenzie</span>
+          <h2>Čo hovoria naši zákazníci</h2>
+          <p class="lead">Zverejňujeme len overené recenzie so súhlasom zákazníkov.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <figure class="review review--pending"><blockquote>Tu bude overená recenzia zákazníka z Google.</blockquote><figcaption><b>Kuchyňa</b><span>Viničné</span></figcaption></figure>
+        <figure class="review review--pending"><blockquote>Tu bude overená recenzia zákazníka z Google.</blockquote><figcaption><b>Celý dom</b><span>Chorvátsky Grob</span></figcaption></figure>
+        <figure class="review review--pending"><blockquote>Tu bude overená recenzia zákazníka z Google.</blockquote><figcaption><b>Vstavané skrine</b><span>Sládkovičovo</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container faq-grid">
+      <div>
+        <span class="eyebrow eyebrow--line">Časté otázky</span>
+        <h2>Na čo sa nás najčastejšie pýtate</h2>
+        <p class="lead">Nenašli ste odpoveď? Zavolajte nám na <a class="link-more" href="tel:+421918638713">+421 918 638 713</a>.</p>
+      </div>
+      <div>
+        <details><summary>Koľko stojí nábytok na mieru?</summary><p>Cena závisí od rozmerov, materiálov a kovania. Po konzultácii a zameraní dostanete presnú ponuku — skôr, ako sa začne vyrábať.</p></details>
+        <details><summary>Ako dlho trvá výroba a montáž?</summary><p>Podľa rozsahu. Napríklad salón Anima bol hotový za 3 týždne, vstavané skrine v Sládkovičove za 4 týždne a celý dom v Chorvátskom Grobe za 5 týždňov.</p></details>
+        <details><summary>Prídete priestor zamerať?</summary><p>Áno, zameranie je súčasťou prípravy návrhu. Termín dohodneme hneď po prvej konzultácii.</p></details>
+        <details><summary>Aké materiály používate?</summary><p>Pracujeme napríklad s doskami Egger, kovaním Blum a drezmi BLANCO. Konkrétne materiály a farby vyberieme spolu pri návrhu.</p></details>
+        <details><summary>Zabezpečíte aj dopravu a montáž?</summary><p>Áno. Nábytok doručíme a namontujeme priamo u vás doma.</p></details>
+        <details><summary>Akú záruku poskytujete?</summary><p>Záručné podmienky uvedieme v zmluve pri objednávke.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="dopyt">
+    <div class="container cta-final">
+      <div>
+        <span class="eyebrow eyebrow--line">Nezáväzný dopyt</span>
+        <h2>Získajte 3D návrh a cenovú ponuku</h2>
+        <p class="lead">Napíšte nám, čo plánujete. Ozveme sa vám a dohodneme bezplatnú konzultáciu.</p>
+        <div class="quick">
+          <a href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg><span><small>Zavolajte nám</small><b>+421 918 638 713</b></span></a>
+          <a href="https://wa.me/421918638713" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-chat"/></svg><span><small>Napíšte na WhatsApp</small><b>Poslať správu alebo fotku priestoru</b></span></a>
+          <a href="mailto:info@imajstri.sk"><svg aria-hidden="true"><use href="#i-doc"/></svg><span><small>E-mail</small><b>info@imajstri.sk</b></span></a>
+        </div>
+      </div>
+      <form class="form-card lead-form" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="m1">Meno <small>(nepovinné)</small></label><input id="m1" name="meno" autocomplete="name"></div>
+            <div class="field"><label for="p1">Čo potrebujete?</label><select id="p1" name="potreba"><option value="" selected>Vyberte</option><option value="kuchyna">Kuchyňa</option><option value="skrina">Vstavaná skriňa / šatník</option><option value="obyvacka">Obývačka / TV stena</option><option value="izba">Spálňa / detská izba</option><option value="interier">Celý interiér</option><option value="firma">Firma / prevádzka</option><option value="ine">Iné</option></select></div>
+            <div class="field"><label for="t1">Telefón</label><input id="t1" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+421 9xx xxx xxx"></div>
+            <div class="field"><label for="e1">E-mail</label><input id="e1" name="email" type="email" autocomplete="email" placeholder="vas@email.sk"></div>
+            <div class="field field--full"><label for="s1">Krátko o projekte <small>(nepovinné)</small></label><textarea id="s1" name="sprava" rows="3" maxlength="2000" placeholder="Miestnosť, približné rozmery, termín…"></textarea></div>
+            <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky.</span></label>
+            <p class="form-error" role="alert"></p>
+            <button class="btn btn-primary" type="submit">Odoslať dopyt <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="form-note">Stačí telefón alebo e-mail. Ozveme sa vám.</p>
+          </div>
+          <div class="form-success" role="status"><svg aria-hidden="true"><use href="#i-check"/></svg><h3>Ďakujeme, ozveme sa vám.</h3><p>Váš dopyt sme prijali.</p></div>
+        </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="images/logo-light.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102"></div>
+        <p>Vaša vízia, náš nábytok. Kuchyne, skrine a nábytok na mieru v Bratislave a okolí — od návrhu až po montáž.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61573057973324" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/421918638713" target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#i-chat"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h2>Stránky</h2>
+        <ul><li><a href="./">Domov</a></li><li><a href="o-nas/">O nás</a></li><li><a href="nas-tim/">Náš tím</a></li><li><a href="sluzby/">Služby</a></li><li><a href="realizacie/">Realizácie</a></li><li><a href="blog/">Blog</a></li><li><a href="objednavka/">Objednávka</a></li><li><a href="kontakt/">Kontakt</a></li></ul>
+      </div>
+      <div>
+        <h2>Služby</h2>
+        <ul><li><a href="kuchyne-na-mieru/">Kuchyne na mieru</a></li><li><a href="vstavane-skrine/">Vstavané skrine a šatníky</a></li><li><a href="obyvacky-a-tv-steny/">Obývačky a TV steny</a></li><li><a href="detske-izby-a-spalne/">Detské izby a spálne</a></li><li><a href="kompletne-interiery/">Kompletné interiéry</a></li><li><a href="komercne-interiery/">Komerčné interiéry</a></li></ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="tel:+421918638713">+421 918 638 713</a></li>
+          <li><a href="mailto:info@imajstri.sk">info@imajstri.sk</a></li>
+          <li>Landauova 3146/20, 841 01 Bratislava</li>
+          <li>Po – Pi: 9:00 – 17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span>Bratislava a okolie</span></div>
+  </div>
+</footer>
+<div class="m-bar">
+  <a class="btn btn-outline" href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg>Zavolať</a>
+  <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka</a>
+</div>
+<script src="js/main.js" defer></script>
 </body>
 </html>
