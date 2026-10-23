@@ -748,15 +748,12 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
   title: 'Realizácie nábytku na mieru | Interiéroví majstri',
   desc: 'Naše realizácie: kuchyne, vstavané skrine, detské izby a celé byty na mieru v Bratislave, Chorvátskom Grobe, Viničnom a Sládkovičove.',
   body: (b) => `
-  <section class="page-hero page-hero--media">
-    <div class="container ph-grid">
-      <div>
-        ${crumbs(b, [[null, 'Realizácie']])}
-        <h1>Skutočné príbehy, skutočné výsledky</h1>
-        <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
-        <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem podobné riešenie ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
-      </div>
-      ${img(P['chorvatsky-grob'].photos[0], b, 'Kuchyňa v rodinnom dome v Chorvátskom Grobe', '(max-width: 1023px) 100vw, 50vw', true)}
+  <section class="page-hero page-hero--wide">
+    <div class="container">
+      ${crumbs(b, [[null, 'Realizácie']])}
+      <h1>Skutočné príbehy, skutočné výsledky</h1>
+      <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem podobné riešenie ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
