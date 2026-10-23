@@ -213,6 +213,12 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
 .is-sent .form-grid { display: none; }
 .is-sent .form-success { display: block; }
 
+/* Short CTA band */
+.cta-band { background: var(--dark); color: #EDE8E1; padding-block: 64px; }
+.cta-band__row { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.cta-band h2 { color: var(--white); font-size: clamp(26px, 2.6vw, 36px); max-width: 640px; }
+.cta-band p { color: #BDB6AD; margin-top: 10px; }
+
 /* Final CTA (form + quick contacts) */
 .cta-final { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
 .quick { display: grid; gap: 12px; margin-top: 28px; }

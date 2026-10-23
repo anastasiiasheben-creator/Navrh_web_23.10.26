@@ -299,6 +299,18 @@ const finalCta = (b, selected = '', h = 'Získajte bezplatnú konzultáciu a cen
     </div>
   </section>`;
 
+// Short call-to-action for informational pages (no form)
+const ctaBand = (b, h, sub) => `
+  <section class="cta-band">
+    <div class="container cta-band__row">
+      <div><h2>${h}</h2><p>${sub}</p></div>
+      <div class="actions">
+        <a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a>
+        <a class="btn btn-light" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a>
+      </div>
+    </div>
+  </section>`;
+
 const steps = (dark = false) => `
       <ol class="steps">
         <li class="step"><div class="step-num">${ic('chat')}01</div><h3>Konzultácia</h3><p>Porozprávame sa o vašich predstavách a požiadavkách. Prvá konzultácia je bezplatná.</p></li>
@@ -583,7 +595,7 @@ ${steps()}
     </div>
   </section>
 ${brands(b)}
-${finalCta(b)}` });
+${ctaBand(b, 'Chcete, aby sme navrhli aj váš nábytok?', 'Prvá konzultácia je bezplatná a nezáväzná.')}` });
 
 // Náš tím
 pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-tim/', 'Náš tím']]),
@@ -623,7 +635,7 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
       </div>
     </div>
   </section>
-${finalCta(b)}` });
+${ctaBand(b, 'Chcete sa s nami poradiť o vašom projekte?', 'Ozvite sa nám — prvá konzultácia je bezplatná a nezáväzná.')}` });
 
 // Služby (overview)
 pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby/', 'Služby']]),
@@ -659,7 +671,7 @@ ${faqBlock([
   ['V akej oblasti pracujete?', 'V Bratislave a okolí — realizovali sme napríklad v Dúbravke, pri Nivách, vo Vydrici, v Chorvátskom Grobe, Viničnom a Sládkovičove.'],
   ['Spolupracujete s architektmi?', 'Áno, vyrobíme nábytok aj podľa návrhu vášho architekta.'],
 ])}
-${finalCta(b)}` });
+${ctaBand(b, 'Neviete, čo presne potrebujete?', 'Poradíme vám na bezplatnej konzultácii.')}` });
 
 // Service pages — one template (brief section 05)
 for (const s of services) {
@@ -839,7 +851,7 @@ pages.push({ path: 'blog/', section: 'blog/', jsonld: breadcrumbLd([['blog/', 'B
       <article class="card"><div class="card-img">${img(P.vinicne.photos[5], b, '')}</div><div class="card-body"><span class="soon">Pripravujeme</span><h3>Ako využiť roh v kuchyni</h3><p>Rohové systémy LeMans a ďalšie riešenia, vďaka ktorým nič nezostane nevyužité.</p></div></article>
     </div>
   </section>
-${finalCta(b, '', 'Radšej to preberieme osobne?', 'Prvá konzultácia je bezplatná a nezáväzná.')}` });
+${ctaBand(b, 'Radšej to preberieme osobne?', 'Prvá konzultácia je bezplatná a nezáväzná.')}` });
 
 // Objednávka — full form (brief section 07)
 pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([['objednavka/', 'Objednávka']]),
