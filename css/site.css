@@ -100,7 +100,7 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .crumbs a:hover { color: var(--accent-strong); text-decoration: underline; }
 .crumbs span[aria-hidden] { margin-inline: 6px; }
 .page-hero { padding-block: 64px 56px; border-bottom: 1px solid var(--border); }
-.page-hero h1 { max-width: 900px; font-size: clamp(36px, 3.4vw, 48px); }
+.page-hero h1 { max-width: 900px; }
 .page-hero--wide .lead { max-width: none; }
 .page-hero .actions { margin-top: 32px; }
 .page-hero--media .ph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
