@@ -142,8 +142,6 @@
     .countdown span { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
     .slots { font-size: 15px; }
     .slots b { color: var(--white); }
-    .slot-bar { height: 8px; background: rgba(255, 255, 255, .15); border-radius: 99px; margin-top: 10px; overflow: hidden; }
-    .slot-bar i { display: block; height: 100%; width: 67%; background: var(--accent); border-radius: 99px; }
     .guarantee { display: flex; gap: 14px; align-items: flex-start; background: rgba(255, 255, 255, .06); border-radius: 12px; padding: 16px; font-size: 15px; }
     .guarantee svg { width: 28px; height: 28px; color: #F0B98E; flex: none; }
     .guarantee b { color: var(--white); display: block; }
@@ -405,7 +403,7 @@
 
   <!-- Offer bar -->
   <div class="offer-bar">
-    Do 30. 11. 2026: <strong>zameranie + 3D návrh zdarma</strong> a LED osvetlenie kuchyne ako darček. <a href="#ponuka">Zobraziť ponuku</a>
+    Do konca <span class="js-month">mesiaca</span>: <strong>zameranie + 3D návrh zdarma</strong> a LED osvetlenie kuchyne ako darček. <a href="#ponuka">Zobraziť ponuku</a>
   </div>
 
   <!-- Header -->
@@ -483,7 +481,7 @@
       <div class="wrap">
         <div class="offer-box">
           <div class="offer-main">
-            <span class="offer-label"><svg width="16" height="16"><use href="#i-gift"/></svg>Jesenná ponuka · platí do 30. 11. 2026</span>
+            <span class="offer-label"><svg width="16" height="16"><use href="#i-gift"/></svg>Ponuka mesiaca · platí do konca <span class="js-month">mesiaca</span></span>
             <h2>Zameranie a 3D návrh zdarma + LED osvetlenie ako darček</h2>
             <ul class="offer-list">
               <li><span class="what"><svg><use href="#i-ruler"/></svg>Laserové zameranie u vás doma</span><span class="price"><s>60 €</s><b>0 €</b></span></li>
@@ -502,8 +500,7 @@
               </div>
             </div>
             <div class="slots">
-              Voľné termíny montáže v decembri: <b>4 z 12</b>
-              <div class="slot-bar"><i></i></div>
+              <b>Mesačne prijímame len obmedzený počet zákaziek</b> — aby sme dodržali každý termín v zmluve.
             </div>
             <div class="guarantee">
               <svg><use href="#i-shield"/></svg>
@@ -748,7 +745,7 @@
           <h2>Získajte 3D návrh a cenu zdarma</h2>
           <p class="lead">3 krátke otázky, 30 sekúnd. Ozveme sa do 24 hodín a dohodneme termín zamerania.</p>
           <ul class="lead-points">
-            <li><svg><use href="#i-check"/></svg>Zameranie a 3D návrh zdarma do 30. 11.</li>
+            <li><svg><use href="#i-check"/></svg>Zameranie a 3D návrh zdarma do konca <span class="js-month">mesiaca</span></li>
             <li><svg><use href="#i-check"/></svg>Fixná cena — žiadne doplatky</li>
             <li><svg><use href="#i-check"/></svg>Nepáči sa vám návrh? Neplatíte nič.</li>
           </ul>
@@ -850,7 +847,11 @@
 
     // Offer countdown
     (function () {
-      var end = new Date('2026-11-30T23:59:59+01:00').getTime();
+      // Offer always runs to the end of the current month, so nobody has to update dates
+      var now = new Date();
+      var end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59).getTime();
+      var months = ['januára', 'februára', 'marca', 'apríla', 'mája', 'júna', 'júla', 'augusta', 'septembra', 'októbra', 'novembra', 'decembra'];
+      document.querySelectorAll('.js-month').forEach(function (el) { el.textContent = months[now.getMonth()]; });
       var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'), m = document.getElementById('cd-m');
       function tick() {
         var diff = Math.max(0, end - Date.now());
