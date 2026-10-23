@@ -99,10 +99,12 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .crumbs { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
 .crumbs a:hover { color: var(--accent-strong); text-decoration: underline; }
 .crumbs span[aria-hidden] { margin-inline: 6px; }
-.page-hero { padding-block: 64px 56px; border-bottom: 1px solid var(--border); }
-.page-hero h1 { max-width: 900px; }
+/* Compact subpage header, like montwell.sk */
+.page-hero { padding-block: 48px; border-bottom: 1px solid var(--border); }
+.page-hero h1 { max-width: 900px; font-size: clamp(30px, 3.5vw, 44px); }
+.page-hero .lead { margin-top: 12px; }
+.page-hero .actions { margin-top: 24px; }
 .page-hero--wide .lead { max-width: none; }
-.page-hero .actions { margin-top: 32px; }
 .page-hero--media .ph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .page-hero--media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
