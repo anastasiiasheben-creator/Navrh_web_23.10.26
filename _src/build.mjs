@@ -75,7 +75,7 @@ const projects = [
     task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
     solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
     items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
-  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 4,
+  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 3, skip: [1],
     alt: 'Moderná kuchyňa s tmavou zástenou v byte v Slnečniciach',
     task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
     solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
