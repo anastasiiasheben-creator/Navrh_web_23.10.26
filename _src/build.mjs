@@ -12,7 +12,16 @@ const PHONE_TXT = '+421 918 638 713';
 const WA = 'https://wa.me/421918638713';
 const ic = (id) => `<svg><use href="#i-${id}"/></svg>`;
 
+// Header menu follows the client's design mockup; the full page list lives in the footer
 const NAV = [
+  ['sluzby.html#kuchyne', 'Kuchyne'],
+  ['sluzby.html#skrine', 'Vstavané skrine'],
+  ['sluzby.html', 'Nábytok na mieru'],
+  ['realizacie.html', 'Realizácie'],
+  ['o-nas.html', 'O nás'],
+  ['kontakt.html', 'Kontakt'],
+];
+const FOOT_NAV = [
   ['index.html', 'Domov'],
   ['o-nas.html', 'O nás'],
   ['nas-tim.html', 'Náš tím'],
@@ -22,6 +31,8 @@ const NAV = [
   ['objednavka.html', 'Objednávka'],
   ['kontakt.html', 'Kontakt'],
 ];
+
+const brand = (b) => `<a href="${b}index.html" class="brand"><img src="${b}images/logo.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102" /></a>`;
 
 // ---------- Data ----------
 
@@ -79,10 +90,10 @@ const head = (p, b) => `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${p.title}</title>
   <meta name="description" content="${p.desc}" />
-  <link rel="icon" href="${b}images/Logo_Interierovi_Majstri.webp" />
+  <link rel="icon" href="${b}images/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="${b}css/style.css" />
   <link rel="stylesheet" href="${b}css/pages.css" />
 </head>
@@ -90,18 +101,15 @@ const head = (p, b) => `<!doctype html>
 ${sprite}`;
 
 const header = (p, b) => `
-  <div class="offer-bar">
-    Do konca <span class="js-month">mesiaca</span>: <strong>zameranie + 3D návrh zdarma</strong> a LED osvetlenie kuchyne ako darček. <a href="${b}objednavka.html">Chcem ponuku</a>
-  </div>
   <header>
     <div class="wrap nav">
-      <a href="${b}index.html" class="logo"><img src="${b}images/Logo_Interierovi_Majstri_main.webp" alt="Interiéroví majstri logo" />Interiéroví majstri</a>
+      ${brand(b)}
       <nav class="nav-links" id="nav" aria-label="Hlavná navigácia">
         ${NAV.map(([href, label]) => `<a href="${b}${href}"${p.file === href ? ' class="active"' : ''}>${label}</a>`).join('\n        ')}
       </nav>
       <div class="nav-cta">
-        <a class="nav-icon" href="tel:${PHONE}" aria-label="Zavolať">${ic('phone')}</a>
-        <a class="btn btn-primary" href="${b}objednavka.html">3D návrh zdarma</a>
+        <a class="nav-tel" href="tel:${PHONE}" aria-label="Zavolať">${ic('phone')}<span>${PHONE_TXT}</span></a>
+        <a class="btn btn-primary" href="${b}objednavka.html">Nezáväzná ponuka ${ic('arrow')}</a>
         <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -113,7 +121,7 @@ const footer = (p, b) => `
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="foot-logo"><img src="${b}images/Logo_Interierovi_Majstri.webp" alt="" />Interiéroví majstri</div>
+          <div class="foot-brand"><img src="${b}images/logo-light.png" alt="Interiéroví majstri – nábytok na mieru" width="600" height="102" /></div>
           <p><b style="color:#fff">Vaša vízia, náš nábytok.</b> Kuchyne, skrine a nábytok na mieru v Bratislave a okolí. Návrh, výroba a montáž od A po Z.</p>
           <div class="foot-social">
             <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -123,7 +131,7 @@ const footer = (p, b) => `
         </div>
         <div>
           <h4>Rýchle odkazy</h4>
-          <ul>${NAV.map(([href, label]) => `<li><a href="${b}${href}">${label}</a></li>`).join('')}</ul>
+          <ul>${FOOT_NAV.map(([href, label]) => `<li><a href="${b}${href}">${label}</a></li>`).join('')}</ul>
         </div>
         <div>
           <h4>Kontakt</h4>
@@ -327,38 +335,32 @@ const pages = [];
 // Domov
 pages.push({ file: 'index.html', title: 'Kuchyne a nábytok na mieru Bratislava | Interiéroví majstri', desc: 'Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh, výroba a montáž od A po Z. Fixná cena v zmluve, 3D návrh zdarma.',
   body: (b) => `
-    <section class="hero">
+    <section class="hero2">
+      <img class="hero2-img" src="${b}images/hero-kuchyna.jpg" alt="Kuchyňa na mieru s výsuvnými zásuvkami a rohovým systémom – realizácia Viničné" width="1536" height="1024" fetchpriority="high" />
       <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <span class="eyebrow">Bratislava a okolie do 50 km</span>
-            <h1>Kuchyne a nábytok <em>na mieru</em> — od návrhu až po montáž</h1>
-            <p class="lead">Navrhneme, vyrobíme a namontujeme. Jedna firma, jedna fixná cena v zmluve, žiadne doplatky.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="${b}objednavka.html">Chcem 3D návrh zdarma ${ic('arrow')}</a>
-              <a class="btn btn-ghost" href="${b}realizacie.html">Pozrieť realizácie</a>
-            </div>
-            <p class="hero-micro">${ic('check')}Ozveme sa do 24 hodín · nezáväzne · bez zálohy za návrh</p>
-            <div class="hero-facts">
-              <div class="fact"><b>3–6 týž.</b><span>od návrhu po montáž</span></div>
-              <div class="fact"><b>do 24 h</b><span>sa vám ozveme</span></div>
-              <div class="fact"><b>0 €</b><span>konzultácia a 3D návrh</span></div>
-            </div>
+        <div class="hero2-text">
+          <div class="eyebrow-line">Bratislava a okolie</div>
+          <h1>Kuchyne a nábytok na mieru<span>od návrhu až po montáž.</span></h1>
+          <p class="sub">Jeden tím. Jasná cena. Interiér, ktorý vám skutočne uľahčí život.</p>
+          <div class="hero2-feats">
+            <div class="feat"><i>${ic('ruler')}</i>Zameranie a 3D návrh zdarma</div>
+            <div class="feat"><i>${ic('doc')}</i>Fixná cena v zmluve</div>
+            <div class="feat"><i>${ic('gear')}</i>Profesionálna výroba a montáž</div>
           </div>
-          <div class="hero-media">
-            <img src="${b}images/2025_03_interierovi_majstri_obyvacka_kuchyna.webp" alt="Obývačka s lamelovou stenou a kuchyňa s ostrovčekom – realizácia Záhorská Bystrica" />
-            <span class="hero-tag">Naša realizácia · Záhorská Bystrica</span>
-            <div class="hero-card">
-              <div class="stars">★★★★★</div>
-              <p>Hodnotenie na Google</p>
-              <ul>
-                <li>${ic('check')}Fixná cena v zmluve</li>
-                <li>${ic('check')}Termín montáže v zmluve</li>
-                <li>${ic('check')}Po montáži upraceme</li>
-              </ul>
-            </div>
+          <div class="hero2-actions">
+            <a class="btn btn-primary" href="${b}objednavka.html">Chcem 3D návrh zdarma ${ic('arrow')}</a>
+            <a class="play-link" href="${b}realizacie.html"><i>${ic('play')}</i>Pozrieť realizácie</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="price-strip" aria-label="Orientačné ceny">
+      <div class="wrap">
+        <a class="ps-item" href="${b}sluzby.html#kuchyne"><svg><use href="#i-kitchen2"/></svg><div><span>Kuchyne</span><b>od 3 900 €</b></div></a>
+        <a class="ps-item" href="${b}sluzby.html#skrine"><svg><use href="#i-wardrobe2"/></svg><div><span>Vstavané skrine</span><b>od 990 €</b></div></a>
+        <a class="ps-item" href="${b}sluzby.html#obyvacky"><svg><use href="#i-tv2"/></svg><div><span>Obývačky a TV steny</span><b>od 1 200 €</b></div></a>
+        <a class="ps-item" href="${b}sluzby.html#byt"><svg><use href="#i-tools"/></svg><div><span>Nábytok do celého interiéru</span><b>na mieru</b></div></a>
       </div>
     </section>
 ${partners(b)}
@@ -410,12 +412,12 @@ ${partners(b)}
     </section>
 
     <section class="photo-band">
-      <img src="${b}images/vinicne_1_full.webp" alt="Kuchyňa drevo a čierno-biela – Viničné" loading="lazy" style="object-position:center 62%" />
+      <img src="${b}images/imajstri_homepage.webp" alt="Obývačka s lamelovou stenou a kuchyňa s ostrovčekom – Záhorská Bystrica" loading="lazy" style="object-position:center 55%" />
       <div class="wrap">
         <div>
-          <span class="eyebrow" style="color:#F0B98E">Realizácia · Viničné</span>
-          <h2>Kuchyňa na mieru za 6 týždňov</h2>
-          <p>Drevo v kombinácii s čierno-bielym dizajnom, rohový systém LeMans a vstavané spotrebiče.</p>
+          <span class="eyebrow" style="color:#E6C3A3">Realizácia · Záhorská Bystrica</span>
+          <h2>Celý byt na mieru za 1 mesiac</h2>
+          <p>Lamelová stena do obývačky, kuchyňa s ostrovčekom, vstavané skrine a chodba — v jednom štýle.</p>
         </div>
         <a class="btn btn-primary" href="${b}realizacie.html">Pozrieť realizácie</a>
       </div>
