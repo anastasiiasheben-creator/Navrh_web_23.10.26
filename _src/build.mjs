@@ -154,6 +154,9 @@ const services = [
 
 // ---------------------------------------------------------------- shared markup
 
+// Gallery layout = one big photo + 3 beside it + full rows of 3, so 4, 7 or 10 photos never leave a lone photo
+const fullRows = (list) => list.slice(0, [10, 7, 4, 1].find((n) => n <= list.length) || 0);
+
 const img = (base, b, alt, sizes = '(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw', eager = false, style = '') =>
   base.endsWith('.jpg')
     ? `<img src="${b}images/${base}" alt="${esc(alt)}"${eager ? ' fetchpriority="high"' : ' loading="lazy"'}${style}>`
@@ -667,7 +670,7 @@ ${ctaBand(b, 'Neviete, čo presne potrebujete?', 'Poradíme vám na bezplatnej k
 // Service pages — one template (brief section 05)
 for (const s of services) {
   const rel = s.projects.map((x) => P[x]);
-  const gallery = rel.flatMap((p) => p.photos.slice(0, 2).map((ph) => [ph, p])).slice(0, 6);
+  const gallery = fullRows(rel.flatMap((p) => p.photos.slice(0, rel.length === 1 ? 7 : 2).map((ph) => [ph, p])).slice(0, 7));
   pages.push({ path: `${s.slug}/`, section: 'sluzby/', og: s.img.endsWith('.jpg') ? s.img : `${s.img}-1400.jpg`, jsonld: breadcrumbLd([['sluzby/', 'Služby'], [`${s.slug}/`, s.name]]),
     title: s.title, desc: s.desc,
     body: (b) => `
@@ -794,7 +797,7 @@ projects.forEach((p, i) => {
     <div class="container project-layout">
       <div>
         <div class="gallery">
-          ${p.photos.map((ph, n) => `<a href="${b}images/${ph}-1400.jpg" target="_blank" rel="noopener">${img(ph, b, `${p.alt} — fotografia ${n + 1} z ${p.photos.length}`, n === 0 ? '(max-width: 1023px) 100vw, 60vw' : undefined, n === 0)}</a>`).join('\n          ')}
+          ${fullRows(p.photos).map((ph, n, shown) => `<a href="${b}images/${ph}-1400.jpg" target="_blank" rel="noopener">${img(ph, b, `${p.alt} — fotografia ${n + 1} z ${shown.length}`, n === 0 ? '(max-width: 1023px) 100vw, 60vw' : undefined, n === 0)}</a>`).join('\n          ')}
         </div>
       </div>
       <aside class="sticky-box">
