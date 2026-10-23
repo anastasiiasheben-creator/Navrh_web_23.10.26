@@ -9,6 +9,69 @@
   });
 })();
 
+// Project gallery lightbox: arrows, keyboard, swipe
+(function () {
+  var gallery = document.querySelector('[data-lightbox]');
+  if (!gallery) return;
+  var links = Array.prototype.slice.call(gallery.querySelectorAll('a'));
+  var box = document.createElement('div');
+  box.className = 'lightbox';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', 'Fotografie projektu');
+  box.innerHTML =
+    '<button class="lb-close" type="button" aria-label="Zavrieť">×</button>' +
+    '<button class="lb-prev" type="button" aria-label="Predchádzajúca fotografia">‹</button>' +
+    '<figure><img alt=""><figcaption></figcaption></figure>' +
+    '<button class="lb-next" type="button" aria-label="Ďalšia fotografia">›</button>';
+  document.body.appendChild(box);
+  var imgEl = box.querySelector('img');
+  var cap = box.querySelector('figcaption');
+  var cur = 0;
+  var lastFocus = null;
+
+  function show(i) {
+    cur = (i + links.length) % links.length;
+    imgEl.src = links[cur].getAttribute('href');
+    imgEl.alt = links[cur].querySelector('img').alt;
+    cap.textContent = (cur + 1) + ' / ' + links.length;
+  }
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    box.querySelector('.lb-close').focus();
+  }
+  function close() {
+    box.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+  });
+  box.querySelector('.lb-close').addEventListener('click', close);
+  box.querySelector('.lb-prev').addEventListener('click', function () { show(cur - 1); });
+  box.querySelector('.lb-next').addEventListener('click', function () { show(cur + 1); });
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!box.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+  var x0 = null;
+  box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+})();
+
 // Realizácie filter
 (function () {
   var buttons = document.querySelectorAll('.filters button');

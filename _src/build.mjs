@@ -42,47 +42,59 @@ const photos = (slug, skip = []) => fs.readdirSync(path.join(projectImgDir, slug
   .filter((f) => !skip.includes(Number(f.match(/-(\d\d)-700\.jpg$/)[1])))
   .map((f) => `projekty/${slug}/${f.replace(/-700\.jpg$/, '')}`);
 
+// Project texts are taken from the project pages on the old imajstri.sk (Zadanie, Riešenie, Projektové informácie).
+// Client names are left out until the client confirms we may publish them.
 const projects = [
-  { slug: 'vinicne', title: 'Kuchyňa drevo + čierno-biela', h1: 'Moderná kuchyňa na mieru — Viničné', loc: 'Viničné', cats: ['kuchyne'], type: 'Kuchyňa', time: '6 týždňov', by: 'Jozef', cover: 3,
+  { slug: 'vinicne', title: 'Kuchyňa drevo + čierno-biela', h1: 'Moderná kuchyňa v kombinácii dreva a čierno-bieleho dizajnu', loc: 'Viničné', cats: ['kuchyne'], type: 'Kuchyňa', rooms: 'Kuchyňa', time: '6 týždňov', by: 'Jozef', ours: true, cover: 3,
     alt: 'Kuchyňa na mieru vo Viničnom s drevenou doskou a čiernymi skrinkami',
-    task: 'Moderná kuchyňa, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom a pritom ponúkne čo najviac praktického úložného priestoru.',
-    items: ['Prírodný dekor dreva v kombinácii s čierno-bielymi prvkami', 'Veľké výsuvné zásuvky na hrnce a riad', 'Rohový výsuvný systém LeMans — využitý aj roh linky', 'Vstavané spotrebiče a premyslené rozloženie pracovnej plochy', 'LED osvetlenie pracovnej dosky'] },
-  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt — Záhorská Bystrica', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne'], type: 'Celý byt', time: '1 mesiac', cover: 2,
+    task: 'Moderná kuchyňa na mieru, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom.',
+    solution: 'Kombinácia prírodného dekoru dreva s čierno-bielymi prvkami vytvára elegantnú kuchyňu, ktorá sa hodí do moderných interiérov.',
+    items: ['Moderný a nadčasový dizajn — prírodný dekor dreva s čierno-bielymi prvkami', 'Veľké zásuvky a rohový výsuvný systém LeMans pre jednoduchý prístup a maximálne využitie priestoru', 'Premyslené rozloženie pracovnej plochy, vstavané spotrebiče a čisté línie pre pohodlné každodenné používanie'] },
+  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '1 mesiac', cover: 2,
     alt: 'Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici',
-    task: 'Zariadiť celý byt v jednom štýle — s dôrazom na eleganciu a funkčnosť.',
-    items: ['Obývačková stena s lamelami', 'Kuchyňa s lamelami a ostrovčekom', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Skrinka pod umývadlo do kúpeľne'] },
-  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru — Chorvátsky Grob', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'izby'], type: 'Celý dom', time: '5 týždňov', by: 'Dušana', cover: 1,
+    task: 'V byte v Záhorskej Bystrici bolo potrebné navrhnúť moderný nábytok na mieru.',
+    solution: 'Vytvorili sme unikátny interiér, ktorý spája eleganciu a funkčnosť. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
+    items: ['Obývačková stena s lamelami, ktorá dodáva priestoru štýlový a sofistikovaný vzhľad', 'Kuchyňa s lamelami a ostrovčekom pre tých, ktorí ocenia moderný dizajn a praktickosť', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Kúpeľňová skrinka pod umývadlo'] },
+  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'izby'], type: 'Celý dom', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '5 týždňov', by: 'Dušana', ours: true, cover: 1,
     alt: 'Kuchyňa a interiér rodinného domu v Chorvátskom Grobe',
-    task: 'Kompletné zariadenie rodinného domu — od kuchyne cez spálňu až po detskú izbu pre dvoch súrodencov.',
-    items: ['Drevodekorová kuchyňa s previazanou textúrou dvierok', 'Chodba plynulo prepojená s kuchyňou', 'Spálňa so vstavanými skriňami a šatníkom', 'Detská izba: čalúnená poschodová posteľ, schodisko s úložným priestorom, skriňa a písací stôl', 'Minimalistická obývačka s lamelami a nábytok do kúpeľne'] },
-  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru — pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a obývačka', time: '1 mesiac', by: 'Jozef', cover: 1, skip: [5],
+    task: 'Dostali sme za úlohu zariadiť novostavbu v Chorvátskom Grobe.',
+    solution: 'Projekt rodinného domu zahŕňa nábytok na mieru do všetkých miestností — od kuchyne až po detskú izbu.',
+    items: ['Kuchyňa v drevodekore s prepojenou textúrou na dvierkach', 'Chodba plynule prepojená s kuchyňou', 'Spálňa so vstavanými skriňami a šatníkom', 'Kúpeľňa', 'Detská izba pre dvoch súrodencov — poschodová posteľ s čalúnením, schody s úložným priestorom, vstavaná skriňa a písací stôl', 'Minimalistická obývačka s lamelovým plátom, zladená do farieb kuchyne'] },
+  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka', time: '1 mesiac', by: 'Jozef', ours: true, cover: 1, skip: [5],
     alt: 'Kuchyňa so systémom Smart-Cube a čiernou policou pri Nivách',
-    task: 'Moderný nábytok na mieru do bytu pri Nivách — kuchyňa ako miesto na varenie aj príjemný pobyt a obývačka s priestorom na prácu.',
-    items: ['Kuchyňa so systémom Smart-Cube s podsvietením', 'Čierne dvierka s tmavým sklom Lacobel', 'Knižnica cez celú stenu', 'Pracovný kút v obývačke'] },
-  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu na mieru — Vydrica, Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'skrine'], type: 'Celý byt', time: '5 týždňov', by: 'Jozef', cover: 1,
+    task: 'V byte pri Nivách bolo potrebné navrhnúť moderný nábytok na mieru.',
+    solution: 'Moderná kuchyňa na mieru sa pýši výrazným Smart-Cube systémom s podsvietením, ktorý dodáva interiéru sofistikovaný a technologicky pokročilý vzhľad. Dokonalý kontrast vytvárajú čierne dvere s tmavým sklom Lacobel. Každý detail je premyslený tak, aby kuchyňa nebola len miestom na varenie, ale aj priestorom, kde sa budete cítiť výnimočne.',
+    items: ['Kuchyňa so Smart-Cube systémom s podsvietením', 'Čierne dvere s tmavým sklom Lacobel', 'Obývačka a priestor na prácu'] },
+  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'skrine'], type: 'Celý byt', rooms: 'Izba, kuchyňa, kúpeľňa, obývačka', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Svetlá kuchyňa na mieru v byte vo Vydrici',
-    task: 'Kompletné zariadenie bytu, kde je každý kus navrhnutý podľa individuálnych potrieb zákazníka.',
-    items: ['Kuchyňa s otvorenými policami a LED osvetlením', 'Minimalistická stena do obývačky', 'Vstavaná skriňa v spálni s posuvnými dverami', 'Čelo postele s nočnými stolíkmi'] },
-  { slug: 'sladkovicovo', title: 'Vstavané skrine', h1: 'Vstavané skrine na mieru — Sládkovičovo', loc: 'Sládkovičovo', cats: ['skrine'], type: 'Vstavané skrine', time: '4 týždne', by: 'Jozef', cover: 2,
+    task: 'Kompletné vybavenie bytu nábytkom na mieru.',
+    solution: 'Tentokrát sme vytvorili kompletné vybavenie bytu na mieru. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
+    items: ['Kuchyňa', 'Minimalistická obývačková stena', 'Vstavaná skriňa v spálni', 'Čelo postele so stolíkmi'] },
+  { slug: 'sladkovicovo', title: 'Vstavané skrine', h1: 'Vstavané skrine – Sládkovičovo', loc: 'Sládkovičovo', cats: ['skrine'], type: 'Vstavané skrine', rooms: 'Šatník', time: '4 týždne', by: 'Jozef', ours: true, cover: 2,
     alt: 'Vstavaná skriňa s posuvnými dverami a otvoreným vnútorným vybavením',
-    task: 'Vstavané skrine do troch miestností s maximálnym využitím priestoru.',
-    items: ['Skriňa do spálne', 'Skriňa do hosťovskej izby', 'Skriňa do vstupnej chodby', 'Posuvné dvere s čiernym rámom a vnútorné zásuvky'] },
-  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine — Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', time: '1 mesiac', cover: 4,
+    task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
+    solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
+    items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
+  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 4,
     alt: 'Moderná kuchyňa s tmavou zástenou v byte v Slnečniciach',
-    task: 'Kuchyňa na mieru s praktickým usporiadaním a vstavané skrine, ktoré naplno využijú priestor.',
-    items: ['Kuchyňa s vysokými skrinkami a vstavanými spotrebičmi', 'Vstavané skrine do chodby', 'Galéria obsahuje aj fotografie z priebehu montáže'] },
-  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu — Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'izby', 'skrine'], type: 'Celý byt', time: '2 mesiace', cover: 1,
+    task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
+    solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
+    items: ['Moderná kuchyňa s praktickým usporiadaním', 'Vstavané skrine, ktoré efektívne využívajú priestor'] },
+  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'izby', 'skrine'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
     alt: 'Knižnica a obývačka na mieru v trojizbovom byte v Dúbravke',
-    task: 'Praktický domov pre rodinu s malým dieťaťom s dôrazom na úložný priestor.',
-    items: ['Vstavané skrine a prehľadná spálňa', 'Bezpečná a funkčná detská izba', 'Obývačka s knižnicou a TV stenou', 'Kuchyňa so vstavanými spotrebičmi', 'Skryté úložné priestory v chodbe a práčovni'] },
-  { slug: 'dubravka-mensi-byt', title: 'Menší byt', h1: 'Zariadenie menšieho bytu — Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a chodba', time: '1 mesiac', by: 'Jozef', cover: 7,
+    task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
+    solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
+    items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
+  { slug: 'dubravka-mensi-byt', title: 'Menší byt', h1: 'Zariadenie menšieho bytu – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
-    task: 'Kuchyňa do malého priestoru, ktorá šetrí miesto a zvyšuje úložnú kapacitu.',
-    items: ['Kuchyňa na mieru do malého priestoru', 'Vysoké skrinky po strop', 'Chodba s dizajnovým obkladom a vešiakovou stenou'] },
-  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Nábytok na mieru pre kozmetický salón Anima', loc: 'Bratislava', cats: ['firmy', 'skrine'], type: 'Komerčný interiér', time: '3 týždne', by: 'ToøL. interior architects (návrh)', cover: 1,
+    task: 'Zariadiť funkčne malú kuchyňu v Bratislave.',
+    solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
+    items: ['Kuchyňa na mieru do malého priestoru', 'Vyššia úložná kapacita', 'Dizajnové obloženie chodby s vešiakovou stenou'] },
+  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Kozmetický salón Anima', loc: 'Bratislava', cats: ['firmy', 'skrine'], type: 'Komerčný priestor', rooms: 'Komerčné priestory', time: '3 týždne', by: 'ToøL. interior architects', ours: false, cover: 1,
     alt: 'Vstavané skrine a recepcia v kozmetickom salóne Anima',
-    task: 'Realizácia nábytku podľa návrhu architektov pre komerčný priestor salónu.',
-    items: ['Vstavaná skriňa s veľkou úložnou kapacitou, dvere zakrývajú aj sokel', 'Minikuchynka pre personál', 'Zrkadlová skriňa, ktorá opticky zväčšuje priestor'] },
+    task: 'Realizácia nábytku pre salón krásy Anima podľa návrhu architektov.',
+    solution: 'Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby priestoru a zákazníka, s cieľom vytvoriť harmonický komerčný priestor.',
+    items: ['Vstavaná skriňa s množstvom úložného priestoru — dvere elegantne zakrývajú sokle a vytvárajú čistý, jednotný vzhľad', 'Minikuchynka pre pracovníkov salónu', 'Zrkadlová skriňa, ktorá opticky zväčšuje priestor'] },
 ];
 projects.forEach((p) => { p.photos = photos(p.slug, p.skip); p.coverImg = p.photos[p.cover - 1]; });
 const P = Object.fromEntries(projects.map((p) => [p.slug, p]));
@@ -356,7 +368,7 @@ const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" 
           <div class="card-body">
             <div class="chips"><span class="chip">${p.loc}</span><span class="chip">${ic('clock')}${p.time}</span></div>
             <h3><a class="card-link" href="${b}realizacie/${p.slug}/">${p.title}</a></h3>
-            <p>${p.items[0]}.</p>
+            <p>${p.task}</p>
             <div class="card-foot"><span class="from">${p.type}</span><span class="go" aria-hidden="true">Pozrieť projekt ${ic('arrow')}</span></div>
           </div>
         </article>`;
@@ -779,15 +791,17 @@ projects.forEach((p, i) => {
         ${crumbs(b, [['realizacie/', 'Realizácie'], [null, p.title]])}
         <div class="chips" style="margin-bottom:16px"><span class="chip">${p.type}</span><span class="chip">${p.loc}</span></div>
         <h1>${p.h1}</h1>
+        <h2 class="mini-head">Zadanie</h2>
         <p class="lead">${p.task}</p>
       </div>
-      <aside class="facts-card" aria-label="O projekte">
-        <h2>O projekte</h2>
+      <aside class="facts-card" aria-label="Projektové informácie">
+        <h2>Projektové informácie</h2>
         <dl class="meta-table">
-          <div><dt>Lokalita</dt><dd>${p.loc}</dd></div>
-          <div><dt>Typ</dt><dd>${p.type}</dd></div>
+          <div><dt>Realizácia</dt><dd>${p.loc}</dd></div>
+          <div><dt>Typ projektu</dt><dd>${p.rooms}</dd></div>
           <div><dt>Doba dodania</dt><dd>${p.time}</dd></div>
           ${p.by ? `<div><dt>Návrh</dt><dd>${p.by}</dd></div>` : ''}
+          ${p.ours !== undefined ? `<div><dt>Návrh od imajstri.sk</dt><dd>${p.ours ? 'Áno' : 'Nie'}</dd></div>` : ''}
         </dl>
         <a class="btn btn-primary" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
       </aside>
@@ -796,12 +810,14 @@ projects.forEach((p, i) => {
   <section class="section">
     <div class="container project-layout">
       <div>
-        <div class="gallery">
-          ${fullRows(p.photos).map((ph, n, shown) => `<a href="${b}images/${ph}-1400.jpg" target="_blank" rel="noopener">${img(ph, b, `${p.alt} — fotografia ${n + 1} z ${shown.length}`, n === 0 ? '(max-width: 1023px) 100vw, 60vw' : undefined, n === 0)}</a>`).join('\n          ')}
+        <div class="gallery" data-lightbox>
+          ${fullRows(p.photos).map((ph, n, shown) => `<a href="${b}images/${ph}-1400.jpg" aria-label="Zväčšiť fotografiu ${n + 1}">${img(ph, b, `${p.alt} — fotografia ${n + 1} z ${shown.length}`, n === 0 ? '(max-width: 1023px) 100vw, 60vw' : undefined, n === 0)}</a>`).join('\n          ')}
         </div>
       </div>
       <aside class="sticky-box">
         <h2 style="font-size:24px">Riešenie</h2>
+        <p class="solution">${p.solution}</p>
+        <h3 class="mini-head">${p.slug === 'sladkovicovo' ? 'Miestnosti' : 'Projekt zahŕňa'}</h3>
         <ul class="check-list">${p.items.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
         <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
       </aside>
