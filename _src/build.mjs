@@ -75,7 +75,7 @@ const projects = [
     task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
     solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
     items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
-  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 3, skip: [1],
+  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 1,
     alt: 'Moderná kuchyňa s tmavou zástenou v byte v Slnečniciach',
     task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
     solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
@@ -166,8 +166,8 @@ const services = [
 
 // ---------------------------------------------------------------- shared markup
 
-// Gallery layout = one big photo + 3 beside it + full rows of 3, so 4, 7 or 10 photos never leave a lone photo
-const fullRows = (list) => list.slice(0, [10, 7, 4, 1].find((n) => n <= list.length) || 0);
+// Gallery layout = one big photo + 3 beside it + rows of 3 (a last row of 2 is stretched), so there is never a lone photo
+const fullRows = (list) => list.slice(0, [10, 9, 7, 6, 4, 1].find((n) => n <= list.length) || 0);
 
 const img = (base, b, alt, sizes = '(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw', eager = false, style = '') =>
   base.endsWith('.jpg')
