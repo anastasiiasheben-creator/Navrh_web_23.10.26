@@ -232,7 +232,7 @@ const footer = (b) => `
         <div class="social">
           <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/profile.php?id=61573057973324" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="${WA}" target="_blank" rel="noopener" aria-label="WhatsApp">${ic('chat')}</a>
+          <a href="${WA}" target="_blank" rel="noopener" aria-label="WhatsApp">${ic('whatsapp')}</a>
         </div>
       </div>
       <div>
@@ -306,7 +306,7 @@ const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový
         <p class="lead">${sub}</p>
         <div class="quick">
           <a href="tel:${PHONE}">${ic('phone')}<span><small>Zavolajte nám</small><b>${PHONE_TXT}</b></span></a>
-          <a href="${WA}" target="_blank" rel="noopener">${ic('chat')}<span><small>Napíšte na WhatsApp</small><b>Poslať správu alebo fotku priestoru</b></span></a>
+          <a href="${WA}" target="_blank" rel="noopener">${ic('whatsapp')}<span><small>Napíšte na WhatsApp</small><b>Poslať správu alebo fotku priestoru</b></span></a>
           <a href="mailto:${MAIL}">${ic('doc')}<span><small>E-mail</small><b>${MAIL}</b></span></a>
         </div>
       </div>
@@ -917,7 +917,7 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
       <div class="c-list">
         <a class="c-item" href="tel:${PHONE}"><span class="ic">${ic('phone')}</span><span><small>Telefón</small><b>${PHONE_TXT}</b></span></a>
         <a class="c-item" href="mailto:${MAIL}"><span class="ic">${ic('doc')}</span><span><small>E-mail</small><b>${MAIL}</b></span></a>
-        <a class="c-item" href="${WA}" target="_blank" rel="noopener"><span class="ic">${ic('chat')}</span><span><small>WhatsApp</small><b>Napísať správu</b></span></a>
+        <a class="c-item" href="${WA}" target="_blank" rel="noopener"><span class="ic">${ic('whatsapp')}</span><span><small>WhatsApp</small><b>Napísať správu</b></span></a>
         <div class="c-item"><span class="ic">${ic('home')}</span><span><small>Adresa</small><b>Landauova 3146/20, 841 01 Bratislava</b></span></div>
         <div class="c-item"><span class="ic">${ic('clock')}</span><span><small>Pracovný čas</small><b>Po – Pi: 9:00 – 17:00</b><small>So – Ne: individuálne</small></span></div>
         <p class="small" style="color:var(--muted);padding:4px">BK Creative s. r. o. · IČO: 56343744 · DIČ: 2122278433 · IČ DPH: SK2122278433</p>
