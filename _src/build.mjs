@@ -446,7 +446,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
           <li class="chip">Nábytok vytvorený pre vás</li>
         </ul>
       </div>
-      ${img(P['zahorska-bystrica'].photos[3], b, 'Kuchyňa s ostrovčekom a mramorovou doskou – Záhorská Bystrica', '(max-width: 1023px) 100vw, 45vw')}
+      ${img('hero-kuchyna.jpg', b, 'Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans', '(max-width: 1023px) 100vw, 45vw')}
       <div class="actions about-cta"><a class="btn btn-outline" href="${b}o-nas/">Viac o nás ${ic('arrow')}</a></div>
     </div>
   </section>
