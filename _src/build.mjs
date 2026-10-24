@@ -472,41 +472,17 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
         <div>
           <span class="eyebrow eyebrow--line">Služby</span>
           <h2>Čo pre vás vyrobíme</h2>
-          <p class="lead">Kuchyne, skrine, obývačky, spálne aj celé interiéry — všetko na mieru vášmu priestoru. Ceny sú orientačné — výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu.</p>
+          <p class="lead">Orientačné ceny. Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu.</p>
         </div>
         <a class="link-more" href="${b}sluzby/">Všetky služby →</a>
       </div>
-      <div class="grid-3">
-        ${services.map((s) => serviceCard(s, b)).join('\n        ')}
+      <div class="prices">
+        ${services.map((s) => `<a class="price" href="${b}${s.slug}/"><svg aria-hidden="true"><use href="#i-${s.icon}"/></svg><span>${s.name}</span><b>${s.price ? 'od ' + s.price : 'individuálne'}</b></a>`).join('\n        ')}
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow eyebrow--line">Prečo si vybrať nás</span>
-          <h2>Jeden tím, ktorý za výsledok ručí</h2>
-          <p class="lead">Nemusíte hľadať návrhára, stolára a montážnikov zvlášť. Celý projekt vedieme za vás.</p>
-        </div>
-        <a class="btn btn-primary" href="${b}objednavka/">Získať ponuku ${ic('arrow')}</a>
-      </div>
-      <div class="benefits">
-        <div class="benefit"><i>${ic('cube')}</i><h3>Návrh, ktorý uvidíte vopred</h3><p>Nábytok si pozriete vo vizualizácii ešte pred výrobou. Upravujeme, kým nebude presne podľa vás.</p></div>
-        <div class="benefit"><i>${ic('ruler')}</i><h3>Presne do vášho priestoru</h3><p>Využijeme aj šikminy, výklenky a ťažko dostupné rohy. Žiadne kompromisy z katalógu.</p></div>
-        <div class="benefit"><i>${ic('shield')}</i><h3>Kvalitné materiály</h3><p>Pracujeme s overenými značkami — dosky Egger, kovanie Blum, drezy BLANCO.</p></div>
-        <div class="benefit"><i>${ic('doc')}</i><h3>Jasná dohoda</h3><p>Rozsah, materiály a cenu preberieme vopred — ešte predtým, ako sa začne vyrábať.</p></div>
-      </div>
-    </div>
-  </section>
   <!-- Recenzie klientov: hidden until real reviews are approved by the client -->
-${faqBlock([
-  ['Koľko stojí nábytok na mieru?', 'Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu. Po konzultácii a zameraní dostanete presnú ponuku — skôr, ako sa začne vyrábať.'],
-  ['Ako dlho trvá výroba a montáž?', 'Podľa rozsahu. Napríklad salón Anima bol hotový za 3 týždne, vstavané skrine v Sládkovičove za 4 týždne a celý dom v Chorvátskom Grobe za 5 týždňov.'],
-  ['Aké materiály používate?', 'Pracujeme napríklad s doskami Egger, kovaním Blum a drezmi BLANCO. Konkrétne materiály a farby vyberieme spolu pri návrhu.'],
-  ['Zabezpečíte aj dopravu a montáž?', 'Áno. Nábytok doručíme a namontujeme priamo u vás doma.'],
-])}
 ${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}`;
   } });
 
@@ -544,6 +520,25 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
           <li>${ic('check')}<span><b>Kreatívne riešenia</b> — nebojíme sa inovácií.</span></li>
           <li>${ic('check')}<span><b>Kvalita a trvácnosť</b> — dôraz na spracovanie a výber materiálov.</span></li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow eyebrow--line">Prečo si vybrať nás</span>
+          <h2>Jeden tím, ktorý za výsledok ručí</h2>
+          <p class="lead">Nemusíte hľadať návrhára, stolára a montážnikov zvlášť. Celý projekt vedieme za vás.</p>
+        </div>
+        
+      </div>
+      <div class="benefits">
+        <div class="benefit"><i>${ic('cube')}</i><h3>Návrh, ktorý uvidíte vopred</h3><p>Nábytok si pozriete vo vizualizácii ešte pred výrobou. Upravujeme, kým nebude presne podľa vás.</p></div>
+        <div class="benefit"><i>${ic('ruler')}</i><h3>Presne do vášho priestoru</h3><p>Využijeme aj šikminy, výklenky a ťažko dostupné rohy. Žiadne kompromisy z katalógu.</p></div>
+        <div class="benefit"><i>${ic('shield')}</i><h3>Kvalitné materiály</h3><p>Pracujeme s overenými značkami — dosky Egger, kovanie Blum, drezy BLANCO.</p></div>
+        <div class="benefit"><i>${ic('doc')}</i><h3>Jasná dohoda</h3><p>Rozsah, materiály a cenu preberieme vopred — ešte predtým, ako sa začne vyrábať.</p></div>
       </div>
     </div>
   </section>

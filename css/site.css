@@ -332,10 +332,10 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
 .about-short .chips .chip { font-size: 14px; padding: 7px 14px; }
 
 /* Orientačné ceny */
-.prices { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-.price { display: flex; flex-direction: column; gap: 6px; padding: 26px 22px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); transition: border-color var(--t), transform var(--t) var(--ease); }
+.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.price { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 18px; row-gap: 2px; align-items: center; padding: 22px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); transition: border-color var(--t), transform var(--t) var(--ease); }
 .price:hover { border-color: var(--accent); transform: translateY(-2px); }
-.price svg { width: 44px; height: 44px; color: var(--accent); margin-bottom: 10px; }
+.price svg { width: 44px; height: 44px; color: var(--accent); grid-row: span 2; }
 .price span { color: var(--muted); font-size: 15px; }
 .price b { font-family: var(--font-head); font-size: 22px; }
 
