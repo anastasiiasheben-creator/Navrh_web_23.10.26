@@ -337,7 +337,8 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
 .price:hover { border-color: var(--accent); transform: translateY(-2px); }
 .price svg { width: 44px; height: 44px; color: var(--accent); grid-row: span 2; }
 .price span { color: var(--muted); font-size: 15px; }
-.price b { font-family: var(--font-head); font-size: 22px; }
+.price b { font-family: var(--font-head); font-size: 22px; white-space: nowrap; }
+.price, .price * { min-width: 0; }
 
 /* Benefits (Prečo si vybrať nás) */
 .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -374,7 +375,7 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
   .grid-3, .gallery, .facts { grid-template-columns: 1fr 1fr; }
   .gallery a:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 3; }
   .steps, .benefits { grid-template-columns: 1fr 1fr; }
-  .prices { grid-template-columns: repeat(3, 1fr); }
+  .prices { grid-template-columns: 1fr 1fr; }
   .about-short { grid-template-columns: 1fr; grid-template-areas: "text" "img" "cta"; row-gap: 32px; }
   .about-cta { margin-top: 0; }
   .featured, .split, .faq-grid, .cta-final, .contact-grid, .project-layout, .page-hero--media .ph-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -395,7 +396,10 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
   .hero-sub { font-size: 18px; }
   .actions .btn { width: 100%; }
   .grid-3, .steps, .benefits, .facts, .foot-grid, .form-grid { grid-template-columns: 1fr; }
-  .prices { grid-template-columns: 1fr 1fr; }
+  .prices { grid-template-columns: 1fr; gap: 10px; }
+  .price { padding: 16px 18px; }
+  .price svg { width: 36px; height: 36px; }
+  .price b { font-size: 20px; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
   .gallery a:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 3; }
   .featured-media { aspect-ratio: 4 / 3; }
