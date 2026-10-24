@@ -405,6 +405,8 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
   .featured-media { aspect-ratio: 4 / 3; }
   .form-card { padding: 24px 18px; }
   .m-bar { display: flex; }
+  /* home: no form on phones, the sticky bar offers call + Nezáväzná ponuka */
+  .hide-mobile { display: none; }
   .sec-head { margin-bottom: 32px; }
   .map { min-height: 300px; }
 }
