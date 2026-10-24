@@ -406,7 +406,7 @@ const orgLd = {
 
 // Domov — block order from the technical brief v2 (section 04):
 // hero → o nás (short) → realizácie → služby → prečo my → spolupráca → ceny → recenzie → FAQ → formulár
-pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
+pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: orgLd,
   title: 'Kuchyne a nábytok na mieru Bratislava | Interiéroví majstri',
   desc: 'Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh s vizualizáciou, výroba, doprava a montáž od jedného tímu.',
   body: (b) => {
@@ -429,7 +429,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
       </div>
       <div class="hero-media">
-        <img src="${b}images/hero-kuchyna.jpg" alt="Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans" width="1536" height="1024" fetchpriority="high">
+        <img src="${b}images/hero-kuchyna-ostrov.jpg" alt="Moderná kuchyňa na mieru s ostrovčekom, drevenou pracovnou doskou a LED osvetlením" width="1536" height="1024" fetchpriority="high">
       </div>
     </div>
   </section>
