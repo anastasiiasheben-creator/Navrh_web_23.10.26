@@ -483,7 +483,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
   </section>
 
   <!-- Recenzie klientov: hidden until real reviews are approved by the client -->
-${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true).replace('class="section section--dark" id="dopyt"', 'class="section section--dark hide-mobile" id="dopyt"')}`;
+`;
   } });
 
 // O nás
