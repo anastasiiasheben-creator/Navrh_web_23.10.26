@@ -297,7 +297,7 @@ const shortForm = (selected = '', withPhoto = false) => {
         </form>`;
 };
 
-const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový nábytok', sub = 'Zistite, koľko bude stáť váš nový nábytok. Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene.', withPhoto = false) => `
+const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový nábytok', sub = 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene.', withPhoto = false) => `
   <section class="section section--dark" id="dopyt">
     <div class="container cta-final">
       <div>
@@ -355,7 +355,7 @@ const faqBlock = (items, h = 'Na čo sa nás najčastejšie pýtate') => `
       <div>
         <span class="eyebrow eyebrow--line">Časté otázky</span>
         <h2>${h}</h2>
-        <p class="lead">Nenašli ste odpoveď? Zavolajte nám na <a class="link-more" href="tel:${PHONE}">${PHONE_TXT}</a>.</p>
+        <p class="lead">Nenašli ste odpoveď?<br>Zavolajte nám na <a class="link-more" href="tel:${PHONE}">${PHONE_TXT}</a></p>
       </div>
       <div>
         ${items.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join('\n        ')}
@@ -409,7 +409,6 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
   title: 'Kuchyne a nábytok na mieru Bratislava | Interiéroví majstri',
   desc: 'Kuchyne, vstavané skrine a nábytok na mieru v Bratislave a okolí. Návrh s vizualizáciou, výroba, doprava a montáž od jedného tímu.',
   body: (b) => {
-    const v = P.vinicne;
     return `
   <section class="hero">
     <div class="container container--wide hero-grid">
@@ -461,26 +460,8 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
         </div>
         <a class="btn btn-outline" href="${b}realizacie/">Pozrieť realizácie ${ic('arrow')}</a>
       </div>
-      <div class="featured">
-        <div class="featured-media">
-          <img src="${b}images/hero-kuchyna.jpg" alt="Kuchyňa vo Viničnom — výsuvné zásuvky a rohový systém" loading="lazy">
-          ${img(v.photos[5], b, 'Rohový výsuvný systém LeMans v kuchyni vo Viničnom', '(max-width: 1023px) 50vw, 20vw')}
-          ${img(v.photos[0], b, 'Pracovná doska s LED osvetlením a varnou doskou', '(max-width: 1023px) 50vw, 20vw')}
-        </div>
-        <div>
-          <span class="chip">Kuchyňa · ${v.loc}</span>
-          <h3 style="font-size:clamp(26px,2.4vw,34px);margin-top:16px">Kuchyňa, v ktorej má všetko svoje miesto</h3>
-          <p class="lead">${v.task}</p>
-          <ul class="check-list">
-            <li>${ic('check')}<span><b>Rohový systém LeMans</b> — aj ťažko dostupný roh linky je plne využitý.</span></li>
-            <li>${ic('check')}<span><b>LED osvetlenie pracovnej dosky</b> — svetlo presne tam, kde krájate a varíte.</span></li>
-            <li>${ic('check')}<span><b>Veľké výsuvné zásuvky</b> na hrnce a riad, vstavané spotrebiče.</span></li>
-          </ul>
-          <div class="actions" style="margin-top:28px"><a class="btn btn-outline" href="${b}realizacie/vinicne/">Pozrieť celý projekt ${ic('arrow')}</a></div>
-        </div>
-      </div>
-      <div class="grid-3" style="margin-top:56px">
-        ${['zahorska-bystrica', 'chorvatsky-grob', 'nivy', 'vydrica', 'sladkovicovo', 'salon-anima'].map((s) => projectCard(P[s], b)).join('\n        ')}
+      <div class="grid-3">
+        ${['vinicne', 'zahorska-bystrica', 'chorvatsky-grob'].map((s) => projectCard(P[s], b)).join('\n        ')}
       </div>
     </div>
   </section>
@@ -491,12 +472,12 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
         <div>
           <span class="eyebrow eyebrow--line">Služby</span>
           <h2>Čo pre vás vyrobíme</h2>
-          <p class="lead">Kuchyne, skrine, obývačky, spálne aj celé interiéry — všetko na mieru vášmu priestoru.</p>
+          <p class="lead">Kuchyne, skrine, obývačky, spálne aj celé interiéry — všetko na mieru vášmu priestoru. Ceny sú orientačné — výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu.</p>
         </div>
         <a class="link-more" href="${b}sluzby/">Všetky služby →</a>
       </div>
       <div class="grid-3">
-        ${services.map((s) => serviceCard(s, b, false)).join('\n        ')}
+        ${services.map((s) => serviceCard(s, b)).join('\n        ')}
       </div>
     </div>
   </section>
@@ -519,48 +500,14 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
       </div>
     </div>
   </section>
-${brands(b)}
-
-  <section class="section section--dark">
-    <div class="container">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow eyebrow--line">Ako prebieha spolupráca</span>
-          <h2>Od konzultácie po montáž v piatich krokoch</h2>
-          <p class="lead">Viete, čo vás čaká v každom kroku.</p>
-        </div>
-        <a class="btn btn-light" href="${b}objednavka/">Nezáväzná konzultácia</a>
-      </div>
-${steps(true)}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow eyebrow--line">Orientačné ceny</span>
-          <h2>Koľko stojí nábytok na mieru</h2>
-          <p class="lead">Ceny sú orientačné. Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu — presnú ponuku dostanete po konzultácii a zameraní, ešte pred výrobou.</p>
-        </div>
-        <a class="btn btn-primary" href="${b}objednavka/">Vypočítať cenu ${ic('arrow')}</a>
-      </div>
-      <div class="prices">
-        ${services.filter((s) => s.price).map((s) => `<a class="price" href="${b}${s.slug}/"><svg aria-hidden="true"><use href="#i-${s.icon}"/></svg><span>${s.name}</span><b>od ${s.price}</b></a>`).join('\n        ')}
-      </div>
-    </div>
-  </section>
-
   <!-- Recenzie klientov: hidden until real reviews are approved by the client -->
 ${faqBlock([
   ['Koľko stojí nábytok na mieru?', 'Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu. Po konzultácii a zameraní dostanete presnú ponuku — skôr, ako sa začne vyrábať.'],
   ['Ako dlho trvá výroba a montáž?', 'Podľa rozsahu. Napríklad salón Anima bol hotový za 3 týždne, vstavané skrine v Sládkovičove za 4 týždne a celý dom v Chorvátskom Grobe za 5 týždňov.'],
   ['Aké materiály používate?', 'Pracujeme napríklad s doskami Egger, kovaním Blum a drezmi BLANCO. Konkrétne materiály a farby vyberieme spolu pri návrhu.'],
-  ['Akú záruku poskytujete?', 'Záručné podmienky uvedieme v zmluve pri objednávke.'],
-  ['Prídete priestor zamerať?', 'Áno, zameranie je súčasťou prípravy návrhu. Termín dohodneme hneď po prvej konzultácii.'],
   ['Zabezpečíte aj dopravu a montáž?', 'Áno. Nábytok doručíme a namontujeme priamo u vás doma.'],
 ])}
-${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Zistite, koľko bude stáť váš nový nábytok. Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}`;
+${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}`;
   } });
 
 // O nás
