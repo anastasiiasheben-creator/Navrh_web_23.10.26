@@ -297,7 +297,7 @@ const shortForm = (selected = '', withPhoto = false) => {
         </form>`;
 };
 
-const finalCta = (b, selected = '', h = 'Získajte bezplatnú konzultáciu a cenovú ponuku', sub = 'Napíšte nám, čo plánujete. Ozveme sa vám a dohodneme bezplatnú konzultáciu.', withPhoto = false) => `
+const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový nábytok', sub = 'Zistite, koľko bude stáť váš nový nábytok. Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene.', withPhoto = false) => `
   <section class="section section--dark" id="dopyt">
     <div class="container cta-final">
       <div>
@@ -415,17 +415,18 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna.jpg', jsonld: orgLd,
     <div class="container container--wide hero-grid">
       <div class="hero-text">
         <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
-        <h1>Kuchyne a nábytok na mieru<span>od návrhu až po montáž.</span></h1>
-        <p class="hero-sub">Jeden tím. Jasná dohoda. Interiér presne pre vás.</p>
+        <h1>Kuchyne a nábytok na mieru<span>podľa vašich predstáv.</span></h1>
+        <p class="hero-sub">Od prvého návrhu až po montáž. Vytvoríme funkčné riešenie, ktoré využije váš priestor naplno a bude zodpovedať vášmu rozpočtu.</p>
         <ul class="hero-feats">
-          <li class="feat"><i>${ic('chat')}</i>Bezplatná konzultácia</li>
-          <li class="feat"><i>${ic('cube')}</i>Návrh a vizualizácia</li>
-          <li class="feat"><i>${ic('gear')}</i>Výroba, doprava a montáž</li>
+          <li class="feat"><i>${ic('ruler')}</i>Návrh a riešenie na mieru</li>
+          <li class="feat"><i>${ic('cube')}</i>Výber materiálov a doplnkov</li>
+          <li class="feat"><i>${ic('gear')}</i>Výroba a profesionálna montáž</li>
         </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="${b}objednavka/">Chcem bezplatnú konzultáciu ${ic('arrow')}</a>
+          <a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a>
           <a class="btn-text play" href="${b}realizacie/"><i>${ic('play')}</i>Pozrieť realizácie</a>
         </div>
+        <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
       </div>
       <div class="hero-media">
         <img src="${b}images/hero-kuchyna.jpg" alt="Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans" width="1536" height="1024" fetchpriority="high">
@@ -540,7 +541,7 @@ ${steps(true)}
         <div>
           <span class="eyebrow eyebrow--line">Orientačné ceny</span>
           <h2>Koľko stojí nábytok na mieru</h2>
-          <p class="lead">Ceny sú orientačné. Presnú cenu určí zameranie, materiály a kovanie — dostanete ju ešte pred výrobou.</p>
+          <p class="lead">Ceny sú orientačné. Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu — presnú ponuku dostanete po konzultácii a zameraní, ešte pred výrobou.</p>
         </div>
         <a class="btn btn-primary" href="${b}objednavka/">Vypočítať cenu ${ic('arrow')}</a>
       </div>
@@ -552,14 +553,14 @@ ${steps(true)}
 
   <!-- Recenzie klientov: hidden until real reviews are approved by the client -->
 ${faqBlock([
-  ['Koľko stojí nábytok na mieru?', 'Cena závisí od rozmerov, materiálov a kovania. Po konzultácii a zameraní dostanete presnú ponuku — skôr, ako sa začne vyrábať.'],
+  ['Koľko stojí nábytok na mieru?', 'Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu. Po konzultácii a zameraní dostanete presnú ponuku — skôr, ako sa začne vyrábať.'],
   ['Ako dlho trvá výroba a montáž?', 'Podľa rozsahu. Napríklad salón Anima bol hotový za 3 týždne, vstavané skrine v Sládkovičove za 4 týždne a celý dom v Chorvátskom Grobe za 5 týždňov.'],
   ['Aké materiály používate?', 'Pracujeme napríklad s doskami Egger, kovaním Blum a drezmi BLANCO. Konkrétne materiály a farby vyberieme spolu pri návrhu.'],
   ['Akú záruku poskytujete?', 'Záručné podmienky uvedieme v zmluve pri objednávke.'],
   ['Prídete priestor zamerať?', 'Áno, zameranie je súčasťou prípravy návrhu. Termín dohodneme hneď po prvej konzultácii.'],
   ['Zabezpečíte aj dopravu a montáž?', 'Áno. Nábytok doručíme a namontujeme priamo u vás doma.'],
 ])}
-${finalCta(b, '', 'Získajte bezplatnú konzultáciu a cenovú ponuku', 'Vyberte, čo plánujete, a priložte fotku priestoru. Ozveme sa vám a dohodneme bezplatnú konzultáciu.', true)}`;
+${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Zistite, koľko bude stáť váš nový nábytok. Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}`;
   } });
 
 // O nás
@@ -656,7 +657,7 @@ pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby
       ${crumbs(b, [[null, 'Služby']])}
       <h1>Nábytok na mieru do každej miestnosti</h1>
       <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem bezplatnú konzultáciu ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
@@ -673,7 +674,7 @@ ${steps(true)}
     </div>
   </section>
 ${faqBlock([
-  ['Koľko stojí nábytok na mieru?', 'Cena závisí od rozmerov, materiálov a kovania. Po konzultácii a zameraní pripravíme presnú ponuku.'],
+  ['Koľko stojí nábytok na mieru?', 'Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu. Po konzultácii a zameraní pripravíme presnú ponuku.'],
   ['V akej oblasti pracujete?', 'V Bratislave a okolí — realizovali sme napríklad v Dúbravke, pri Nivách, vo Vydrici, v Chorvátskom Grobe, Viničnom a Sládkovičove.'],
   ['Spolupracujete s architektmi?', 'Áno, vyrobíme nábytok aj podľa návrhu vášho architekta.'],
 ])}
@@ -692,7 +693,7 @@ for (const s of services) {
       <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
       <h1>${s.h1}</h1>
       <p class="lead">${s.intro}</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/?typ=${s.key}">Chcem bezplatnú konzultáciu ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/?typ=${s.key}">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -731,7 +732,7 @@ for (const s of services) {
         <span class="eyebrow eyebrow--line">Materiály a kovanie</span>
         <h2>S čím pracujeme</h2>
         <ul class="check-list">${s.materials.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
-        <div class="fact" style="margin-top:28px"><span>Orientačný rozpočet</span><b>${s.price ? `od ${s.price}` : 'podľa rozsahu a materiálu'}</b><span>Presnú cenu pripravíme po zameraní a návrhu.</span></div>
+        <div class="fact" style="margin-top:28px"><span>Orientačný rozpočet</span><b>${s.price ? `od ${s.price}` : 'podľa rozsahu a materiálu'}</b><span>Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu.</span></div>
       </div>
     </div>
   </section>

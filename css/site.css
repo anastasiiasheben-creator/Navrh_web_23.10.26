@@ -122,6 +122,7 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .feat i { width: 52px; height: 52px; border-radius: 50%; border: 1px solid #CBB9A7; display: grid; place-items: center; flex: none; background: rgba(255, 255, 255, .5); }
 .feat i svg { width: 24px; height: 24px; }
 .hero .actions { margin-top: 40px; }
+.hero-note { font-size: 14px; color: var(--muted); margin-top: 16px; }
 .play i { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #CBB9A7; display: grid; place-items: center; }
 .play i svg { width: 14px; height: 14px; margin-left: 3px; }
 .hero-media { position: relative; margin-right: calc(50% - 50vw); }
