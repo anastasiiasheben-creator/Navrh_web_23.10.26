@@ -18,7 +18,8 @@ const PREVIEW_BASE = '/Navrh_web_23.10.26/';     // where 404.html is served on 
 const PHONE = '+421918638713';
 const PHONE_TXT = '+421 918 638 713';
 const MAIL = 'info@imajstri.sk';
-const WA = 'https://wa.me/421918638713';         // number to be confirmed by the client
+const WA = 'https://wa.me/421918638713';
+const PRIVACY = 'https://www.imajstri.sk/ochrana-sukromia/'; // existing page on the current site; migrate at launch         // number to be confirmed by the client
 const ic = (id, cls = '') => `<svg${cls ? ` class="${cls}"` : ''} aria-hidden="true"><use href="#i-${id}"/></svg>`;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
@@ -85,7 +86,7 @@ const projects = [
     task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
     solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
     items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
-  { slug: 'dubravka-mensi-byt', title: 'Menší byt', h1: 'Zariadenie menšieho bytu – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
+  { slug: 'dubravka-mensi-byt', title: 'Malá kuchyňa a chodba', h1: 'Kuchyňa do malého bytu a chodba – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
     task: 'Zariadiť funkčne malú kuchyňu v Bratislave.',
     solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
@@ -253,7 +254,7 @@ const footer = (b) => `
         </ul>
       </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span>Bratislava a okolie</span></div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${PRIVACY}" target="_blank" rel="noopener">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
   </div>
 </footer>
 <div class="m-bar">
@@ -288,7 +289,7 @@ const shortForm = (selected = '', withPhoto = false) => {
             <div class="field"><label for="t${n}">Telefón</label><input id="t${n}" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+421 9xx xxx xxx"></div>
             <div class="field"><label for="e${n}">E-mail</label><input id="e${n}" name="email" type="email" autocomplete="email" placeholder="vas@email.sk"></div>
             <div class="field field--full"><label for="s${n}">Krátko o projekte <small>(nepovinné)</small></label><textarea id="s${n}" name="sprava" rows="3" maxlength="2000" placeholder="Miestnosť, približné rozmery, termín…"></textarea></div>${photo}
-            <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky.</span></label>
+            <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky podľa <a href="${PRIVACY}" target="_blank" rel="noopener">zásad ochrany osobných údajov</a>.</span></label>
             <p class="form-error" role="alert"></p>
             <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
             <p class="form-note">Stačí telefón alebo e-mail. Ozveme sa vám.</p>
@@ -366,7 +367,7 @@ const faqBlock = (items, h = 'Na čo sa nás najčastejšie pýtate') => `
 const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" data-c="${p.cats.join(' ')}">
           <a class="card-img" href="${b}realizacie/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.coverImg, b, p.alt)}</a>
           <div class="card-body">
-            <div class="chips"><span class="chip">${p.loc}</span><span class="chip">${ic('clock')}${p.time}</span></div>
+            <div class="chips"><span class="chip">${p.loc}</span><span class="chip">${ic('clock')}Realizácia: ${p.time}</span></div>
             <h3><a class="card-link" href="${b}realizacie/${p.slug}/">${p.title}</a></h3>
             <p>${p.task}</p>
             <div class="card-foot"><span class="from">${p.type}</span><span class="go" aria-hidden="true">Pozrieť projekt ${ic('arrow')}</span></div>
@@ -832,7 +833,7 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
           <div class="field"><label for="o-roz">Rozmery / rozpočet <small>(nepovinné)</small></label><input id="o-roz" name="rozmery" placeholder="napr. linka 3,2 m, do 6 000 €"></div>
           <div class="field field--full"><label for="o-opis">Opis projektu</label><textarea id="o-opis" name="sprava" rows="4" maxlength="2000" placeholder="Čo plánujete, štýl, termín…"></textarea></div>
           <div class="field field--full"><label for="o-foto">Fotografia priestoru <small>(nepovinné · JPG, PNG, WEBP do 10 MB)</small></label><input id="o-foto" name="foto" type="file" accept="image/jpeg,image/png,image/webp" multiple></div>
-          <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky.</span></label>
+          <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky podľa <a href="${PRIVACY}" target="_blank" rel="noopener">zásad ochrany osobných údajov</a>.</span></label>
           <p class="form-error" role="alert"></p>
           <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
           <p class="form-note">Stačí telefón alebo e-mail. Údaje použijeme len na prípravu ponuky.</p>

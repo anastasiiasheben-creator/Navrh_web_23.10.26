@@ -215,6 +215,7 @@ details p { color: var(--muted); padding-bottom: 22px; max-width: 680px; }
 .field input[type="file"] { padding: 10px; background: var(--white); }
 .field [aria-invalid="true"] { border-color: var(--error); }
 .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); grid-column: 1 / -1; }
+.consent a { color: var(--accent-strong); text-decoration: underline; }
 .consent input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); flex: none; }
 .form-error { color: var(--error); font-size: 14px; font-weight: 600; min-height: 20px; grid-column: 1 / -1; }
 .form-card .btn { width: 100%; grid-column: 1 / -1; }
