@@ -126,9 +126,9 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .play i { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #CBB9A7; display: grid; place-items: center; }
 .play i svg { width: 14px; height: 14px; margin-left: 3px; }
 .hero-media { position: relative; margin-right: calc(50% - 50vw); }
-.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% center; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%); mask-image: linear-gradient(90deg, transparent 0, #000 12%); }
+.hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% bottom; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%); mask-image: linear-gradient(90deg, transparent 0, #000 12%); }
 /* large screens: more kitchen, photo starts further left */
-@media (min-width: 1600px) { .hero-grid { grid-template-columns: 40fr 60fr; } .hero-media img { object-position: 45% center; } }
+@media (min-width: 1600px) { .hero-grid { grid-template-columns: 40fr 60fr; } .hero-media img { object-position: 45% bottom; } }
 
 
 /* Brands */
