@@ -193,6 +193,18 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 .prose p:first-child { margin-top: 0; }
 .prose h2 + p, .prose h3 + p { margin-top: 12px; }
 
+/* Legal text (Ochrana osobných údajov) */
+.legal { max-width: 820px; }
+.legal h2 { font-size: clamp(24px, 2vw, 30px); margin-top: 48px; }
+.legal h2:first-child { margin-top: 0; }
+.legal h3 { font-size: 19px; margin-top: 32px; }
+.legal p, .legal li { color: var(--muted); }
+.legal p { margin-top: 12px; }
+.legal strong { color: var(--ink); font-weight: 600; }
+.legal ul { margin-top: 12px; padding-left: 22px; list-style: disc; }
+.legal li + li { margin-top: 6px; }
+.legal a { color: var(--accent-strong); text-decoration: underline; }
+
 /* FAQ */
 .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; }
 details { border-bottom: 1px solid var(--border); }

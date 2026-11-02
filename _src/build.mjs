@@ -19,7 +19,7 @@ const PHONE = '+421918638713';
 const PHONE_TXT = '+421 918 638 713';
 const MAIL = 'info@imajstri.sk';
 const WA = 'https://wa.me/421918638713';
-const PRIVACY = 'https://www.imajstri.sk/ochrana-sukromia/'; // existing page on the current site; migrate at launch         // number to be confirmed by the client
+const privacy = (b) => `${b}ochrana-sukromia/`; // text taken over from the old imajstri.sk/ochrana-sukromia/
 const ic = (id, cls = '') => `<svg${cls ? ` class="${cls}"` : ''} aria-hidden="true"><use href="#i-${id}"/></svg>`;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
@@ -254,7 +254,7 @@ const footer = (b) => `
         </ul>
       </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${PRIVACY}" target="_blank" rel="noopener">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${privacy(b)}">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
   </div>
 </footer>
 <div class="m-bar">
@@ -278,7 +278,7 @@ const potrebaOptions = (selected = '') => [['', 'Vyberte'], ['kuchyna', 'Kuchyň
   .map(([v, l]) => `<option value="${v}"${v === selected ? ' selected' : ''}>${l}</option>`).join('');
 
 let formCount = 0;
-const shortForm = (selected = '', withPhoto = false) => {
+const shortForm = (b, selected = '', withPhoto = false) => {
   const n = ++formCount;
   const photo = withPhoto ? `
             <div class="field field--full"><label for="f${n}">Fotografia priestoru <small>(nepovinné · JPG, PNG, WEBP do 10 MB)</small></label><input id="f${n}" name="foto" type="file" accept="image/jpeg,image/png,image/webp" multiple></div>` : '';
@@ -289,7 +289,7 @@ const shortForm = (selected = '', withPhoto = false) => {
             <div class="field"><label for="t${n}">Telefón</label><input id="t${n}" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+421 9xx xxx xxx"></div>
             <div class="field"><label for="e${n}">E-mail</label><input id="e${n}" name="email" type="email" autocomplete="email" placeholder="vas@email.sk"></div>
             <div class="field field--full"><label for="s${n}">Krátko o projekte <small>(nepovinné)</small></label><textarea id="s${n}" name="sprava" rows="3" maxlength="2000" placeholder="Miestnosť, približné rozmery, termín…"></textarea></div>${photo}
-            <p class="consent">Odoslaním formulára beriem na vedomie informácie o spracúvaní osobných údajov uvedené v <a href="${PRIVACY}" target="_blank" rel="noopener">Zásadách ochrany osobných údajov</a>.</p>
+            <p class="consent">Odoslaním formulára beriem na vedomie informácie o spracúvaní osobných údajov uvedené v <a href="${privacy(b)}" target="_blank" rel="noopener">Zásadách ochrany osobných údajov</a>.</p>
             <p class="form-error" role="alert"></p>
             <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
             <p class="form-note">Stačí telefón alebo e-mail. Ozveme sa vám.</p>
@@ -311,7 +311,7 @@ const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový
           <a href="mailto:${MAIL}">${ic('doc')}<span><small>E-mail</small><b>${MAIL}</b></span></a>
         </div>
       </div>
-      ${shortForm(selected, withPhoto)}
+      ${shortForm(b, selected, withPhoto)}
     </div>
   </section>`;
 
@@ -833,7 +833,7 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
           <div class="field"><label for="o-roz">Rozmery / rozpočet <small>(nepovinné)</small></label><input id="o-roz" name="rozmery" placeholder="napr. linka 3,2 m, do 6 000 €"></div>
           <div class="field field--full"><label for="o-opis">Opis projektu</label><textarea id="o-opis" name="sprava" rows="4" maxlength="2000" placeholder="Čo plánujete, štýl, termín…"></textarea></div>
           <div class="field field--full"><label for="o-foto">Fotografia priestoru <small>(nepovinné · JPG, PNG, WEBP do 10 MB)</small></label><input id="o-foto" name="foto" type="file" accept="image/jpeg,image/png,image/webp" multiple></div>
-          <label class="consent"><input type="checkbox" name="suhlas" required> <span>Potvrdzujem, že som sa oboznámil/a so <a href="${PRIVACY}" target="_blank" rel="noopener">Zásadami ochrany osobných údajov</a>.</span></label>
+          <label class="consent"><input type="checkbox" name="suhlas" required> <span>Potvrdzujem, že som sa oboznámil/a so <a href="${privacy(b)}" target="_blank" rel="noopener">Zásadami ochrany osobných údajov</a>.</span></label>
           <p class="form-error" role="alert"></p>
           <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
           <p class="form-note">Stačí telefón alebo e-mail. Údaje použijeme len na prípravu ponuky.</p>
@@ -852,7 +852,7 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
     <div class="container">
       ${crumbs(b, [[null, 'Kontakt']])}
       <h1>Kontakt a bezplatná konzultácia</h1>
-      <p class="lead">Máte otázky ohľadom našej práce? Máte záujem o bezplatnú konzultáciu? Kontaktujte nás telefonicky alebo e-mailom. Odpovedáme v najkratšom možnom čase, väčšinou do 24 hodín.</p>
+      <p class="lead">Máte otázky ohľadom našej práce? Máte záujem o bezplatnú konzultáciu? Kontaktujte nás telefonicky alebo e-mailom.<br>Odpovedáme v najkratšom možnom čase, väčšinou do 24 hodín.</p>
     </div>
   </section>
   <section class="section">
@@ -869,6 +869,84 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
     </div>
   </section>
 ${finalCta(b, '', 'Potrebujete cenovú ponuku?')}` });
+
+// Ochrana osobných údajov — wording kept as on the old imajstri.sk, only the layout is new
+pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['ochrana-sukromia/', 'Ochrana osobných údajov']]),
+  title: 'Zásady ochrany osobných údajov | Interiéroví majstri',
+  desc: 'Ako BK Creative s. r. o. spracúva a chráni osobné údaje zákazníkov a aké práva v tejto súvislosti máte.',
+  body: (b) => `
+  <section class="page-hero page-hero--wide">
+    <div class="container">
+      ${crumbs(b, [[null, 'Ochrana osobných údajov']])}
+      <h1>Zásady ochrany osobných údajov</h1>
+      <p class="lead">Robíme všetko preto, aby ste sa u nás cítili bezpečne a prehlasujeme, že sme prijali všetky vhodné technické a organizačné opatrenia k zabezpečeniu osobných údajov. Vaše osobné údaje sú na našich serveroch šifrované.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container"><div class="legal">
+      <h2>Prevádzkovateľ</h2>
+      <p>Prevádzkovateľom osobných údajov podľa § 5 písm. o) zákona č. 18/2018 Z.z. o ochrane osobných údajov v znení neskorších predpisov (ďalej len „Zákon“) je BK Creative s. r. o. IČO: 56343744 so sídlom Landauova 3146/20 841 01 Bratislava (ďalej len: „prevádzkovateľ“).</p>
+
+      <h2>Aké typy osobných údajov zbierame a načo ich potrebujeme</h2>
+      <p><strong>Údaje zo žiadostí o cenové ponuky a dopyty v rozsahu:</strong> Meno a priezvisko potencionálneho zákazníka, telefónne číslo, e-mail, adresa potencionálnej montáže</p>
+      <p><strong>Údaje potrebné k fakturácii a ekonomickým záležitostiam v rozsahu:</strong> Obchodný názov, Meno a priezvisko, fakturačná adresa, adresa montáže, IČO, DIČ, IČ DPH</p>
+
+      <h2>Prenos údajov do tretích krajín</h2>
+      <p>Prevádzkovateľ nemá v úmysle odovzdať osobné údaje do tretej krajiny (do krajiny mimo EU) alebo medzinárodnej organizácii.</p>
+
+      <h2>Zabezpečenie osobných údajov</h2>
+      <p>Aby boli Vaše osobné údaje u nás chránené, vykonali sme primerané technické, bezpečnostné a organizačné opatrenia v súlade s požiadavkami a nariadeniami platnej legislatívy. Všetky Vaše osobné údaje v elektronickej podobe sú uložené na zabezpečených dátových serveroch.</p>
+
+      <h2>Ako dlho vaše osobné údaje uchovávame</h2>
+      <p>Vaše osobné údaje uchovávame po dobu nevyhnutnú k výkonu práv a povinností vyplývajúcich zo zmluvného vzťahu medzi nami a uplatňovanie nárokov z tohto zmluvného vzťahu.</p>
+      <p>Osobné údaje, ktorých uchovávanie je nevyhnutné pre splnenie všetkých našich povinností vyplývajúcich zo zákonného nariadenia musíme uchovávať po dobu stanovenú príslušným právnym predpisom a to bez ohľadu na vami udelený súhlas. Pri daňových a účtovných dokladoch je spravidla táto doba 10 rokov.</p>
+      <p>Vaše osobné údaje nebudeme využívať k žiadnym marketingovým aktivitám.</p>
+
+      <h2>Vaše práva</h2>
+      <p>V súvislosti s ochranou osobných údajov máte viaceré práva, ktoré si môžete uplatniť:</p>
+      <ul>
+        <li>právo kedykoľvek odvolať váš súhlas so spracovaním osobných údajov</li>
+        <li>právo doplniť alebo opraviť osobné údaje</li>
+        <li>právo na prístup k údajom</li>
+        <li>právo na vymazanie osobných údajov</li>
+        <li>právo na obmedzenie spracúvania</li>
+        <li>právo vniesť námietku</li>
+        <li>právo na podanie sťažnosti</li>
+        <li>právo na prenos údajov</li>
+      </ul>
+
+      <h3>Právo na doplnenie a opravu</h3>
+      <p>Ak sú vaše údaje nesprávne uvedené, môžete ich upraviť priamo v nastaveniach vášho užívateľského účtu alebo nás môžete priamo kontaktovať na e-mailovú adresu <a href="mailto:${MAIL}">${MAIL}</a> a požiadať o ich opravu a doplnenie.</p>
+
+      <h3>Prístup k údajom</h3>
+      <p>Máte právo požiadať nás o prehľad údajov, ktoré o vás spracúvame, za akým účelom, komu ich poskytujeme, ako dlho ich budeme uchovávať a to prostredníctvom e-mailovej adresy <a href="mailto:${MAIL}">${MAIL}</a>.</p>
+
+      <h3>Právo na vymazanie osobných údajov</h3>
+      <p>Máte právo požiadať nás o vymazanie vašich osobných údajov, ktoré spracúvame a to v prípade, že sú splnené nasledovné podmienky a nedotkne sa to údajov, ktoré musíme podľa zákona uchovávať (napr. faktúry):</p>
+      <ul>
+        <li>Osobné údaje už nie sú potrebné na účely, na ktoré sa získali a boli spracované</li>
+        <li>Odvoláte svoj súhlas, na základe ktorého boli osobné údaje spracované a neexistuje iný právny základ pre spracovanie osobných údajov</li>
+        <li>Osobné údaje boli spracované nezákonne</li>
+        <li>Dôvodom pre výmaz je splnenie povinnosti podľa zákona, osobitného predpisu alebo medzinárodnej zmluvy</li>
+        <li>Ide o osobné údaje osoby mladšej ako 16 rokov</li>
+      </ul>
+
+      <h3>Právo na obmedzenie spracúvania</h3>
+      <p>Máte právo požiadať nás o obmedzenie spracovania vašich osobných údajov v nasledovných prípadoch:</p>
+      <ul>
+        <li>namietate správnosť osobných údajov, a to do doby než sa overí správnosť osobných údajov</li>
+        <li>spracovanie vašich osobných údajov je nezákonné</li>
+        <li>vaše osobné údaje už nepotrebujeme na účel spracúvania, avšak vy ich potrebujete pre uplatnenie, výkon alebo obranu vašich právnych nárokov</li>
+        <li>namietate podľa predchádzajúceho bodu so spracovaním vašich osobných údajov</li>
+      </ul>
+
+      <h3>Právo na vznesenie námietky</h3>
+      <p>Máte právo namietať spracovanie vašich osobných údajov z dôvodu týkajúceho sa vašej konkrétnej situácie, ktoré je vykonané na základe nášho oprávneného záujmu vrátane profilovania založeného na týchto ustanoveniach. Máte tiež právo namietať voči spracovaniu vašich osobných údajov na účel priameho marketingu.</p>
+
+      <h3>Právo na podanie sťažnosti</h3>
+      <p>Máte právo podať sťažnosť na Úrad na ochranu osobných údajov v prípade, že sa domnievate, že vaše osobné údaje boli spracované v rozpore s platnými právnymi predpismi na ochranu osobných údajov. Kontaktné údaje nájdete tu: <a href="https://dataprotection.gov.sk/uoou/sk/content/kontakt-0" target="_blank" rel="noopener">dataprotection.gov.sk</a>.</p>
+    </div></div>
+  </section>` });
 
 // ---------------------------------------------------------------- write
 
