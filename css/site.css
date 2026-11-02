@@ -204,6 +204,7 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 .legal ul { margin-top: 12px; padding-left: 22px; list-style: disc; }
 .legal li + li { margin-top: 6px; }
 .legal a { color: var(--accent-strong); text-decoration: underline; }
+.legal .legal-date { margin-top: 48px; font-size: 14px; }
 
 /* FAQ */
 .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; }
