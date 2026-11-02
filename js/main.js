@@ -126,7 +126,7 @@
           if (f.size > MAX_FILE) return fail('Jedna fotografia môže mať najviac 10 MB.', form.foto);
         }
       }
-      if (form.suhlas && !form.suhlas.checked) return fail('Potvrďte, prosím, súhlas so spracovaním údajov.', form.suhlas);
+      if (form.suhlas && !form.suhlas.checked) return fail('Pred odoslaním potvrďte, že ste sa oboznámili so Zásadami ochrany osobných údajov.', form.suhlas);
 
       // Prevent double submits; in production the success state is shown only after the server confirms.
       btn.disabled = true;

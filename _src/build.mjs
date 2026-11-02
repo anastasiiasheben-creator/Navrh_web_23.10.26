@@ -289,7 +289,7 @@ const shortForm = (selected = '', withPhoto = false) => {
             <div class="field"><label for="t${n}">Telefón</label><input id="t${n}" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+421 9xx xxx xxx"></div>
             <div class="field"><label for="e${n}">E-mail</label><input id="e${n}" name="email" type="email" autocomplete="email" placeholder="vas@email.sk"></div>
             <div class="field field--full"><label for="s${n}">Krátko o projekte <small>(nepovinné)</small></label><textarea id="s${n}" name="sprava" rows="3" maxlength="2000" placeholder="Miestnosť, približné rozmery, termín…"></textarea></div>${photo}
-            <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky podľa <a href="${PRIVACY}" target="_blank" rel="noopener">zásad ochrany osobných údajov</a>.</span></label>
+            <p class="consent">Odoslaním formulára beriem na vedomie informácie o spracúvaní osobných údajov uvedené v <a href="${PRIVACY}" target="_blank" rel="noopener">Zásadách ochrany osobných údajov</a>.</p>
             <p class="form-error" role="alert"></p>
             <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
             <p class="form-note">Stačí telefón alebo e-mail. Ozveme sa vám.</p>
@@ -833,7 +833,7 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
           <div class="field"><label for="o-roz">Rozmery / rozpočet <small>(nepovinné)</small></label><input id="o-roz" name="rozmery" placeholder="napr. linka 3,2 m, do 6 000 €"></div>
           <div class="field field--full"><label for="o-opis">Opis projektu</label><textarea id="o-opis" name="sprava" rows="4" maxlength="2000" placeholder="Čo plánujete, štýl, termín…"></textarea></div>
           <div class="field field--full"><label for="o-foto">Fotografia priestoru <small>(nepovinné · JPG, PNG, WEBP do 10 MB)</small></label><input id="o-foto" name="foto" type="file" accept="image/jpeg,image/png,image/webp" multiple></div>
-          <label class="consent"><input type="checkbox" name="suhlas"> <span>Súhlasím so spracovaním osobných údajov za účelom prípravy ponuky podľa <a href="${PRIVACY}" target="_blank" rel="noopener">zásad ochrany osobných údajov</a>.</span></label>
+          <label class="consent"><input type="checkbox" name="suhlas" required> <span>Potvrdzujem, že som sa oboznámil/a so <a href="${PRIVACY}" target="_blank" rel="noopener">Zásadami ochrany osobných údajov</a>.</span></label>
           <p class="form-error" role="alert"></p>
           <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
           <p class="form-note">Stačí telefón alebo e-mail. Údaje použijeme len na prípravu ponuky.</p>
