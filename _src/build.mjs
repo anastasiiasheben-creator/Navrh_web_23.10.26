@@ -868,7 +868,7 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
       <iframe class="map" title="Mapa — Landauova 3146/20, Bratislava" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&output=embed"></iframe>
     </div>
   </section>
-${finalCta(b, '', 'Potrebujete cenovú ponuku?')}` });
+${finalCta(b, '', 'Potrebujete cenovú ponuku?', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}` });
 
 // Ochrana osobných údajov — information under Art. 13 GDPR, tailored to this site (contract čl. XI); the client approves the wording
 pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['ochrana-sukromia/', 'Ochrana osobných údajov']]),
