@@ -289,7 +289,7 @@ const shortForm = (b, selected = '', withPhoto = false) => {
             <div class="field"><label for="t${n}">Telefón</label><input id="t${n}" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="+421 9xx xxx xxx"></div>
             <div class="field"><label for="e${n}">E-mail</label><input id="e${n}" name="email" type="email" autocomplete="email" placeholder="vas@email.sk"></div>
             <div class="field field--full"><label for="s${n}">Krátko o projekte <small>(nepovinné)</small></label><textarea id="s${n}" name="sprava" rows="3" maxlength="2000" placeholder="Miestnosť, približné rozmery, termín…"></textarea></div>${photo}
-            <p class="consent">Odoslaním formulára beriem na vedomie informácie o spracúvaní osobných údajov uvedené v <a href="${privacy(b)}" target="_blank" rel="noopener">Zásadách ochrany osobných údajov</a>.</p>
+            <label class="consent"><input type="checkbox" name="suhlas" required> <span>Potvrdzujem, že som sa oboznámil/a so <a href="${privacy(b)}" target="_blank" rel="noopener">Zásadami ochrany osobných údajov</a>.</span></label>
             <p class="form-error" role="alert"></p>
             <button class="btn btn-primary" type="submit">Odoslať dopyt ${ic('arrow')}</button>
             <p class="form-note">Stačí telefón alebo e-mail. Ozveme sa vám.</p>
