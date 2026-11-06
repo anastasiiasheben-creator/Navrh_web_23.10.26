@@ -143,6 +143,28 @@ const services = [
     materials: ['Dosky Egger', 'Kovanie Blum', 'Čalúnenie', 'Úložné schody a zásuvky'],
     projects: ['chorvatsky-grob', 'dubravka-landauova', 'vydrica'],
     faq: [['Je posteľ na poschodí bezpečná?', 'Navrhujeme ju s ohľadom na vek detí — so zábradlím a stabilným schodiskom.'], ['Dá sa nábytok neskôr upraviť?', 'Pri návrhu myslíme na to, ako bude izba rásť s dieťaťom.'], ['Robíte aj samotné šatníky?', 'Áno, aj samostatné šatníky a vstavané skrine.']] },
+  // Kúpeľne and Chodby added at the client's request (Nov 2026); texts are a draft for the client to confirm.
+  // No projects yet: the gallery appears once realizácie with these categories are added.
+  { slug: 'kupelnovy-nabytok', key: 'kupelna', name: 'Kúpeľňový nábytok', h1: 'Kúpeľňový nábytok na mieru', img: 'projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-07', price: null, icon: 'cube',
+    title: 'Kúpeľňový nábytok na mieru | Interiéroví majstri',
+    desc: 'Skrinky pod umývadlo, vysoké skrine a zrkadlové skrinky do kúpeľne na mieru. Návrh, výroba a montáž od jedného tímu.',
+    short: 'Skrinky pod umývadlo, vysoké skrine, zrkadlové skrinky.',
+    intro: 'Aj v malej kúpeľni sa dá nájsť miesto na všetko. Navrhneme nábytok presne do vašich rozmerov — od skrinky pod umývadlo až po vysokú skriňu na uteráky a drogériu.',
+    forWhom: ['Malá kúpeľňa, v ktorej chýba úložný priestor', 'Nepravidelné rozmery alebo šikmina, kam sa hotový nábytok nezmestí', 'Chcete kúpeľňu zladenú s ostatným nábytkom v byte'],
+    variants: [['Skrinky pod umývadlo', 'Na mieru k vášmu umývadlu a batérii.'], ['Vysoké skrine', 'Na uteráky, drogériu aj práčku či sušičku.'], ['Zrkadlové skrinky', 'S osvetlením a úložným priestorom.'], ['Police a niky', 'Využijeme aj priestor nad WC či vaňou.']],
+    materials: ['Materiály vhodné do vlhkého prostredia', 'Kovanie Blum', 'Zrkadlá a sklo', 'LED osvetlenie'],
+    projects: [],
+    faq: [['Vydrží nábytok vlhkosť v kúpeľni?', 'Na kúpeľňový nábytok používame materiály a hrany určené do vlhkého prostredia.'], ['Viete nábytok prispôsobiť umývadlu a batérii?', 'Áno, rozmery aj výrezy navrhneme podľa konkrétneho umývadla a batérie.'], ['Robíte aj skrine na práčku a sušičku?', 'Áno, aj vstavané skrine pre práčku a sušičku nad sebou.']] },
+  { slug: 'chodby-a-predsiene', key: 'chodba', name: 'Chodby a predsiene', h1: 'Nábytok do chodby a predsiene na mieru', img: 'projekty/dubravka-mensi-byt/mensi-byt-dubravka-02', price: null, icon: 'wardrobe',
+    title: 'Nábytok do chodby a predsiene na mieru | Interiéroví majstri',
+    desc: 'Vstavané skrine, botníky, vešiakové steny a sedenie pri vstupe na mieru. Návrh, výroba a montáž od jedného tímu.',
+    short: 'Vstavané skrine, botníky, vešiaky a sedenie pri vstupe.',
+    intro: 'Chodba je prvé, čo uvidíte po príchode domov. Navrhneme ju tak, aby mali svoje miesto bundy, topánky aj tašky — a aby pôsobila čisto a vzdušne aj v úzkom priestore.',
+    forWhom: ['Úzka alebo dlhá chodba, kde je každý centimeter dôležitý', 'Chcete skryť bundy a topánky za jednotné dvierka', 'Potrebujete sedenie na obúvanie a miesto na kľúče či tašky'],
+    variants: [['Vstavané skrine', 'Od podlahy po strop, aj s posuvnými dverami.'], ['Botníky', 'Výklopné aj výsuvné, podľa počtu párov.'], ['Vešiakové steny', 'Otvorené vešiaky s lamelami alebo policami.'], ['Sedenie pri vstupe', 'S úložným priestorom pod sedákom.']],
+    materials: ['Dosky Egger', 'Kovanie Blum', 'Lamely a obklady', 'Zrkadlá a LED osvetlenie'],
+    projects: [],
+    faq: [['Dá sa skriňa vstavať aj do úzkej chodby?', 'Áno, navrhneme plytšie skrine alebo posuvné dvere, ktoré pri otváraní nezaberajú miesto.'], ['Robíte aj samostatné botníky?', 'Áno, aj samostatné botníky a vešiakové steny.'], ['Viete chodbu zladiť s ostatným nábytkom?', 'Áno, použijeme rovnaké dekory ako v kuchyni či obývačke.']] },
   { slug: 'kompletne-interiery', key: 'interier', name: 'Kompletné interiéry', h1: 'Kompletné interiéry na mieru', img: 'projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02', price: '8 900 €', icon: 'home',
     title: 'Kompletné interiéry na mieru Bratislava | Interiéroví majstri',
     desc: 'Celý byt alebo dom na mieru v jednom štýle — kuchyňa, skrine, obývačka, detská izba aj kúpeľňa od jednej firmy.',
@@ -274,7 +296,7 @@ const breadcrumbLd = (trail) => ({
   itemListElement: [['', 'Domov'], ...trail].map(([p, name], i) => ({ '@type': 'ListItem', position: i + 1, name, ...(p !== null ? { item: SITE + '/' + p } : {}) })),
 });
 
-const potrebaOptions = (selected = '') => [['', 'Vyberte'], ['kuchyna', 'Kuchyňa'], ['skrina', 'Vstavaná skriňa / šatník'], ['obyvacka', 'Obývačka / TV stena'], ['izba', 'Spálňa / detská izba'], ['interier', 'Celý interiér'], ['firma', 'Firma / prevádzka'], ['ine', 'Iné']]
+const potrebaOptions = (selected = '') => [['', 'Vyberte'], ['kuchyna', 'Kuchyňa'], ['skrina', 'Vstavaná skriňa / šatník'], ['obyvacka', 'Obývačka / TV stena'], ['izba', 'Spálňa / detská izba'], ['kupelna', 'Kúpeľňa'], ['chodba', 'Chodba / predsieň'], ['interier', 'Celý interiér'], ['firma', 'Firma / prevádzka'], ['ine', 'Iné']]
   .map(([v, l]) => `<option value="${v}"${v === selected ? ' selected' : ''}>${l}</option>`).join('');
 
 let formCount = 0;
@@ -655,7 +677,7 @@ for (const s of services) {
     </div>
   </section>
 
-  <section class="section section--white">
+${gallery.length ? `  <section class="section section--white">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow eyebrow--line">Naše práce</span><h2>Z našich realizácií</h2></div><a class="link-more" href="${b}realizacie/">Všetky realizácie →</a></div>
       <div class="gallery">
@@ -663,7 +685,7 @@ for (const s of services) {
       </div>
     </div>
   </section>
-
+` : ''}
   <section class="section">
     <div class="container split" style="align-items:start">
       <div>
