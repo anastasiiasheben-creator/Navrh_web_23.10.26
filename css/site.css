@@ -139,7 +139,7 @@ small, .small { font-size: 14px; line-height: 1.5; }
 
 
 /* Brands */
-.brands { padding-block: 56px; background: var(--white); border-block: 1px solid var(--border); }
+.brands { padding-block: 56px; background: var(--bg); border-block: 1px solid var(--border); }
 .brands .eyebrow { margin-bottom: 32px; }
 .brand-logos { display: grid; grid-template-columns: repeat(6, 1fr); align-items: center; justify-items: center; gap: 32px 24px; }
 /* Logos are masks filled with the site's accent colour, so they always match the design */
