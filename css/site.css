@@ -142,8 +142,13 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .brands { padding-block: 56px; background: var(--white); border-block: 1px solid var(--border); }
 .brands .eyebrow { margin-bottom: 32px; }
 .brand-logos { display: grid; grid-template-columns: repeat(6, 1fr); align-items: center; justify-items: center; gap: 32px 24px; }
-.brand-logos img { height: 48px; width: auto; max-width: 100%; object-fit: contain; }
-.brand-logos span { font-family: var(--font-head); font-weight: 800; letter-spacing: .08em; color: #A27650; font-size: 26px; }
+/* Logos are masks filled with the site's accent colour, so they always match the design */
+.brand-logo { display: block; width: 150px; max-width: 100%; aspect-ratio: 343 / 110; background: var(--accent); -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; }
+.brand-logo--blum { --logo: url(../images/blum_imajstri.webp); }
+.brand-logo--egger { --logo: url(../images/egger_imajstri.webp); }
+.brand-logo--knauf { --logo: url(../images/knauf_imajstri.webp); }
+.brand-logo--benalex { --logo: url(../images/logo-benalexplus-imajstri.webp); }
+.brand-name { font-family: var(--font-head); font-weight: 800; letter-spacing: .08em; color: var(--accent); font-size: 26px; }
 
 /* Cards */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -434,4 +439,4 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .map { min-height: 300px; }
 }
 
-@media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logos img { height: 36px; } .brand-logos span { font-size: 20px; } }
+@media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-name { font-size: 18px; } }

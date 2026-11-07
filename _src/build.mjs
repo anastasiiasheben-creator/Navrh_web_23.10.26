@@ -362,11 +362,11 @@ const brands = (b) => `
     <div class="container">
       <span class="eyebrow eyebrow--line">Pracujeme s materiálmi a kovaním</span>
       <div class="brand-logos">
-        <img src="${b}images/blum_imajstri.webp" alt="Blum" loading="lazy">
-        <img src="${b}images/egger_imajstri.webp" alt="Egger" loading="lazy">
-        <img src="${b}images/knauf_imajstri.webp" alt="Knauf" loading="lazy">
-        <img src="${b}images/logo-benalexplus-imajstri.webp" alt="Benalex" loading="lazy">
-        <span>BLANCO</span><span>PEBE</span>
+        <span class="brand-logo brand-logo--blum" role="img" aria-label="Blum"></span>
+        <span class="brand-logo brand-logo--egger" role="img" aria-label="Egger"></span>
+        <span class="brand-logo brand-logo--knauf" role="img" aria-label="Knauf"></span>
+        <span class="brand-logo brand-logo--benalex" role="img" aria-label="Benalex"></span>
+        <span class="brand-name">BLANCO</span><span class="brand-name">PEBE</span>
       </div>
     </div>
   </section>`;
