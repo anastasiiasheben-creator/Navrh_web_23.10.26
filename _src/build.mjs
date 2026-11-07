@@ -218,9 +218,8 @@ const head = (pg, b) => {
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImg}">
   <link rel="icon" href="${b}images/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@300;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="${b}css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="${b}css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${b}css/site.css?v=${CSS_V}">${pg.preload ? `\n  <link rel="preload" as="image" href="${b}images/${pg.preload}" fetchpriority="high">` : ''}${pg.jsonld ? `\n  <script type="application/ld+json">${JSON.stringify(pg.jsonld)}</script>` : ''}
 </head>
 <body>
@@ -943,7 +942,7 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li>externá účtovná kancelária,</li>
         <li>orgány verejnej moci, ak to vyžaduje zákon.</li>
       </ul>
-      <p>Stránka načítava písma Google Fonts a na stránke Kontakt mapu Google Maps. Pri ich zobrazení sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
+      <p>Na stránke Kontakt zobrazujeme mapu Google Maps. Pri jej zobrazení sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
 
       <h2>6. Ako dlho údaje uchovávame</h2>
       <p>Osobné údaje uchovávame len po dobu nevyhnutnú na účel, na ktorý boli získané, a po dobu, ktorú nám ukladajú právne predpisy. Potom ich vymažeme.</p>
