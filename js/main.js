@@ -128,10 +128,19 @@
       }
       if (form.suhlas && !form.suhlas.checked) return fail('Pred odoslaním potvrďte, že ste sa oboznámili so Zásadami ochrany osobných údajov.', form.suhlas);
 
-      // Prevent double submits; in production the success state is shown only after the server confirms.
+      // Prevent double submits. The WordPress theme defines window.imjSend (real sending);
+      // the static prototype only simulates the success state.
+      var label = btn.innerHTML;
       btn.disabled = true;
       btn.textContent = 'Odosielam…';
-      setTimeout(function () { form.classList.add('is-sent'); }, 600);
+      if (!window.imjSend) { setTimeout(function () { form.classList.add('is-sent'); }, 600); return; }
+      window.imjSend(form).then(function () {
+        form.classList.add('is-sent');
+      }, function (msg) {
+        btn.disabled = false;
+        btn.innerHTML = label;
+        fail(msg || 'Odoslanie sa nepodarilo. Skúste to znova alebo nám zavolajte.');
+      });
     });
   });
 })();

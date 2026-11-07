@@ -966,10 +966,40 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li><strong>odvolať súhlas</strong>, ak sa spracúvanie zakladá na súhlase (napr. cookies) — odvolanie nemá vplyv na zákonnosť spracúvania pred ním.</li>
       </ul>
       <p>Svoje práva si môžete uplatniť e-mailom na <a href="mailto:${MAIL}">${MAIL}</a> alebo písomne na adrese sídla. Odpovieme bez zbytočného odkladu, najneskôr do 1 mesiaca.</p>
+      <p>O vymazanie údajov z dopytu odoslaného cez webovú stránku môžete požiadať aj cez <a href="${b}vymaz-udajov/">formulár na vymazanie údajov</a>.</p>
       <p>Ak sa domnievate, že spracúvame vaše údaje v rozpore s predpismi, môžete podať návrh na začatie konania na <strong>Úrad na ochranu osobných údajov Slovenskej republiky</strong>, Hraničná 12, 820 07 Bratislava, <a href="https://dataprotection.gov.sk" target="_blank" rel="noopener">dataprotection.gov.sk</a>.</p>
 
       <p class="legal-date">Tieto zásady sú účinné od 2. 11. 2026.</p>
     </div></div>
+  </section>` });
+
+// Vymazanie údajov — request to erase a web enquiry (number from the confirmation e-mail + e-mail address).
+// The prototype only simulates sending; in WordPress the request is confirmed by a link sent to that e-mail.
+pages.push({ path: 'vymaz-udajov/', section: null, jsonld: breadcrumbLd([['ochrana-sukromia/', 'Ochrana osobných údajov'], ['vymaz-udajov/', 'Vymazanie údajov']]),
+  title: 'Vymazanie osobných údajov | Interiéroví majstri',
+  desc: 'Požiadajte o vymazanie osobných údajov z dopytu, ktorý ste poslali cez našu webovú stránku.',
+  body: (b) => `
+  <section class="page-hero page-hero--wide">
+    <div class="container">
+      ${crumbs(b, [['ochrana-sukromia/', 'Ochrana osobných údajov'], [null, 'Vymazanie údajov']])}
+      <h1>Vymazanie osobných údajov</h1>
+      <p class="lead">Zadajte e-mail, ktorý ste uviedli v dopyte, a ak ho máte, aj číslo dopytu z potvrdzujúceho e-mailu. Na e-mail vám pošleme odkaz — údaje vymažeme až po jeho potvrdení, aby ich nemohol vymazať nikto iný.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container" style="max-width:720px">
+      <form class="form-card lead-form" novalidate>
+        <input type="hidden" name="form" value="vymaz">
+        <div class="form-grid">
+          <div class="field"><label for="v-mail">E-mail z dopytu</label><input id="v-mail" name="email" type="email" autocomplete="email" required placeholder="vas@email.sk"></div>
+          <div class="field"><label for="v-id">Číslo dopytu <small>(nepovinné)</small></label><input id="v-id" name="id_dopytu" placeholder="napr. IM-26-7KQ4XP" autocapitalize="characters"></div>
+          <p class="form-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit">Požiadať o vymazanie ${ic('arrow')}</button>
+          <p class="form-note">Bez čísla dopytu vymažeme všetky dopyty odoslané z tohto e-mailu. Údaje, ktoré musíme uchovávať zo zákona (napr. faktúry), vymazať nemôžeme.</p>
+        </div>
+        <div class="form-success" role="status">${ic('check')}<h3>Skontrolujte svoj e-mail.</h3><p>Ak k tomuto e-mailu evidujeme dopyt, poslali sme naň odkaz na potvrdenie vymazania. Odkaz platí 48 hodín.</p></div>
+      </form>
+    </div>
   </section>` });
 
 // ---------------------------------------------------------------- write
