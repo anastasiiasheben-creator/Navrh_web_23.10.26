@@ -148,6 +148,7 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .brand-logo--egger { --logo: url(../images/egger_imajstri.webp); }
 .brand-logo--knauf { --logo: url(../images/knauf_imajstri.webp); }
 .brand-logo--benalex { --logo: url(../images/logo-benalexplus-imajstri.webp); }
+.brand-logo--blanco { --logo: url(../images/blanco-logo.svg); width: 118px; aspect-ratio: 88 / 16; } /* official logo from blanco.com */
 .brand-name { font-family: var(--font-head); font-weight: 800; letter-spacing: .08em; color: var(--accent); font-size: 26px; }
 
 /* Cards */
@@ -439,4 +440,4 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .map { min-height: 300px; }
 }
 
-@media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-name { font-size: 18px; } }
+@media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-logo--blanco { width: 78px; } .brand-name { font-size: 18px; } }

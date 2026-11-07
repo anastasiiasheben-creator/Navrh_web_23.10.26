@@ -366,7 +366,8 @@ const brands = (b) => `
         <span class="brand-logo brand-logo--egger" role="img" aria-label="Egger"></span>
         <span class="brand-logo brand-logo--knauf" role="img" aria-label="Knauf"></span>
         <span class="brand-logo brand-logo--benalex" role="img" aria-label="Benalex"></span>
-        <span class="brand-name">BLANCO</span><span class="brand-name">PEBE</span>
+        <span class="brand-logo brand-logo--blanco" role="img" aria-label="BLANCO"></span>
+        <span class="brand-name">PEBE</span>
       </div>
     </div>
   </section>`;
