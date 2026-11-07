@@ -360,7 +360,7 @@ const steps = (dark = false) => `
 const brands = (b) => `
   <section class="brands" aria-label="Materiály a kovanie">
     <div class="container">
-      <p>Pracujeme s materiálmi a kovaním</p>
+      <span class="eyebrow eyebrow--line">Pracujeme s materiálmi a kovaním</span>
       <div class="brand-logos">
         <img src="${b}images/blum_imajstri.webp" alt="Blum" loading="lazy">
         <img src="${b}images/egger_imajstri.webp" alt="Egger" loading="lazy">
@@ -693,14 +693,14 @@ ${gallery.length ? `  <section class="section section--white">
         <ul class="check-list">${['Konzultácia a poradenstvo', 'Zameranie priestoru', 'Návrh a vizualizácia', 'Výroba nábytku', 'Doprava', 'Montáž u vás doma'].map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
       </div>
       <div>
-        <span class="eyebrow eyebrow--line">Materiály a kovanie</span>
-        <h2>S čím pracujeme</h2>
-        <ul class="check-list">${s.materials.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
+        <span class="eyebrow eyebrow--line">Cena</span>
+        <h2>Koľko to stojí</h2>
         <div class="fact" style="margin-top:28px"><span>Orientačný rozpočet</span><b>${s.price ? `od ${s.price}` : 'podľa rozsahu a materiálu'}</b><span>Výslednú cenu ovplyvňujú rozmery, materiály, vybavenie a náročnosť projektu.</span></div>
       </div>
     </div>
   </section>
 
+${brands(b)}
   <section class="section section--dark">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow eyebrow--line">Postup</span><h2>Ako budeme postupovať</h2></div></div>
