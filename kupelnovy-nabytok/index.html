@@ -14,9 +14,10 @@
   <meta property="og:url" content="https://www.imajstri.sk/kupelnovy-nabytok/">
   <meta property="og:image" content="https://www.imajstri.sk/images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-07-1400.jpg">
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <script>try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}</script>
   <link rel="preload" href="../css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/site.css?v=67b8a73b">
+  <link rel="stylesheet" href="../css/site.css?v=14223c6c">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://www.imajstri.sk/"},{"@type":"ListItem","position":2,"name":"Služby","item":"https://www.imajstri.sk/sluzby/"},{"@type":"ListItem","position":3,"name":"Kúpeľňový nábytok","item":"https://www.imajstri.sk/kupelnovy-nabytok/"}]}</script>
 </head>
 <body>
@@ -59,7 +60,7 @@
 
 <header class="site-header">
   <div class="container container--wide header-row">
-    <a href="../" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img src="../images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span></a>
+    <a href="../" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img class="brand-mark" src="../images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span><img class="brand-round" src="../images/logo-klient.png" alt="" width="288" height="288"></a>
     <nav class="nav" id="nav" aria-label="Hlavná navigácia">
       <a href="../">Domov</a>
       <a href="../o-nas/">O nás</a>
@@ -195,7 +196,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="brand brand--light"><img src="../images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span></div>
+        <div class="brand brand--light"><img class="brand-mark" src="../images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span><img class="brand-round" src="../images/logo-klient.png" alt="" width="288" height="288"></div>
         <p>Vaša vízia, náš nábytok. Kuchyne, skrine a nábytok na mieru v Bratislave a okolí — od návrhu až po montáž.</p>
         <div class="social">
           <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -229,5 +230,7 @@
   <a class="btn btn-primary" href="../objednavka/">Nezáväzná ponuka</a>
 </div>
 <script src="../js/main.js?v=4fe6d455" defer></script>
+<div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
+<script>document.querySelectorAll('.logo-switch button').forEach(function(x){x.addEventListener('click',function(){try{sessionStorage.setItem('imj-logo',x.dataset.l)}catch(e){}if(x.dataset.l==='klient')document.documentElement.setAttribute('data-logo','klient');else document.documentElement.removeAttribute('data-logo')})})</script>
 </body>
 </html>

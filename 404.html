@@ -15,9 +15,10 @@
   <meta property="og:url" content="https://www.imajstri.sk/404">
   <meta property="og:image" content="https://www.imajstri.sk/images/hero-kuchyna.jpg">
   <link rel="icon" href="/Navrh_web_23.10.26/images/favicon.svg" type="image/svg+xml">
+  <script>try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}</script>
   <link rel="preload" href="/Navrh_web_23.10.26/css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/Navrh_web_23.10.26/css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/Navrh_web_23.10.26/css/site.css?v=67b8a73b">
+  <link rel="stylesheet" href="/Navrh_web_23.10.26/css/site.css?v=14223c6c">
 </head>
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
@@ -59,7 +60,7 @@
 
 <header class="site-header">
   <div class="container container--wide header-row">
-    <a href="/Navrh_web_23.10.26/" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img src="/Navrh_web_23.10.26/images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span></a>
+    <a href="/Navrh_web_23.10.26/" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img class="brand-mark" src="/Navrh_web_23.10.26/images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span><img class="brand-round" src="/Navrh_web_23.10.26/images/logo-klient.png" alt="" width="288" height="288"></a>
     <nav class="nav" id="nav" aria-label="Hlavná navigácia">
       <a href="/Navrh_web_23.10.26/">Domov</a>
       <a href="/Navrh_web_23.10.26/o-nas/">O nás</a>
@@ -91,7 +92,7 @@
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="brand brand--light"><img src="/Navrh_web_23.10.26/images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span></div>
+        <div class="brand brand--light"><img class="brand-mark" src="/Navrh_web_23.10.26/images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span><img class="brand-round" src="/Navrh_web_23.10.26/images/logo-klient.png" alt="" width="288" height="288"></div>
         <p>Vaša vízia, náš nábytok. Kuchyne, skrine a nábytok na mieru v Bratislave a okolí — od návrhu až po montáž.</p>
         <div class="social">
           <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -125,5 +126,7 @@
   <a class="btn btn-primary" href="/Navrh_web_23.10.26/objednavka/">Nezáväzná ponuka</a>
 </div>
 <script src="/Navrh_web_23.10.26/js/main.js?v=4fe6d455" defer></script>
+<div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
+<script>document.querySelectorAll('.logo-switch button').forEach(function(x){x.addEventListener('click',function(){try{sessionStorage.setItem('imj-logo',x.dataset.l)}catch(e){}if(x.dataset.l==='klient')document.documentElement.setAttribute('data-logo','klient');else document.documentElement.removeAttribute('data-logo')})})</script>
 </body>
 </html>

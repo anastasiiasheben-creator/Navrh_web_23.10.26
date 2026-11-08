@@ -89,6 +89,16 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .brand-tag::before, .brand-tag::after { content: ""; flex: 1; height: 1px; background: currentColor; min-width: 10px; }
 .brand--light { margin-bottom: 18px; }
 .brand--light .brand-tag { color: #D2B496; }
+/* Client's round logo – shown instead of the new logo when <html data-logo="klient"> */
+.brand .brand-round { display: none; width: 64px; height: 64px; }
+[data-logo="klient"] .brand-mark, [data-logo="klient"] .brand-tag { display: none; }
+[data-logo="klient"] .brand .brand-round { display: block; }
+.brand--light .brand-round { width: 112px; height: 112px; }
+/* Prototype only: switch between the two logos */
+.logo-switch { position: fixed; left: 16px; bottom: 16px; z-index: 60; display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 14px; background: var(--white); border: 1px solid var(--border); border-radius: 999px; box-shadow: 0 6px 24px rgba(0,0,0,.12); font-size: 14px; font-weight: 600; }
+.logo-switch button { min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; font: inherit; cursor: pointer; }
+.logo-switch button[data-l="novy"], [data-logo="klient"] .logo-switch button[data-l="klient"] { background: var(--ink); color: var(--white); }
+[data-logo="klient"] .logo-switch button[data-l="novy"] { background: transparent; color: inherit; }
 .nav { display: flex; gap: 22px; font-size: 15px; font-weight: 500; white-space: nowrap; }
 .nav a { padding-block: 8px; border-bottom: 2px solid transparent; transition: color var(--t), border-color var(--t); }
 .nav a:hover { color: var(--accent-strong); }
@@ -420,6 +430,8 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .section { padding-block: 64px; }
   .page-hero { padding-block: 40px; }
   .brand img { height: 26px; }
+  .brand .brand-round { width: 52px; height: 52px; }
+  .logo-switch { bottom: 84px; }
   .brand-tag { font-size: 9px; letter-spacing: .2em; }
   .header-cta .btn, .header-cta .icon-btn { display: none; }
   .hero-sub { font-size: 18px; }

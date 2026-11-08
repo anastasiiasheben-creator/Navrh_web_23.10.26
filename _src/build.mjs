@@ -199,6 +199,10 @@ const img = (base, b, alt, sizes = '(max-width: 767px) 100vw, (max-width: 1023px
 
 const link = (b, p) => (b + p) || './';
 
+// Logo variant: our new logo (default) or the client's round logo. ?logo=klient / ?logo=novy, remembered for the browser tab.
+const LOGO_JS = "try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}";
+const roundLogo = (b, cls) => `<img class="brand-round${cls ? ' ' + cls : ''}" src="${b}images/logo-klient.png" alt="" width="288" height="288">`;
+
 const head = (pg, b) => {
   const url = SITE + '/' + pg.path;
   const ogImg = SITE + '/images/' + (pg.og || 'hero-kuchyna.jpg');
@@ -218,6 +222,7 @@ const head = (pg, b) => {
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${ogImg}">
   <link rel="icon" href="${b}images/favicon.svg" type="image/svg+xml">
+  <script>${LOGO_JS}</script>
   <link rel="preload" href="${b}css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="${b}css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="${b}css/site.css?v=${CSS_V}">${pg.preload ? `\n  <link rel="preload" as="image" href="${b}images/${pg.preload}" fetchpriority="high">` : ''}${pg.jsonld ? `\n  <script type="application/ld+json">${JSON.stringify(pg.jsonld)}</script>` : ''}
@@ -230,7 +235,7 @@ ${sprite}`;
 const header = (pg, b) => `
 <header class="site-header">
   <div class="container container--wide header-row">
-    <a href="${link(b, '')}" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img src="${b}images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span></a>
+    <a href="${link(b, '')}" class="brand" aria-label="Interiéroví majstri – nábytok na mieru, úvodná stránka"><img class="brand-mark" src="${b}images/logo-mark.png" alt="" width="600" height="86"><span class="brand-tag" aria-hidden="true">Nábytok na mieru</span>${roundLogo(b)}</a>
     <nav class="nav" id="nav" aria-label="Hlavná navigácia">
       ${NAV.map(([p, label]) => `<a href="${link(b, p)}"${pg.section === p ? ' aria-current="page"' : ''}>${label}</a>`).join('\n      ')}
     </nav>
@@ -249,7 +254,7 @@ const footer = (b) => `
   <div class="container">
     <div class="foot-grid">
       <div>
-        <div class="brand brand--light"><img src="${b}images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span></div>
+        <div class="brand brand--light"><img class="brand-mark" src="${b}images/logo-mark-light.png" alt="Interiéroví majstri" width="600" height="86"><span class="brand-tag">Nábytok na mieru</span>${roundLogo(b)}</div>
         <p>Vaša vízia, náš nábytok. Kuchyne, skrine a nábytok na mieru v Bratislave a okolí — od návrhu až po montáž.</p>
         <div class="social">
           <a href="https://www.instagram.com/imajstri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -283,6 +288,8 @@ const footer = (b) => `
   <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka</a>
 </div>
 <script src="${b}js/main.js?v=${JS_V}" defer></script>
+<div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
+<script>document.querySelectorAll('.logo-switch button').forEach(function(x){x.addEventListener('click',function(){try{sessionStorage.setItem('imj-logo',x.dataset.l)}catch(e){}if(x.dataset.l==='klient')document.documentElement.setAttribute('data-logo','klient');else document.documentElement.removeAttribute('data-logo')})})</script>
 </body>
 </html>
 `;
