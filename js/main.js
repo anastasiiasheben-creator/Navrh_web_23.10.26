@@ -144,3 +144,88 @@
     });
   });
 })();
+
+// Cookie bar: only necessary storage by default; Google Maps (external content) loads after consent.
+// The choice is kept in localStorage ('imj-consent') and can be changed via "Nastavenia cookies" in the footer.
+(function () {
+  var KEY = 'imj-consent';
+  var consent = null;
+  try { consent = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+
+  function save(maps) {
+    consent = { v: 1, maps: !!maps, t: new Date().toISOString() };
+    try { localStorage.setItem(KEY, JSON.stringify(consent)); } catch (e) {}
+    apply();
+    close();
+  }
+
+  function apply() {
+    if (!consent || !consent.maps) return;
+    document.querySelectorAll('[data-map-src]').forEach(function (box) {
+      if (box.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = box.dataset.mapSrc;
+      f.title = box.dataset.mapTitle || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      box.innerHTML = '';
+      box.appendChild(f);
+    });
+  }
+
+  var bar;
+  function open(showSettings) {
+    if (!bar) {
+      var privacy = document.querySelector('.foot-bottom a[href*="ochrana-sukromia"]');
+      bar = document.createElement('div');
+      bar.className = 'cookie-bar';
+      bar.setAttribute('role', 'dialog');
+      bar.setAttribute('aria-label', 'Nastavenia cookies');
+      bar.innerHTML =
+        '<div class="cookie-text"><strong>Cookies</strong><p>Používame len nevyhnutné cookies, ktoré stránka potrebuje na fungovanie. S vaším súhlasom načítame aj mapu Google, ktorá ukladá vlastné cookies. ' +
+        (privacy ? '<a href="' + privacy.getAttribute('href') + '">Viac o ochrane údajov</a>' : '') + '</p>' +
+        '<div class="cookie-settings" hidden>' +
+          '<label><input type="checkbox" checked disabled> <span><b>Nevyhnutné</b> – fungovanie stránky a ochrana formulárov pred spamom. Sú vždy zapnuté.</span></label>' +
+          '<label><input type="checkbox" name="maps"> <span><b>Externý obsah</b> – mapa Google Maps na stránke Kontakt.</span></label>' +
+        '</div></div>' +
+        '<div class="cookie-actions">' +
+          '<button class="btn btn-primary" type="button" data-c="all">Prijať všetko</button>' +
+          '<button class="btn btn-primary" type="button" data-c="none">Len nevyhnutné</button>' +
+          '<button class="btn btn-outline" type="button" data-c="settings">Nastavenia</button>' +
+          '<button class="btn btn-outline" type="button" data-c="save" hidden>Uložiť výber</button>' +
+        '</div>';
+      document.body.appendChild(bar);
+      bar.addEventListener('click', function (e) {
+        var c = e.target.closest('[data-c]');
+        if (!c) return;
+        if (c.dataset.c === 'all') save(true);
+        else if (c.dataset.c === 'none') save(false);
+        else if (c.dataset.c === 'save') save(bar.querySelector('[name=maps]').checked);
+        else toggleSettings(true);
+      });
+    }
+    bar.querySelector('[name=maps]').checked = !!(consent && consent.maps);
+    toggleSettings(!!showSettings);
+    bar.hidden = false;
+    document.body.classList.add('has-cookie-bar');
+  }
+
+  function toggleSettings(on) {
+    bar.querySelector('.cookie-settings').hidden = !on;
+    bar.querySelector('[data-c=settings]').hidden = on;
+    bar.querySelector('[data-c=save]').hidden = !on;
+  }
+
+  function close() {
+    if (bar) bar.hidden = true;
+    document.body.classList.remove('has-cookie-bar');
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-cookies]')) open(true);
+    if (e.target.closest('[data-map-load]')) save(true);
+  });
+
+  apply();
+  if (!consent) open(false);
+})();
