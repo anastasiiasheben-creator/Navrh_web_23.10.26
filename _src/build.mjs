@@ -748,7 +748,7 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
       </div>
     </div>
   </section>
-${finalCta(b, '', 'Páči sa vám niektorá realizácia?', 'Napíšte nám, ktorý projekt sa vám páči. Navrhneme podobné riešenie presne do vášho priestoru.')}` });
+${ctaBand(b, 'Páči sa vám niektorá realizácia?', 'Navrhneme podobné riešenie presne do vášho priestoru. Prvá konzultácia je bezplatná.')}` });
 
 // Project detail pages (brief section 06)
 projects.forEach((p, i) => {
@@ -804,7 +804,7 @@ projects.forEach((p, i) => {
       <a class="btn-text" href="${b}realizacie/${next.slug}/">${next.title} →</a>
     </div>
   </section>
-${finalCta(b, '', 'Chcete podobné riešenie?', `Napíšte nám — navrhneme riešenie podobné projektu ${p.loc} presne do vášho priestoru.`)}` });
+${ctaBand(b, 'Chcete podobné riešenie?', `Navrhneme riešenie podobné projektu ${p.loc} presne do vášho priestoru.`)}` });
 });
 
 // Blog
