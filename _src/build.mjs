@@ -846,10 +846,10 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
       <div>
         <span class="eyebrow eyebrow--line">Ako to funguje</span>
         <h2>Tri kroky k návrhu</h2>
-        <ol class="steps" style="grid-template-columns:1fr;margin-top:28px">
-          <li class="step"><div class="step-num">${ic('doc')}01</div><h3>Pošlete dopyt</h3><p>Typ nábytku, lokalita a kontakt. Fotky priestoru môžete priložiť.</p></li>
-          <li class="step"><div class="step-num">${ic('chat')}02</div><h3>Ozveme sa vám</h3><p>Dohodneme bezplatnú konzultáciu a zameranie.</p></li>
-          <li class="step"><div class="step-num">${ic('cube')}03</div><h3>Dostanete návrh a ponuku</h3><p>Návrh s vizualizáciou a cenovú ponuku podľa rozmerov a materiálov.</p></li>
+        <ol class="how">
+          <li><span class="how-num">1</span><div><h3>Pošlete dopyt</h3><p>Typ nábytku, lokalita a kontakt. Fotky priestoru môžete priložiť.</p></div></li>
+          <li><span class="how-num">2</span><div><h3>Ozveme sa vám</h3><p>Dohodneme bezplatnú konzultáciu a zameranie.</p></div></li>
+          <li><span class="how-num">3</span><div><h3>Dostanete návrh a ponuku</h3><p>Návrh s vizualizáciou a cenovú ponuku podľa rozmerov a materiálov.</p></div></li>
         </ol>
         <p class="direct-label">Alebo nás kontaktujte priamo:</p>
         <ul class="direct">

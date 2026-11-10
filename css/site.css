@@ -354,12 +354,17 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .map-credit { position: absolute; right: 0; bottom: 0; padding: 2px 8px; font-size: 11px; color: var(--muted); background: rgba(255, 255, 255, .75); border-top-left-radius: 6px; }
 @media (max-width: 860px) { .map, .map-static { min-height: 340px; } .map-card { left: 12px; right: 12px; bottom: 12px; } }
 
-/* Objednávka: direct contacts */
-.direct-label { margin-top: 28px; color: var(--muted); }
-.direct { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 4px; }
-.direct a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 18px; color: var(--ink); }
+/* Objednávka: "Ako to funguje" steps and direct contacts (like montwell.sk) */
+.how { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 26px; }
+.how li { display: flex; gap: 18px; align-items: flex-start; }
+.how-num { width: 40px; height: 40px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--white); font-family: var(--font-head); font-weight: 700; font-size: 17px; }
+.how h3 { font-size: 18px; margin: 0 0 4px; }
+.how p { color: var(--muted); font-size: 15px; margin: 0; }
+.direct-label { margin-top: 36px; color: var(--muted); font-size: 15px; }
+.direct { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 2px; }
+.direct a { display: inline-flex; align-items: center; gap: 12px; min-height: 40px; font-size: 16px; color: var(--ink); }
 .direct a:hover { color: var(--accent-strong); }
-.direct svg { width: 22px; height: 22px; color: var(--accent); flex: none; }
+.direct svg { width: 20px; height: 20px; color: var(--accent); flex: none; }
 
 /* Footer */
 .site-footer { background: #1F201E; color: #B6AFA6; padding-block: 64px 32px; font-size: 15px; }
@@ -476,13 +481,17 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 
 @media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-logo--blanco { width: 78px; } .brand-name { font-size: 18px; } }
 
-/* Cookie bar (js/main.js) */
-.cookie-bar { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 70; max-width: 880px; margin-inline: auto; display: flex; align-items: center; gap: 16px 28px; padding: 18px 22px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 40px rgba(0, 0, 0, .16); font-size: 15px; }
-.cookie-bar p { flex: 1; color: var(--muted); }
-.cookie-bar a { color: var(--accent-strong); text-decoration: underline; }
-.cookie-bar .btn { flex: none; min-height: 44px; padding: 10px 24px; font-size: 15px; }
+/* Cookie bar (js/main.js), same as on montwell.sk */
+.cookie-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -8px 30px rgba(0, 0, 0, .08); padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .4s ease; }
+.cookie-bar.show { transform: translateY(0); }
+.cookie-inner { max-width: var(--container); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; }
+.cookie-inner p { font-size: 15px; color: var(--muted); }
+.cookie-inner a { color: var(--accent-strong); text-decoration: underline; }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btns .btn { min-height: 44px; padding: 10px 20px; font-size: 15px; }
 .has-cookie-bar .logo-switch { display: none; }
 @media (max-width: 860px) {
-  .cookie-bar { flex-direction: column; align-items: stretch; left: 8px; right: 8px; bottom: 8px; padding: 16px; }
+  .cookie-inner { flex-direction: column; align-items: stretch; }
+  .cookie-btns .btn { flex: 1; }
   .has-cookie-bar .m-bar { display: none; }
 }

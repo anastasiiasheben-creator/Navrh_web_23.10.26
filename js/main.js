@@ -146,7 +146,8 @@
 })();
 
 
-// Cookie bar (contract čl. XI): the site uses only necessary cookies, so it informs and needs no consent choice.
+// Cookie bar (contract čl. XI), same as on montwell.sk: slides in from the bottom, the choice is kept in localStorage.
+// The site uses only necessary cookies, so both buttons just remember the choice.
 (function () {
   var KEY = 'imj-cookies';
   try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
@@ -154,15 +155,19 @@
   var bar = document.createElement('div');
   bar.className = 'cookie-bar';
   bar.setAttribute('role', 'region');
-  bar.setAttribute('aria-label', 'Informácia o cookies');
-  bar.innerHTML = '<p>Používame len nevyhnutné cookies, ktoré stránka potrebuje na fungovanie. Analytické ani marketingové cookies nepoužívame.' +
-    (privacy ? ' <a href="' + privacy.getAttribute('href') + '">Viac o ochrane údajov</a>' : '') + '</p>' +
-    '<button class="btn btn-primary" type="button">Rozumiem</button>';
+  bar.setAttribute('aria-label', 'Cookies');
+  bar.innerHTML = '<div class="cookie-inner"><p>Táto stránka používa cookies.' +
+    (privacy ? ' Prečítajte si naše <a href="' + privacy.getAttribute('href') + '">Zásady ochrany osobných údajov</a>.' : '') + '</p>' +
+    '<div class="cookie-btns"><button class="btn btn-primary" type="button" data-c="all">Prijať všetky</button>' +
+    '<button class="btn btn-outline" type="button" data-c="necessary">Len nevyhnutné</button></div></div>';
   document.body.appendChild(bar);
-  document.body.classList.add('has-cookie-bar');
-  bar.querySelector('button').addEventListener('click', function () {
-    try { localStorage.setItem(KEY, '1'); } catch (e) {}
-    bar.remove();
+  setTimeout(function () { bar.classList.add('show'); document.body.classList.add('has-cookie-bar'); }, 1000);
+  bar.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-c]');
+    if (!b) return;
+    try { localStorage.setItem(KEY, b.dataset.c); } catch (err) {}
+    bar.classList.remove('show');
     document.body.classList.remove('has-cookie-bar');
+    setTimeout(function () { bar.remove(); }, 400);
   });
 })();
