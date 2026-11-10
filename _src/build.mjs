@@ -241,7 +241,7 @@ const header = (pg, b) => `
     </nav>
     <div class="header-cta">
       <a class="icon-btn" href="tel:${PHONE}" aria-label="Zavolať ${PHONE_TXT}">${ic('phone')}</a>
-      <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Nezáväzná ponuka ${ic('arrow')}</a>
+      <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka ${ic('arrow')}</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -285,7 +285,7 @@ const footer = (b) => `
 </footer>
 <div class="m-bar">
   <a class="btn btn-outline" href="tel:${PHONE}">${ic('phone')}Zavolať</a>
-  <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Nezáväzná ponuka</a>
+  <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka</a>
 </div>
 <script src="${b}js/main.js?v=${JS_V}" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
@@ -350,7 +350,7 @@ const ctaBand = (b, h, sub) => `
     <div class="container cta-band__row">
       <div><h2>${h}</h2><p>${sub}</p></div>
       <div class="actions">
-        <a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
+        <a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a>
         <a class="btn btn-light" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a>
       </div>
     </div>
@@ -453,7 +453,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
           <li class="feat"><i>${ic('gear')}</i>Výroba a profesionálna montáž</li>
         </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
+          <a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a>
           <a class="btn-text play" href="${b}realizacie/"><i>${ic('play')}</i>Pozrieť realizácie</a>
         </div>
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
@@ -527,7 +527,7 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
       ${crumbs(b, [[null, 'O nás']])}
       <h1>Nábytok, ktorý sa prispôsobí vašim snom</h1>
       <p class="lead">Navrhneme, vyrobíme, dovezieme a namontujeme nábytok na mieru v Bratislave a okolí.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -592,7 +592,7 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
       ${crumbs(b, [[null, 'Náš tím']])}
       <h1>Ľudia, ktorí váš nábytok navrhnú aj dotiahnu do konca</h1>
       <p class="lead">S vaším projektom pracuje priamo dizajnér, ktorý ho navrhuje — od prvej konzultácie až po montáž.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -629,7 +629,7 @@ pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby
       ${crumbs(b, [[null, 'Služby']])}
       <h1>Nábytok na mieru do každej miestnosti</h1>
       <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
@@ -664,7 +664,7 @@ for (const s of services) {
       ${crumbs(b, [['sluzby/', 'Služby'], [null, s.name]])}
       <h1>${s.h1}</h1>
       <p class="lead">${s.intro}</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/?typ=${s.key}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/?typ=${s.key}">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -728,7 +728,7 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
       ${crumbs(b, [[null, 'Realizácie']])}
       <h1>Skutočné príbehy, skutočné výsledky</h1>
       <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
@@ -774,7 +774,7 @@ projects.forEach((p, i) => {
           ${p.by ? `<div><dt>Návrh</dt><dd>${p.by}</dd></div>` : ''}
           ${p.ours !== undefined ? `<div><dt>Návrh od imajstri.sk</dt><dd>${p.ours ? 'Áno' : 'Nie'}</dd></div>` : ''}
         </dl>
-        <a class="btn btn-primary" href="${b}kontakt/?projekt=${p.slug}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
+        <a class="btn btn-primary" href="${b}objednavka/?projekt=${p.slug}">Získať nezáväznú ponuku ${ic('arrow')}</a>
       </aside>
     </div>
   </section>
@@ -790,7 +790,7 @@ projects.forEach((p, i) => {
         <p class="solution">${p.solution}</p>
         <h3 class="mini-head">${p.slug === 'sladkovicovo' ? 'Miestnosti' : 'Projekt zahŕňa'}</h3>
         <ul class="check-list">${p.items.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
-        <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}kontakt/?projekt=${p.slug}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
+        <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}objednavka/?projekt=${p.slug}">Získať nezáväznú ponuku ${ic('arrow')}</a>
       </aside>
     </div>
   </section>
