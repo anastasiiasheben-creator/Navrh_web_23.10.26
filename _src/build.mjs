@@ -900,12 +900,9 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
         <div class="c-item"><span class="ic">${ic('clock')}</span><span><small>Pracovný čas</small><b>Po – Pi: 9:00 – 17:00</b><small>So – Ne: individuálne</small></span></div>
         <p class="small" style="color:var(--muted);padding:4px">BK Creative s. r. o. · IČO: 56343744 · DIČ: 2122278433 · IČ DPH: SK2122278433</p>
       </div>
-      <a class="map map-static" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener" aria-label="Otvoriť adresu Landauova 3146/20 v Google Maps">
-        <img src="${b}images/mapa-kontakt.jpg" alt="" width="1040" height="880" loading="lazy">
-        <span class="map-pin">${ic('home')}</span>
-        <span class="map-card"><b>Landauova 3146/20</b><small>841 01 Bratislava – Dúbravka</small><span class="link-more">Otvoriť v Google Maps ${ic('arrow')}</span></span>
-        <small class="map-credit">© OpenStreetMap</small>
-      </a>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&amp;output=embed" title="Mapa — Landauova 3146/20, Bratislava" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </section>
 ${finalCta(b, '', 'Potrebujete cenovú ponuku?', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true, true)}` });
@@ -961,13 +958,13 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li>externá účtovná kancelária,</li>
         <li>orgány verejnej moci, ak to vyžaduje zákon.</li>
       </ul>
-      <p>Mapa na stránke Kontakt je obrázok uložený priamo na našej stránke (podklad © prispievatelia OpenStreetMap), pri jeho zobrazení sa žiadne údaje tretím stranám neodovzdávajú. Google Maps sa otvorí až po kliknutí na mapu, v novom okne. Do tretích krajín údaje neodovzdávame.</p>
+      <p>Na stránke Kontakt zobrazujeme mapu Google Maps. Pri jej načítaní sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
 
       <h2>6. Ako dlho údaje uchovávame</h2>
       <p>Osobné údaje uchovávame len po dobu nevyhnutnú na účel, na ktorý boli získané, a po dobu, ktorú nám ukladajú právne predpisy. Potom ich vymažeme.</p>
 
       <h2>7. Súbory cookies</h2>
-      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom a na zapamätanie, že ste informáciu o cookies už videli. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame a nenačítavame obsah tretích strán, ktorý by ukladal vlastné cookies.</p>
+      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom a na zapamätanie, že ste informáciu o cookies už videli. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame. Mapa Google Maps na stránke Kontakt môže ukladať vlastné cookies spoločnosti Google podľa jej <a href="https://policies.google.com/privacy?hl=sk" target="_blank" rel="noopener">zásad ochrany súkromia</a>.</p>
 
       <h2>8. Zabezpečenie osobných údajov</h2>
       <p>Prijali sme primerané technické a organizačné opatrenia na ochranu vašich údajov. Komunikácia s webovou stránkou je šifrovaná (SSL) a k údajom majú prístup len poverené osoby.</p>
