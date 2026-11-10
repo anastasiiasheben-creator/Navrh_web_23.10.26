@@ -241,7 +241,7 @@ const header = (pg, b) => `
     </nav>
     <div class="header-cta">
       <a class="icon-btn" href="tel:${PHONE}" aria-label="Zavolať ${PHONE_TXT}">${ic('phone')}</a>
-      <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Získať nezáväznú ponuku ${ic('arrow')}</a>
+      <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Nezáväzná ponuka ${ic('arrow')}</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -285,7 +285,7 @@ const footer = (b) => `
 </footer>
 <div class="m-bar">
   <a class="btn btn-outline" href="tel:${PHONE}">${ic('phone')}Zavolať</a>
-  <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Získať nezáväznú ponuku</a>
+  <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Nezáväzná ponuka</a>
 </div>
 <script src="${b}js/main.js?v=${JS_V}" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>

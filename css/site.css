@@ -371,7 +371,7 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .m-bar { display: none; position: fixed; inset: auto 0 0 0; z-index: 60; background: var(--white); border-top: 1px solid var(--border); padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px; }
 .m-bar .btn { flex: 1; min-height: 48px; padding: 12px 10px; font-size: 15px; white-space: nowrap; }
 @media (max-width: 350px) { .m-bar { gap: 6px; padding-inline: 8px; } .m-bar .btn { font-size: 13px; padding-inline: 6px; } .m-bar .btn svg { display: none; } }
-.m-bar .btn-primary { flex: 1.9; }
+.m-bar .btn-primary { flex: 1.4; }
 
 /* 404 */
 .not-found { min-height: 60vh; display: grid; place-items: center; text-align: center; }
