@@ -17,7 +17,7 @@
   <script>try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}</script>
   <link rel="preload" href="css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=44251204">
+  <link rel="stylesheet" href="css/site.css?v=d3f13ec6">
   <link rel="preload" as="image" href="images/hero-kuchyna-ostrov.jpg" fetchpriority="high">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Interiéroví majstri","legalName":"BK Creative s. r. o.","url":"https://www.imajstri.sk/","logo":"https://www.imajstri.sk/images/logo-mark.png","image":"https://www.imajstri.sk/images/hero-kuchyna.jpg","telephone":"+421918638713","email":"info@imajstri.sk","vatID":"SK2122278433","address":{"@type":"PostalAddress","streetAddress":"Landauova 3146/20","postalCode":"841 01","addressLocality":"Bratislava","addressCountry":"SK"},"areaServed":"Bratislava a okolie","openingHours":"Mo-Fr 09:00-17:00","sameAs":["https://www.instagram.com/imajstri/","https://www.facebook.com/profile.php?id=61573057973324"]}</script>
 </head>
@@ -74,7 +74,7 @@
     </nav>
     <div class="header-cta">
       <a class="icon-btn" href="tel:+421918638713" aria-label="Zavolať +421 918 638 713"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-primary" href="kontakt/#dopyt">Získať nezáväznú ponuku <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -92,7 +92,7 @@
           <li class="feat"><i><svg aria-hidden="true"><use href="#i-gear"/></svg></i>Výroba a profesionálna montáž</li>
         </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="objednavka/">Získať nezáväznú cenovú ponuku <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-primary" href="kontakt/#dopyt">Získať nezáväznú ponuku <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn-text play" href="realizacie/"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Pozrieť realizácie</a>
         </div>
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
@@ -140,7 +140,7 @@
             <div class="card-foot"><span class="from">Kuchyňa</span><span class="go" aria-hidden="true">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
           </div>
         </article>
-        <article class="card card--link" data-c="byty kuchyne skrine izby">
+        <article class="card card--link" data-c="byty">
           <a class="card-img" href="realizacie/zahorska-bystrica/" tabindex="-1" aria-hidden="true"><img src="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg" srcset="images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-700.jpg 700w, images/projekty/zahorska-bystrica/byt-na-mieru-zahorska-bystrica-02-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici" loading="lazy"></a>
           <div class="card-body">
             <div class="chips"><span class="chip">Bratislava – Záhorská Bystrica</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>Realizácia: 1 mesiac</span></div>
@@ -149,7 +149,7 @@
             <div class="card-foot"><span class="from">Celý byt</span><span class="go" aria-hidden="true">Pozrieť projekt <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
           </div>
         </article>
-        <article class="card card--link" data-c="byty kuchyne skrine izby">
+        <article class="card card--link" data-c="byty">
           <a class="card-img" href="realizacie/chorvatsky-grob/" tabindex="-1" aria-hidden="true"><img src="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-700.jpg" srcset="images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-700.jpg 700w, images/projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-01-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Kuchyňa a interiér rodinného domu v Chorvátskom Grobe" loading="lazy"></a>
           <div class="card-body">
             <div class="chips"><span class="chip">Chorvátsky Grob</span><span class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg>Realizácia: 5 týždňov</span></div>
@@ -191,7 +191,7 @@
     <div class="container cta-band__row">
       <div><h2>Zistite, koľko bude stáť váš nový nábytok</h2><p>Prvá konzultácia je bezplatná a nezáväzná.</p></div>
       <div class="actions">
-        <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-primary" href="kontakt/#dopyt">Získať nezáväznú ponuku <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-light" href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg>+421 918 638 713</a>
       </div>
     </div>
@@ -232,7 +232,7 @@
 </footer>
 <div class="m-bar">
   <a class="btn btn-outline" href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg>Zavolať</a>
-  <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka</a>
+  <a class="btn btn-primary" href="kontakt/#dopyt">Získať nezáväznú ponuku</a>
 </div>
 <script src="js/main.js?v=d2761787" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>

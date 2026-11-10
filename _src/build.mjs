@@ -51,22 +51,22 @@ const projects = [
     task: 'Moderná kuchyňa na mieru, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom.',
     solution: 'Kombinácia prírodného dekoru dreva s čierno-bielymi prvkami vytvára elegantnú kuchyňu, ktorá sa hodí do moderných interiérov.',
     items: ['Moderný a nadčasový dizajn — prírodný dekor dreva s čierno-bielymi prvkami', 'Veľké zásuvky a rohový výsuvný systém LeMans pre jednoduchý prístup a maximálne využitie priestoru', 'Premyslené rozloženie pracovnej plochy, vstavané spotrebiče a čisté línie pre pohodlné každodenné používanie'] },
-  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '1 mesiac', cover: 2,
+  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '1 mesiac', cover: 2,
     alt: 'Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici',
     task: 'V byte v Záhorskej Bystrici bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Vytvorili sme unikátny interiér, ktorý spája eleganciu a funkčnosť. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
     items: ['Obývačková stena s lamelami, ktorá dodáva priestoru štýlový a sofistikovaný vzhľad', 'Kuchyňa s lamelami a ostrovčekom pre tých, ktorí ocenia moderný dizajn a praktickosť', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Kúpeľňová skrinka pod umývadlo'] },
-  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý dom', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '5 týždňov', by: 'Dušana', ours: true, cover: 1,
+  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty'], type: 'Celý dom', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '5 týždňov', by: 'Dušana', ours: true, cover: 1,
     alt: 'Kuchyňa a interiér rodinného domu v Chorvátskom Grobe',
     task: 'Dostali sme za úlohu zariadiť novostavbu v Chorvátskom Grobe.',
     solution: 'Projekt rodinného domu zahŕňa nábytok na mieru do všetkých miestností — od kuchyne až po detskú izbu.',
     items: ['Kuchyňa v drevodekore s prepojenou textúrou na dvierkach', 'Chodba plynule prepojená s kuchyňou', 'Spálňa so vstavanými skriňami a šatníkom', 'Kúpeľňa', 'Detská izba pre dvoch súrodencov — poschodová posteľ s čalúnením, schody s úložným priestorom, vstavaná skriňa a písací stôl', 'Minimalistická obývačka s lamelovým plátom, zladená do farieb kuchyne'] },
-  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'izby'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka', time: '1 mesiac', by: 'Jozef', ours: true, cover: 1, skip: [5],
+  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka', time: '1 mesiac', by: 'Jozef', ours: true, cover: 1, skip: [5],
     alt: 'Kuchyňa so systémom Smart-Cube a čiernou policou pri Nivách',
     task: 'V byte pri Nivách bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Moderná kuchyňa na mieru sa pýši výrazným Smart-Cube systémom s podsvietením, ktorý dodáva interiéru sofistikovaný a technologicky pokročilý vzhľad. Dokonalý kontrast vytvárajú čierne dvere s tmavým sklom Lacobel. Každý detail je premyslený tak, aby kuchyňa nebola len miestom na varenie, ale aj priestorom, kde sa budete cítiť výnimočne.',
     items: ['Kuchyňa so Smart-Cube systémom s podsvietením', 'Čierne dvere s tmavým sklom Lacobel', 'Obývačka a priestor na prácu'] },
-  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Izba, kuchyňa, kúpeľňa, obývačka', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty'], type: 'Celý byt', rooms: 'Izba, kuchyňa, kúpeľňa, obývačka', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Svetlá kuchyňa na mieru v byte vo Vydrici',
     task: 'Kompletné vybavenie bytu nábytkom na mieru.',
     solution: 'Tentokrát sme vytvorili kompletné vybavenie bytu na mieru. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
@@ -76,22 +76,22 @@ const projects = [
     task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
     solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
     items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
-  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 1,
+  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 1,
     alt: 'Moderná kuchyňa s tmavou zástenou v byte v Slnečniciach',
     task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
     solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
     items: ['Moderná kuchyňa s praktickým usporiadaním', 'Vstavané skrine, ktoré efektívne využívajú priestor'] },
-  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
+  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
     alt: 'Knižnica a obývačka na mieru v trojizbovom byte v Dúbravke',
     task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
     solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
     items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
-  { slug: 'dubravka-mensi-byt', title: 'Malá kuchyňa a chodba', h1: 'Kuchyňa do malého bytu a chodba – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
+  { slug: 'dubravka-mensi-byt', title: 'Malá kuchyňa a chodba', h1: 'Kuchyňa do malého bytu a chodba – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
     task: 'Zariadiť funkčne malú kuchyňu v Bratislave.',
     solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
     items: ['Kuchyňa na mieru do malého priestoru', 'Vyššia úložná kapacita', 'Dizajnové obloženie chodby s vešiakovou stenou'] },
-  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Kozmetický salón Anima', loc: 'Bratislava', cats: ['firmy', 'skrine'], type: 'Komerčný priestor', rooms: 'Komerčné priestory', time: '3 týždne', by: 'ToøL. interior architects', ours: false, cover: 1,
+  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Kozmetický salón Anima', loc: 'Bratislava', cats: ['firmy'], type: 'Komerčný priestor', rooms: 'Komerčné priestory', time: '3 týždne', by: 'ToøL. interior architects', ours: false, cover: 1,
     alt: 'Vstavané skrine a recepcia v kozmetickom salóne Anima',
     task: 'Realizácia nábytku pre salón krásy Anima podľa návrhu architektov.',
     solution: 'Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby priestoru a zákazníka, s cieľom vytvoriť harmonický komerčný priestor.',
@@ -241,7 +241,7 @@ const header = (pg, b) => `
     </nav>
     <div class="header-cta">
       <a class="icon-btn" href="tel:${PHONE}" aria-label="Zavolať ${PHONE_TXT}">${ic('phone')}</a>
-      <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka ${ic('arrow')}</a>
+      <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Získať nezáväznú ponuku ${ic('arrow')}</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -285,7 +285,7 @@ const footer = (b) => `
 </footer>
 <div class="m-bar">
   <a class="btn btn-outline" href="tel:${PHONE}">${ic('phone')}Zavolať</a>
-  <a class="btn btn-primary" href="${link(b, 'objednavka/')}">Nezáväzná ponuka</a>
+  <a class="btn btn-primary" href="${link(b, 'kontakt/#dopyt')}">Získať nezáväznú ponuku</a>
 </div>
 <script src="${b}js/main.js?v=${JS_V}" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
@@ -350,7 +350,7 @@ const ctaBand = (b, h, sub) => `
     <div class="container cta-band__row">
       <div><h2>${h}</h2><p>${sub}</p></div>
       <div class="actions">
-        <a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a>
+        <a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
         <a class="btn btn-light" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a>
       </div>
     </div>
@@ -453,7 +453,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
           <li class="feat"><i>${ic('gear')}</i>Výroba a profesionálna montáž</li>
         </ul>
         <div class="actions">
-          <a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a>
+          <a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
           <a class="btn-text play" href="${b}realizacie/"><i>${ic('play')}</i>Pozrieť realizácie</a>
         </div>
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
@@ -528,7 +528,7 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
       <span class="eyebrow eyebrow--line">Vaša vízia, náš nábytok</span>
       <h1>Nábytok, ktorý sa prispôsobí vašim snom</h1>
       <p class="lead">Navrhneme, vyrobíme, dovezieme a namontujeme nábytok na mieru v Bratislave a okolí.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -593,7 +593,7 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
       ${crumbs(b, [[null, 'Náš tím']])}
       <h1>Ľudia, ktorí váš nábytok navrhnú aj dotiahnu do konca</h1>
       <p class="lead">S vaším projektom pracuje priamo dizajnér, ktorý ho navrhuje — od prvej konzultácie až po montáž.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Nezáväzná ponuka ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -630,7 +630,7 @@ pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby
       ${crumbs(b, [[null, 'Služby']])}
       <h1>Nábytok na mieru do každej miestnosti</h1>
       <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
@@ -666,7 +666,7 @@ for (const s of services) {
       <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
       <h1>${s.h1}</h1>
       <p class="lead">${s.intro}</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/?typ=${s.key}">Získať nezáväznú cenovú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/?typ=${s.key}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
 
@@ -739,7 +739,6 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
         <button type="button" data-f="all" aria-pressed="true">Všetko</button>
         <button type="button" data-f="kuchyne" aria-pressed="false">Kuchyne</button>
         <button type="button" data-f="skrine" aria-pressed="false">Skrine</button>
-        <button type="button" data-f="izby" aria-pressed="false">Izby</button>
         <button type="button" data-f="byty" aria-pressed="false">Celé byty a domy</button>
         <button type="button" data-f="firmy" aria-pressed="false">Firmy</button>
       </div>
