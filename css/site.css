@@ -394,9 +394,7 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .about-short .chips .chip { font-size: 14px; padding: 7px 14px; }
 
 /* Orientačné ceny */
-.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-/* 8 services: the last one (Komerčné interiéry) sits in the right column, under Chodby a predsiene */
-@media (min-width: 1024px) { .prices > .price:nth-child(8):last-child { grid-column: 3; } }
+.prices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; } /* 8 services: 4 + 4 */
 .price { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 18px; row-gap: 2px; align-items: center; padding: 22px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); transition: border-color var(--t), transform var(--t) var(--ease); }
 .price:hover { border-color: var(--accent); transform: translateY(-2px); }
 .price svg { width: 44px; height: 44px; color: var(--accent); grid-row: span 2; }
