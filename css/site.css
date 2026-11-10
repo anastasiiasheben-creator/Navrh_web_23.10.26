@@ -475,3 +475,14 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 }
 
 @media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-logo--blanco { width: 78px; } .brand-name { font-size: 18px; } }
+
+/* Cookie bar (js/main.js) */
+.cookie-bar { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 70; max-width: 880px; margin-inline: auto; display: flex; align-items: center; gap: 16px 28px; padding: 18px 22px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 40px rgba(0, 0, 0, .16); font-size: 15px; }
+.cookie-bar p { flex: 1; color: var(--muted); }
+.cookie-bar a { color: var(--accent-strong); text-decoration: underline; }
+.cookie-bar .btn { flex: none; min-height: 44px; padding: 10px 24px; font-size: 15px; }
+.has-cookie-bar .logo-switch { display: none; }
+@media (max-width: 860px) {
+  .cookie-bar { flex-direction: column; align-items: stretch; left: 8px; right: 8px; bottom: 8px; padding: 16px; }
+  .has-cookie-bar .m-bar { display: none; }
+}

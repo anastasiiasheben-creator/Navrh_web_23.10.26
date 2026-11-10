@@ -967,7 +967,7 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
       <p>Osobné údaje uchovávame len po dobu nevyhnutnú na účel, na ktorý boli získané, a po dobu, ktorú nám ukladajú právne predpisy. Potom ich vymažeme.</p>
 
       <h2>7. Súbory cookies</h2>
-      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame a nenačítavame obsah tretích strán, ktorý by ukladal vlastné cookies.</p>
+      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom a na zapamätanie, že ste informáciu o cookies už videli. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame a nenačítavame obsah tretích strán, ktorý by ukladal vlastné cookies.</p>
 
       <h2>8. Zabezpečenie osobných údajov</h2>
       <p>Prijali sme primerané technické a organizačné opatrenia na ochranu vašich údajov. Komunikácia s webovou stránkou je šifrovaná (SSL) a k údajom majú prístup len poverené osoby.</p>
@@ -1001,7 +1001,7 @@ pages.push({ path: 'vymaz-udajov/', section: null, jsonld: breadcrumbLd([['ochra
     <div class="container">
       ${crumbs(b, [['ochrana-sukromia/', 'Ochrana osobných údajov'], [null, 'Vymazanie údajov']])}
       <h1>Vymazanie osobných údajov</h1>
-      <p class="lead">Zadajte e-mail, ktorý ste uviedli v dopyte, a ak ho máte, aj číslo dopytu z potvrdzujúceho e-mailu. Na e-mail vám pošleme odkaz — údaje vymažeme až po jeho potvrdení, aby ich nemohol vymazať nikto iný.</p>
+      <p class="lead">Zadajte e-mail, ktorý ste uviedli v dopyte, a ak ho máte, aj číslo dopytu z potvrdzujúceho e-mailu. Na e-mail vám pošleme odkaz na potvrdenie, aby o vymazanie nemohol požiadať nikto iný. Potvrdenú žiadosť posúdime a ozveme sa vám najneskôr do jedného mesiaca.</p>
     </div>
   </section>
   <section class="section">
@@ -1013,9 +1013,9 @@ pages.push({ path: 'vymaz-udajov/', section: null, jsonld: breadcrumbLd([['ochra
           <div class="field"><label for="v-id">Číslo dopytu <small>(nepovinné)</small></label><input id="v-id" name="id_dopytu" placeholder="napr. IM-26-7KQ4XP" autocapitalize="characters"></div>
           <p class="form-error" role="alert"></p>
           <button class="btn btn-primary" type="submit">Požiadať o vymazanie ${ic('arrow')}</button>
-          <p class="form-note">Bez čísla dopytu vymažeme všetky dopyty odoslané z tohto e-mailu. Údaje, ktoré musíme uchovávať zo zákona (napr. faktúry), vymazať nemôžeme.</p>
+          <p class="form-note">Bez čísla dopytu sa žiadosť týka všetkých dopytov odoslaných z tohto e-mailu. Údaje, ktoré musíme uchovávať zo zákona (napr. faktúry), vymazať nemôžeme.</p>
         </div>
-        <div class="form-success" role="status">${ic('check')}<h3>Skontrolujte svoj e-mail.</h3><p>Ak k tomuto e-mailu evidujeme dopyt, poslali sme naň odkaz na potvrdenie vymazania. Odkaz platí 48 hodín.</p></div>
+        <div class="form-success" role="status">${ic('check')}<h3>Skontrolujte svoj e-mail.</h3><p>Ak k tomuto e-mailu evidujeme dopyt, poslali sme naň odkaz na potvrdenie žiadosti. Odkaz platí 48 hodín.</p></div>
       </form>
     </div>
   </section>` });

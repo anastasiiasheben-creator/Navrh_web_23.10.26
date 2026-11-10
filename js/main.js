@@ -145,3 +145,24 @@
   });
 })();
 
+
+// Cookie bar (contract čl. XI): the site uses only necessary cookies, so it informs and needs no consent choice.
+(function () {
+  var KEY = 'imj-cookies';
+  try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
+  var privacy = document.querySelector('.foot-bottom a[href*="ochrana-sukromia"]');
+  var bar = document.createElement('div');
+  bar.className = 'cookie-bar';
+  bar.setAttribute('role', 'region');
+  bar.setAttribute('aria-label', 'Informácia o cookies');
+  bar.innerHTML = '<p>Používame len nevyhnutné cookies, ktoré stránka potrebuje na fungovanie. Analytické ani marketingové cookies nepoužívame.' +
+    (privacy ? ' <a href="' + privacy.getAttribute('href') + '">Viac o ochrane údajov</a>' : '') + '</p>' +
+    '<button class="btn btn-primary" type="button">Rozumiem</button>';
+  document.body.appendChild(bar);
+  document.body.classList.add('has-cookie-bar');
+  bar.querySelector('button').addEventListener('click', function () {
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+    bar.remove();
+    document.body.classList.remove('has-cookie-bar');
+  });
+})();
