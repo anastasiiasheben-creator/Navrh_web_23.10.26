@@ -728,7 +728,7 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
       ${crumbs(b, [[null, 'Realizácie']])}
       <h1>Skutočné príbehy, skutočné výsledky</h1>
       <p class="lead">Kuchyne, skrine a celé interiéry na mieru v Bratislave a okolí. Pri každom projekte vidíte lokalitu, rozsah a riešenie.</p>
-      <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Chcem podobné riešenie ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
+      <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
@@ -774,7 +774,7 @@ projects.forEach((p, i) => {
           ${p.by ? `<div><dt>Návrh</dt><dd>${p.by}</dd></div>` : ''}
           ${p.ours !== undefined ? `<div><dt>Návrh od imajstri.sk</dt><dd>${p.ours ? 'Áno' : 'Nie'}</dd></div>` : ''}
         </dl>
-        <a class="btn btn-primary" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
+        <a class="btn btn-primary" href="${b}kontakt/?projekt=${p.slug}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
       </aside>
     </div>
   </section>
@@ -790,7 +790,7 @@ projects.forEach((p, i) => {
         <p class="solution">${p.solution}</p>
         <h3 class="mini-head">${p.slug === 'sladkovicovo' ? 'Miestnosti' : 'Projekt zahŕňa'}</h3>
         <ul class="check-list">${p.items.map((x) => `<li>${ic('check')}<span>${x}</span></li>`).join('')}</ul>
-        <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}objednavka/?projekt=${p.slug}">Chcem podobné riešenie ${ic('arrow')}</a>
+        <a class="btn btn-primary" style="width:100%;margin-top:28px" href="${b}kontakt/?projekt=${p.slug}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a>
       </aside>
     </div>
   </section>
