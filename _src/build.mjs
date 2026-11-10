@@ -51,22 +51,22 @@ const projects = [
     task: 'Moderná kuchyňa na mieru, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom.',
     solution: 'Kombinácia prírodného dekoru dreva s čierno-bielymi prvkami vytvára elegantnú kuchyňu, ktorá sa hodí do moderných interiérov.',
     items: ['Moderný a nadčasový dizajn — prírodný dekor dreva s čierno-bielymi prvkami', 'Veľké zásuvky a rohový výsuvný systém LeMans pre jednoduchý prístup a maximálne využitie priestoru', 'Premyslené rozloženie pracovnej plochy, vstavané spotrebiče a čisté línie pre pohodlné každodenné používanie'] },
-  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '1 mesiac', cover: 2,
+  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '1 mesiac', cover: 2,
     alt: 'Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici',
     task: 'V byte v Záhorskej Bystrici bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Vytvorili sme unikátny interiér, ktorý spája eleganciu a funkčnosť. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
     items: ['Obývačková stena s lamelami, ktorá dodáva priestoru štýlový a sofistikovaný vzhľad', 'Kuchyňa s lamelami a ostrovčekom pre tých, ktorí ocenia moderný dizajn a praktickosť', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Kúpeľňová skrinka pod umývadlo'] },
-  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'izby'], type: 'Celý dom', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '5 týždňov', by: 'Dušana', ours: true, cover: 1,
+  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý dom', rooms: 'Chodba, izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '5 týždňov', by: 'Dušana', ours: true, cover: 1,
     alt: 'Kuchyňa a interiér rodinného domu v Chorvátskom Grobe',
     task: 'Dostali sme za úlohu zariadiť novostavbu v Chorvátskom Grobe.',
     solution: 'Projekt rodinného domu zahŕňa nábytok na mieru do všetkých miestností — od kuchyne až po detskú izbu.',
     items: ['Kuchyňa v drevodekore s prepojenou textúrou na dvierkach', 'Chodba plynule prepojená s kuchyňou', 'Spálňa so vstavanými skriňami a šatníkom', 'Kúpeľňa', 'Detská izba pre dvoch súrodencov — poschodová posteľ s čalúnením, schody s úložným priestorom, vstavaná skriňa a písací stôl', 'Minimalistická obývačka s lamelovým plátom, zladená do farieb kuchyne'] },
-  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka', time: '1 mesiac', by: 'Jozef', ours: true, cover: 1, skip: [5],
+  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'izby'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka', time: '1 mesiac', by: 'Jozef', ours: true, cover: 1, skip: [5],
     alt: 'Kuchyňa so systémom Smart-Cube a čiernou policou pri Nivách',
     task: 'V byte pri Nivách bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Moderná kuchyňa na mieru sa pýši výrazným Smart-Cube systémom s podsvietením, ktorý dodáva interiéru sofistikovaný a technologicky pokročilý vzhľad. Dokonalý kontrast vytvárajú čierne dvere s tmavým sklom Lacobel. Každý detail je premyslený tak, aby kuchyňa nebola len miestom na varenie, ale aj priestorom, kde sa budete cítiť výnimočne.',
     items: ['Kuchyňa so Smart-Cube systémom s podsvietením', 'Čierne dvere s tmavým sklom Lacobel', 'Obývačka a priestor na prácu'] },
-  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'skrine'], type: 'Celý byt', rooms: 'Izba, kuchyňa, kúpeľňa, obývačka', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Izba, kuchyňa, kúpeľňa, obývačka', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Svetlá kuchyňa na mieru v byte vo Vydrici',
     task: 'Kompletné vybavenie bytu nábytkom na mieru.',
     solution: 'Tentokrát sme vytvorili kompletné vybavenie bytu na mieru. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
@@ -81,12 +81,12 @@ const projects = [
     task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
     solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
     items: ['Moderná kuchyňa s praktickým usporiadaním', 'Vstavané skrine, ktoré efektívne využívajú priestor'] },
-  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'izby', 'skrine'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
+  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'skrine', 'izby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
     alt: 'Knižnica a obývačka na mieru v trojizbovom byte v Dúbravke',
     task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
     solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
     items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
-  { slug: 'dubravka-mensi-byt', title: 'Malá kuchyňa a chodba', h1: 'Kuchyňa do malého bytu a chodba – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'byty'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
+  { slug: 'dubravka-mensi-byt', title: 'Malá kuchyňa a chodba', h1: 'Kuchyňa do malého bytu a chodba – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '1 mesiac', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
     task: 'Zariadiť funkčne malú kuchyňu v Bratislave.',
     solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
@@ -280,7 +280,7 @@ const footer = (b) => `
         </ul>
       </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${privacy(b)}">Ochrana osobných údajov</a> · <button class="link-btn" type="button" data-cookies>Nastavenia cookies</button> · Bratislava a okolie</span></div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${privacy(b)}">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
   </div>
 </footer>
 <div class="m-bar">
@@ -326,8 +326,9 @@ const shortForm = (b, selected = '', withPhoto = false) => {
         </form>`;
 };
 
-const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový nábytok', sub = 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene.', withPhoto = false) => `
-  <section class="section section--dark" id="dopyt">
+// onMobile=false hides the section on phones (only Kontakt keeps it, other pages have the m-bar button)
+const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový nábytok', sub = 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene.', withPhoto = false, onMobile = false) => `
+  <section class="section section--dark${onMobile ? '' : ' hide-mobile'}" id="dopyt">
     <div class="container cta-final">
       <div>
         <span class="eyebrow eyebrow--line">Nezáväzný dopyt</span>
@@ -513,7 +514,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
   </section>
 
   <!-- Recenzie klientov: hidden until real reviews are approved by the client -->
-${finalCta(b, '', 'Zistite, koľko bude stáť váš nový nábytok', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true).replace('class="section section--dark" id="dopyt"', 'class="section section--dark hide-mobile" id="dopyt"')}`;
+${ctaBand(b, 'Zistite, koľko bude stáť váš nový nábytok', 'Prvá konzultácia je bezplatná a nezáväzná.')}`;
   } });
 
 // O nás
@@ -850,7 +851,12 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
           <li class="step"><div class="step-num">${ic('chat')}02</div><h3>Ozveme sa vám</h3><p>Dohodneme bezplatnú konzultáciu a zameranie.</p></li>
           <li class="step"><div class="step-num">${ic('cube')}03</div><h3>Dostanete návrh a ponuku</h3><p>Návrh s vizualizáciou a cenovú ponuku podľa rozmerov a materiálov.</p></li>
         </ol>
-        <p style="margin-top:24px">Radšej telefonicky? <a class="link-more" href="tel:${PHONE}">${PHONE_TXT}</a> · <a class="link-more" href="${WA}" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p class="direct-label">Alebo nás kontaktujte priamo:</p>
+        <ul class="direct">
+          <li><a href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></li>
+          <li><a href="${WA}" target="_blank" rel="noopener">${ic('whatsapp')}WhatsApp</a></li>
+          <li><a href="mailto:${MAIL}">${ic('doc')}${MAIL}</a></li>
+        </ul>
       </div>
       <form class="form-card lead-form" novalidate>
         <div class="form-grid">
@@ -894,17 +900,15 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
         <div class="c-item"><span class="ic">${ic('clock')}</span><span><small>Pracovný čas</small><b>Po – Pi: 9:00 – 17:00</b><small>So – Ne: individuálne</small></span></div>
         <p class="small" style="color:var(--muted);padding:4px">BK Creative s. r. o. · IČO: 56343744 · DIČ: 2122278433 · IČ DPH: SK2122278433</p>
       </div>
-      <div class="map" data-map-src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&amp;output=embed" data-map-title="Mapa — Landauova 3146/20, Bratislava">
-        <div class="map-off">
-          ${ic('home')}
-          <p><strong>Mapa Google</strong>Mapu zobrazíme až s vaším súhlasom, pretože pri jej načítaní ukladá spoločnosť Google vlastné cookies.</p>
-          <button class="btn btn-outline" type="button" data-map-load>Zobraziť mapu</button>
-          <a class="link-more" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener">Otvoriť v Google Maps ${ic('arrow')}</a>
-        </div>
-      </div>
+      <a class="map map-static" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener" aria-label="Otvoriť adresu Landauova 3146/20 v Google Maps">
+        <img src="${b}images/mapa-kontakt.jpg" alt="" width="1040" height="880" loading="lazy">
+        <span class="map-pin">${ic('home')}</span>
+        <span class="map-card"><b>Landauova 3146/20</b><small>841 01 Bratislava – Dúbravka</small><span class="link-more">Otvoriť v Google Maps ${ic('arrow')}</span></span>
+        <small class="map-credit">© OpenStreetMap</small>
+      </a>
     </div>
   </section>
-${finalCta(b, '', 'Potrebujete cenovú ponuku?', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true)}` });
+${finalCta(b, '', 'Potrebujete cenovú ponuku?', 'Na bezplatnej konzultácii preberieme vaše predstavy, možnosti priestoru a rozpočet. Získate jasnejšiu predstavu o vhodnom riešení a jeho cene. Priložte aj fotku priestoru.', true, true)}` });
 
 // Ochrana osobných údajov — information under Art. 13 GDPR, tailored to this site (contract čl. XI); the client approves the wording
 pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['ochrana-sukromia/', 'Ochrana osobných údajov']]),
@@ -957,14 +961,13 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li>externá účtovná kancelária,</li>
         <li>orgány verejnej moci, ak to vyžaduje zákon.</li>
       </ul>
-      <p>Na stránke Kontakt môžete s vaším súhlasom zobraziť mapu Google Maps. Pri jej zobrazení sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
+      <p>Mapa na stránke Kontakt je obrázok uložený priamo na našej stránke (podklad © prispievatelia OpenStreetMap), pri jeho zobrazení sa žiadne údaje tretím stranám neodovzdávajú. Google Maps sa otvorí až po kliknutí na mapu, v novom okne. Do tretích krajín údaje neodovzdávame.</p>
 
       <h2>6. Ako dlho údaje uchovávame</h2>
       <p>Osobné údaje uchovávame len po dobu nevyhnutnú na účel, na ktorý boli získané, a po dobu, ktorú nám ukladajú právne predpisy. Potom ich vymažeme.</p>
 
       <h2>7. Súbory cookies</h2>
-      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie — napríklad na zapamätanie vašej voľby v cookie lište a na ochranu formulárov pred spamom.</p>
-      <p>Mapu Google Maps na stránke Kontakt načítame až s vaším súhlasom, pretože pri jej zobrazení ukladá spoločnosť Google vlastné cookies. Analytické ani marketingové cookies nepoužívame. Svoju voľbu môžete kedykoľvek zmeniť cez odkaz <button class="link-btn" type="button" data-cookies>Nastavenia cookies</button> v päte stránky.</p>
+      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame a nenačítavame obsah tretích strán, ktorý by ukladal vlastné cookies.</p>
 
       <h2>8. Zabezpečenie osobných údajov</h2>
       <p>Prijali sme primerané technické a organizačné opatrenia na ochranu vašich údajov. Komunikácia s webovou stránkou je šifrovaná (SSL) a k údajom majú prístup len poverené osoby.</p>
@@ -978,7 +981,7 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li><strong>na obmedzenie spracúvania</strong>, napríklad kým sa overuje správnosť údajov,</li>
         <li><strong>na prenosnosť</strong> — získať údaje, ktoré ste nám poskytli, v bežne používanom strojovo čitateľnom formáte,</li>
         <li><strong>namietať</strong> proti spracúvaniu založenému na oprávnenom záujme,</li>
-        <li><strong>odvolať súhlas</strong>, ak sa spracúvanie zakladá na súhlase (napr. cookies) — odvolanie nemá vplyv na zákonnosť spracúvania pred ním.</li>
+        <li><strong>odvolať súhlas</strong>, ak sa spracúvanie zakladá na súhlase — odvolanie nemá vplyv na zákonnosť spracúvania pred ním.</li>
       </ul>
       <p>Svoje práva si môžete uplatniť e-mailom na <a href="mailto:${MAIL}">${MAIL}</a> alebo písomne na adrese sídla. Odpovieme bez zbytočného odkladu, najneskôr do 1 mesiaca.</p>
       <p>O vymazanie údajov z dopytu odoslaného cez webovú stránku môžete požiadať aj cez <a href="${b}vymaz-udajov/">formulár na vymazanie údajov</a>.</p>

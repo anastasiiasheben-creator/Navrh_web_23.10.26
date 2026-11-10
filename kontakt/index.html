@@ -17,7 +17,7 @@
   <script>try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}</script>
   <link rel="preload" href="../css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/site.css?v=4751d627">
+  <link rel="stylesheet" href="../css/site.css?v=f5d4294b">
   <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Domov","item":"https://www.imajstri.sk/"},{"@type":"ListItem","position":2,"name":"Kontakt","item":"https://www.imajstri.sk/kontakt/"}]},{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Interiéroví majstri","legalName":"BK Creative s. r. o.","url":"https://www.imajstri.sk/","logo":"https://www.imajstri.sk/images/logo-mark.png","image":"https://www.imajstri.sk/images/hero-kuchyna.jpg","telephone":"+421918638713","email":"info@imajstri.sk","vatID":"SK2122278433","address":{"@type":"PostalAddress","streetAddress":"Landauova 3146/20","postalCode":"841 01","addressLocality":"Bratislava","addressCountry":"SK"},"areaServed":"Bratislava a okolie","openingHours":"Mo-Fr 09:00-17:00","sameAs":["https://www.instagram.com/imajstri/","https://www.facebook.com/profile.php?id=61573057973324"]}]</script>
 </head>
 <body>
@@ -96,14 +96,12 @@
         <div class="c-item"><span class="ic"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><span><small>Pracovný čas</small><b>Po – Pi: 9:00 – 17:00</b><small>So – Ne: individuálne</small></span></div>
         <p class="small" style="color:var(--muted);padding:4px">BK Creative s. r. o. · IČO: 56343744 · DIČ: 2122278433 · IČ DPH: SK2122278433</p>
       </div>
-      <div class="map" data-map-src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&amp;output=embed" data-map-title="Mapa — Landauova 3146/20, Bratislava">
-        <div class="map-off">
-          <svg aria-hidden="true"><use href="#i-home"/></svg>
-          <p><strong>Mapa Google</strong>Mapu zobrazíme až s vaším súhlasom, pretože pri jej načítaní ukladá spoločnosť Google vlastné cookies.</p>
-          <button class="btn btn-outline" type="button" data-map-load>Zobraziť mapu</button>
-          <a class="link-more" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener">Otvoriť v Google Maps <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
+      <a class="map map-static" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener" aria-label="Otvoriť adresu Landauova 3146/20 v Google Maps">
+        <img src="../images/mapa-kontakt.jpg" alt="" width="1040" height="880" loading="lazy">
+        <span class="map-pin"><svg aria-hidden="true"><use href="#i-home"/></svg></span>
+        <span class="map-card"><b>Landauova 3146/20</b><small>841 01 Bratislava – Dúbravka</small><span class="link-more">Otvoriť v Google Maps <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span>
+        <small class="map-credit">© OpenStreetMap</small>
+      </a>
     </div>
   </section>
 
@@ -167,14 +165,14 @@
         </ul>
       </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="../ochrana-sukromia/">Ochrana osobných údajov</a> · <button class="link-btn" type="button" data-cookies>Nastavenia cookies</button> · Bratislava a okolie</span></div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="../ochrana-sukromia/">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
   </div>
 </footer>
 <div class="m-bar">
   <a class="btn btn-outline" href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg>Zavolať</a>
   <a class="btn btn-primary" href="../objednavka/">Nezáväzná ponuka</a>
 </div>
-<script src="../js/main.js?v=0c2bb46a" defer></script>
+<script src="../js/main.js?v=45fe33a6" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
 <script>document.querySelectorAll('.logo-switch button').forEach(function(x){x.addEventListener('click',function(){try{sessionStorage.setItem('imj-logo',x.dataset.l)}catch(e){}if(x.dataset.l==='klient')document.documentElement.setAttribute('data-logo','klient');else document.documentElement.removeAttribute('data-logo')})})</script>
 </body>

@@ -341,11 +341,25 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .c-item small { display: block; color: var(--muted); }
 .map { width: 100%; height: 100%; min-height: 440px; border: 0; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
 .map iframe { display: block; width: 100%; height: 100%; min-height: 440px; border: 0; }
-.map-off { height: 100%; min-height: 440px; display: grid; place-content: center; justify-items: center; gap: 16px; padding: 32px; text-align: center; }
-.map-off > svg { width: 40px; height: 40px; color: var(--accent); }
-.map-off p { max-width: 380px; color: var(--muted); }
-.map-off .link-more svg { width: 18px; height: 18px; }
-.map-off strong { display: block; color: var(--ink); font-size: 18px; margin-bottom: 4px; }
+.map-static { position: relative; display: block; color: var(--ink); }
+.map-static img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.map-static:hover img { transform: scale(1.03); }
+.map-pin { position: absolute; left: 50%; top: 50%; width: 48px; height: 48px; margin: -54px 0 0 -24px; display: grid; place-items: center; background: var(--accent); color: var(--white); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 6px 18px rgba(0, 0, 0, .25); }
+.map-pin svg { width: 22px; height: 22px; transform: rotate(45deg); }
+.map-card { position: absolute; left: 20px; bottom: 20px; display: grid; gap: 2px; padding: 14px 18px; background: var(--white); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0, 0, 0, .12); }
+.map-card b { font-family: var(--font-head); font-size: 17px; }
+.map-card small { color: var(--muted); }
+.map-card .link-more { margin-top: 6px; }
+.map-card .link-more svg { width: 18px; height: 18px; }
+.map-credit { position: absolute; right: 0; bottom: 0; padding: 2px 8px; font-size: 11px; color: var(--muted); background: rgba(255, 255, 255, .75); border-top-left-radius: 6px; }
+@media (max-width: 860px) { .map, .map-static { min-height: 340px; } .map-card { left: 12px; right: 12px; bottom: 12px; } }
+
+/* Objednávka: direct contacts */
+.direct-label { margin-top: 28px; color: var(--muted); }
+.direct { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 4px; }
+.direct a { display: inline-flex; align-items: center; gap: 14px; min-height: 44px; font-size: 18px; color: var(--ink); }
+.direct a:hover { color: var(--accent-strong); }
+.direct svg { width: 22px; height: 22px; color: var(--accent); flex: none; }
 
 /* Footer */
 .site-footer { background: #1F201E; color: #B6AFA6; padding-block: 64px 32px; font-size: 15px; }
@@ -376,6 +390,8 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 
 /* Orientačné ceny */
 .prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+/* 8 services: the last one (Komerčné interiéry) sits in the right column, under Chodby a predsiene */
+@media (min-width: 1024px) { .prices > .price:nth-child(8):last-child { grid-column: 3; } }
 .price { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 18px; row-gap: 2px; align-items: center; padding: 22px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); transition: border-color var(--t), transform var(--t) var(--ease); }
 .price:hover { border-color: var(--accent); transform: translateY(-2px); }
 .price svg { width: 44px; height: 44px; color: var(--accent); grid-row: span 2; }
@@ -459,28 +475,3 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 }
 
 @media (max-width: 860px) { .brands { padding-block: 40px; } .brand-logos { grid-template-columns: repeat(3, 1fr); } .brand-logo { width: 96px; } .brand-logo--blanco { width: 78px; } .brand-name { font-size: 18px; } }
-
-/* Cookie bar (js/main.js) */
-.link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
-.foot-bottom .link-btn { text-decoration: none; }
-.foot-bottom .link-btn:hover { color: var(--white); }
-.cookie-bar { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 70; max-width: 1040px; margin-inline: auto; display: flex; align-items: center; gap: 20px 32px; padding: 22px 26px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 12px 40px rgba(0, 0, 0, .16); }
-.cookie-bar[hidden] { display: none; }
-.cookie-text { flex: 1; font-size: 15px; }
-.cookie-text strong { font-family: var(--font-head); font-size: 18px; }
-.cookie-text p { color: var(--muted); margin-top: 4px; }
-.cookie-text a { color: var(--accent-strong); text-decoration: underline; }
-.cookie-settings { display: grid; gap: 10px; margin-top: 14px; }
-.cookie-settings label { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
-.cookie-settings input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--accent); flex: none; }
-.cookie-settings b { color: var(--ink); font-weight: 600; }
-.cookie-actions { display: flex; flex-direction: column; gap: 8px; flex: none; }
-.cookie-actions .btn { min-height: 44px; padding: 10px 20px; font-size: 15px; }
-.cookie-actions [hidden], .cookie-settings[hidden] { display: none; }
-.has-cookie-bar .logo-switch { display: none; }
-@media (max-width: 860px) {
-  .cookie-bar { flex-direction: column; align-items: stretch; left: 8px; right: 8px; bottom: 8px; padding: 18px; max-height: calc(100svh - 16px); overflow: auto; }
-  .cookie-actions { flex-direction: row; flex-wrap: wrap; }
-  .cookie-actions .btn { flex: 1 1 140px; }
-  .has-cookie-bar .m-bar { display: none; }
-}
