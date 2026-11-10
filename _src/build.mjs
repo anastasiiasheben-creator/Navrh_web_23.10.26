@@ -525,7 +525,6 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
   <section class="page-hero page-hero--wide">
     <div class="container">
       ${crumbs(b, [[null, 'O nás']])}
-      <span class="eyebrow eyebrow--line">Vaša vízia, náš nábytok</span>
       <h1>Nábytok, ktorý sa prispôsobí vašim snom</h1>
       <p class="lead">Navrhneme, vyrobíme, dovezieme a namontujeme nábytok na mieru v Bratislave a okolí.</p>
       <div class="actions"><a class="btn btn-primary" href="${b}kontakt/#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
@@ -663,7 +662,6 @@ for (const s of services) {
   <section class="page-hero page-hero--wide">
     <div class="container">
       ${crumbs(b, [['sluzby/', 'Služby'], [null, s.name]])}
-      <span class="eyebrow eyebrow--line">Bratislava a okolie</span>
       <h1>${s.h1}</h1>
       <p class="lead">${s.intro}</p>
       <div class="actions"><a class="btn btn-primary" href="${b}kontakt/?typ=${s.key}#dopyt">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
@@ -835,7 +833,6 @@ pages.push({ path: 'objednavka/', section: 'objednavka/', jsonld: breadcrumbLd([
   <section class="page-hero page-hero--wide">
     <div class="container">
       ${crumbs(b, [[null, 'Objednávka']])}
-      <span class="eyebrow eyebrow--line">Kontaktujte nás</span>
       <h1>Nezáväzná ponuka</h1>
       <p class="lead">Opíšte, čo plánujete. Vyplnenie trvá približne minútu — stačí telefón alebo e-mail.</p>
     </div>
