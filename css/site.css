@@ -206,6 +206,15 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 /* About teaser / split */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .split img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+/* Náš tím: Jozef with photo, the others as cards below */
+.person { grid-template-columns: minmax(0, 380px) 1fr; gap: 56px; align-items: start; }
+.person img { aspect-ratio: 4 / 5; }
+.person-label { font-weight: 600; color: var(--ink) !important; margin-top: 24px !important; }
+.person-projects { margin-top: 10px; }
+a.chip:hover { background: var(--accent); color: var(--white); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.team-more { margin-top: 64px; }
+@media (max-width: 767px) { .grid-2 { grid-template-columns: 1fr; } .team-more { margin-top: 40px; } }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
 .facts--2 { grid-template-columns: 1fr 1fr; }
 .fact { padding: 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); }

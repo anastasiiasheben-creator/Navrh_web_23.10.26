@@ -645,8 +645,19 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
 
   <section class="section">
     <div class="container">
-      <div class="grid-3">
-        <article class="card"><div class="card-body"><span class="chip" style="align-self:flex-start">Konateľ, návrh a vizualizácia</span><h3>Jozef Kutálek</h3><p>Ako konateľ spoločnosti osobne navrhuje projekty a pripravuje ich vizualizácie — napríklad vo Viničnom, pri Nivách, vo Vydrici, v Pezinku či v Dúbravke.</p><div class="card-foot"><a class="go" href="${b}realizacie/vinicne/">Projekt Viničné ${ic('arrow')}</a></div></div></article>
+      <div class="split person">
+        <!-- Photo of a project until the client sends a portrait of Jozef -->
+        ${img(P['vinicne'].photos[2], b, 'Kuchyňa vo Viničnom — návrh Jozef Kutálek', '(max-width: 1023px) 100vw, 50vw')}
+        <div class="prose">
+          <span class="eyebrow eyebrow--line">Konateľ, návrh a vizualizácia</span>
+          <h2>Jozef Kutálek</h2>
+          <p>Jozef vedie spoločnosť BK Creative s. r. o., ktorá stojí za značkou Interiéroví majstri. Projekty však nielen riadi — sám ich navrhuje a pripravuje k nim vizualizácie. Od prvej konzultácie tak hovoríte priamo s človekom, ktorý váš nábytok navrhuje a ručí za výsledok.</p>
+          <p>Pri návrhu vychádza z toho, ako bude priestor naozaj slúžiť: kde treba čo najviac úložného miesta, čo musí byť po ruke a ako nábytok zladiť s celým interiérom. Výsledok uvidíte vo vizualizácii ešte pred výrobou.</p>
+          <p class="person-label">Navrhol napríklad:</p>
+          <div class="chips person-projects">${['vinicne', 'nivy', 'vydrica', 'pezinok', 'guthaus', 'dubravka-mensi-byt'].map((x) => `<a class="chip" href="${b}realizacie/${x}/">${P[x].loc.replace('Bratislava – ', '')}</a>`).join('')}</div>
+        </div>
+      </div>
+      <div class="grid-2 team-more">
         <article class="card"><div class="card-body"><span class="chip" style="align-self:flex-start">Návrh a vizualizácia</span><h3>Dušana</h3><p>Pripravila návrh celého domu v Chorvátskom Grobe — od kuchyne až po detskú izbu pre dvoch súrodencov.</p><div class="card-foot"><a class="go" href="${b}realizacie/chorvatsky-grob/">Projekt Chorvátsky Grob ${ic('arrow')}</a></div></div></article>
         <article class="card"><div class="card-body"><span class="chip" style="align-self:flex-start">Od konzultácie po montáž</span><h3>Jeden tím na celý projekt</h3><p>Poradenstvo, návrh a vizualizácia, výroba, doprava aj montáž — celý projekt vedie jeden tím, ktorý ho pozná od začiatku.</p><div class="card-foot"><a class="go" href="${b}o-nas/">Ako pracujeme ${ic('arrow')}</a></div></div></article>
       </div>
