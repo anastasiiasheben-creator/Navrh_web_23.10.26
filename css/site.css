@@ -495,3 +495,23 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .cookie-btns .btn { flex: 1; }
   .has-cookie-bar .m-bar { display: none; }
 }
+
+/* Blog article */
+.entry { max-width: 820px; }
+.entry > * + * { margin-top: 18px; }
+.entry p, .entry li { color: var(--muted); }
+.entry h2 { font-size: clamp(26px, 2.2vw, 32px); margin-top: 44px; }
+.entry h3 { font-size: 21px; margin-top: 32px; }
+.entry h2 + *, .entry h3 + * { margin-top: 12px; }
+.entry ul, .entry ol { padding-left: 22px; }
+.entry ul { list-style: disc; }
+.entry ol { list-style: decimal; }
+.entry li + li { margin-top: 6px; }
+.entry a { color: var(--accent-strong); text-decoration: underline; }
+.entry strong { color: var(--ink); font-weight: 600; }
+.entry img { border-radius: var(--radius); height: auto; }
+.entry figure { margin-inline: 0; }
+.entry figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.entry blockquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; font-size: 19px; color: var(--ink); }
+.entry-cover { margin: 0 0 32px; }
+.entry-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }

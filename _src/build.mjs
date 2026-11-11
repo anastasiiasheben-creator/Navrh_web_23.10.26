@@ -860,6 +860,41 @@ ${ctaBand(b, 'Chcete podobné riešenie?', `Navrhneme riešenie podobné projekt
 });
 
 // Blog
+// Blog articles (_src/blog.json): links inside the text are written as {{u:path}}
+const blog = JSON.parse(fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), 'blog.json'), 'utf8'));
+blog.forEach((p) => { p.cover = P[p.img[0]].photos[p.img[1] - 1]; p.minutes = Math.max(1, Math.round(p.content.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length / 200)); });
+const skDate = (d) => d.split('-').reverse().map(Number).join('. ');
+const blogCard = (p, b) => `<article class="card card--link">
+        <a class="card-img" href="${b}blog/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.cover, b, '')}</a>
+        <div class="card-body">
+          <div class="chips"><span class="chip">${skDate(p.date)}</span></div>
+          <h3><a class="card-link" href="${b}blog/${p.slug}/">${p.title}</a></h3>
+          <p>${p.lead}</p>
+          <div class="card-foot"><span class="from">${p.minutes} min čítania</span><span class="go" aria-hidden="true">Čítať článok ${ic('arrow')}</span></div>
+        </div>
+      </article>`;
+for (const p of blog) {
+  pages.push({ path: `blog/${p.slug}/`, section: 'blog/', og: `${p.cover}-1400.jpg`,
+    jsonld: [breadcrumbLd([['blog/', 'Blog'], [`blog/${p.slug}/`, p.title]]), { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.title, description: p.desc, datePublished: p.date, image: SITE + '/images/' + p.cover + '-1400.jpg', author: { '@type': 'Organization', name: 'Interiéroví majstri' }, publisher: { '@type': 'Organization', name: 'Interiéroví majstri' }, mainEntityOfPage: SITE + '/blog/' + p.slug + '/' }],
+    title: p.seoTitle, desc: p.desc,
+    body: (b) => `
+  <section class="page-hero page-hero--wide">
+    <div class="container">
+      ${crumbs(b, [['blog/', 'Blog'], [null, p.title]])}
+      <div class="chips" style="margin-bottom:16px"><span class="chip">${skDate(p.date)}</span><span class="chip">${ic('clock')}${p.minutes} min čítania</span></div>
+      <h1>${p.title}</h1>
+      <p class="lead">${p.lead}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container"><article class="entry">
+      <figure class="entry-cover">${img(p.cover, b, p.title, '(max-width: 860px) 100vw, 820px', true)}</figure>
+      ${p.content.replace(/\{\{u:([^}]*)\}\}/g, (m, x) => b + x)}
+    </article></div>
+  </section>
+${ctaBand(b, 'Radšej to preberieme osobne?', 'Prvá konzultácia je bezplatná a nezáväzná.')}` });
+}
+
 pages.push({ path: 'blog/', section: 'blog/', jsonld: breadcrumbLd([['blog/', 'Blog']]),
   title: 'Blog — rady k nábytku na mieru | Interiéroví majstri',
   desc: 'Rady a inšpirácie ku kuchyniam, vstavaným skriniam a nábytku na mieru.',
@@ -873,9 +908,7 @@ pages.push({ path: 'blog/', section: 'blog/', jsonld: breadcrumbLd([['blog/', 'B
   </section>
   <section class="section">
     <div class="container grid-3">
-      <article class="card"><div class="card-img">${img(P.vinicne.photos[2], b, '')}</div><div class="card-body"><span class="soon">Pripravujeme</span><h3>Koľko stojí kuchyňa na mieru</h3><p>Čo ovplyvňuje cenu, kde sa dá ušetriť a kde radšej nie.</p></div></article>
-      <article class="card"><div class="card-img">${img(P.sladkovicovo.photos[1], b, '')}</div><div class="card-body"><span class="soon">Pripravujeme</span><h3>Vstavaná skriňa: posuvné alebo krídlové dvere?</h3><p>Výhody, nevýhody a čo sa hodí do malej spálne či chodby.</p></div></article>
-      <article class="card"><div class="card-img">${img(P.vinicne.photos[5], b, '')}</div><div class="card-body"><span class="soon">Pripravujeme</span><h3>Ako využiť roh v kuchyni</h3><p>Rohové systémy LeMans a ďalšie riešenia, vďaka ktorým nič nezostane nevyužité.</p></div></article>
+      ${blog.map((p) => blogCard(p, b)).join('\n      ')}
     </div>
   </section>
 ${ctaBand(b, 'Radšej to preberieme osobne?', 'Prvá konzultácia je bezplatná a nezáväzná.')}` });
