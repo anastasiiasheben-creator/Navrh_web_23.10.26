@@ -646,8 +646,8 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
   <section class="section">
     <div class="container">
       <div class="split person">
-        <!-- Photo of a project until the client sends a portrait of Jozef -->
-        ${img(P['vinicne'].photos[2], b, 'Kuchyňa vo Viničnom — návrh Jozef Kutálek', '(max-width: 1023px) 100vw, 50vw')}
+        <!-- Placeholder until the client sends a portrait of Jozef -->
+        <div class="person-photo" role="img" aria-label="Fotografia Jozefa Kutáleka sa pripravuje">${ic('home')}<span>Fotografiu čoskoro doplníme</span></div>
         <div class="prose">
           <span class="eyebrow eyebrow--line">Konateľ, návrh a vizualizácia</span>
           <h2>Jozef Kutálek</h2>
