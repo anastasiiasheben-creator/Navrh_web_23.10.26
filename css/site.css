@@ -534,3 +534,9 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .entry blockquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 20px; font-size: 19px; color: var(--ink); }
 .entry-cover { margin: 0 0 32px; }
 .entry-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Message after clicking a phone link on a computer (js/main.js) */
+.toast { position: fixed; left: 50%; top: calc(var(--header-h) + 16px); z-index: 80; transform: translate(-50%, -12px); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; background: var(--ink); color: var(--white); padding: 14px 22px; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0, 0, 0, .2); font-size: 16px; text-align: center; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast b { font-family: var(--font-head); font-size: 18px; }
+.toast span { display: block; font-size: 14px; opacity: .75; margin-top: 2px; }

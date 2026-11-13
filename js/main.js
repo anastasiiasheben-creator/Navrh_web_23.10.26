@@ -206,3 +206,26 @@
   if (choice === 'all') loadMaps();
   if (!choice) setTimeout(open, 1000);
 })();
+
+// Phone links on a computer: the browser usually has nothing to call with, so the click looked broken.
+// On devices without touch the number is copied and shown; on phones the call opens as usual.
+(function () {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  var toast;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="tel:"]');
+    if (!a) return;
+    var num = a.getAttribute('href').slice(4).replace(/^\+421/, '+421 ').replace(/(\d{3})(\d{3})(\d{3})$/, '$1 $2 $3');
+    try { navigator.clipboard.writeText(num); } catch (err) {}
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.setAttribute('role', 'status');
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = 'Zavolajte nám: <b>' + num + '</b><span>Číslo sme skopírovali.</span>';
+    toast.classList.add('show');
+    clearTimeout(toast.t);
+    toast.t = setTimeout(function () { toast.classList.remove('show'); }, 4000);
+  });
+})();
