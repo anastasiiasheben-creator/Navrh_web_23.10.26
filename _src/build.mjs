@@ -116,7 +116,7 @@ const projects = [
     task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
     solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
     items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
-  { slug: 'zavod', title: 'Kúpeľne a TV stena v Závode', h1: 'Kúpeľňový nábytok, TV stena a chodba – Závod', loc: 'Závod', main: 'byty', cats: ['byty', 'kupelne', 'obyvacky', 'chodby'], type: 'Kúpeľne a obývačka', rooms: 'Chodba, kúpeľňa, obývačka', time: '4 týždne', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'zavod', title: 'Kúpeľne a TV stena v Závode', h1: 'Kúpeľňový nábytok, TV stena a chodba – Závod', loc: 'Závod', main: 'kupelne', cats: ['byty', 'kupelne', 'obyvacky', 'chodby'], type: 'Kúpeľne a obývačka', rooms: 'Chodba, kúpeľňa, obývačka', time: '4 týždne', by: 'Jozef', ours: true, cover: 3,
     alt: 'TV stena s lamelami a skrinkami v rodinnom dome v Závode',
     task: 'Zariadiť dve kúpeľne, obývačku a chodbu v rodinnom dome.',
     solution: 'Do kúpeľní sme navrhli závesné skrinky pod umývadlá s veľkými zásuvkami a vysokú skriňu, ktorá ukrýva kotol. V obývačke vznikla TV stena s lamelami a skrinkami, na chodbe lamelový obklad s policami.',
@@ -145,7 +145,7 @@ const projects = [
 projects.forEach((p) => { p.photos = photos(p.slug, p.skip); p.coverImg = p.photos[p.cover - 1]; });
 
 // Realizácie filter: every project has one main category
-const FILTERS = [['kuchyne', 'Kuchyne'], ['skrine', 'Skrine a chodby'], ['izby', 'Detské izby'], ['byty', 'Celé byty a domy'], ['firmy', 'Firmy'], ['ostatne', 'Ostatné']];
+const FILTERS = [['kuchyne', 'Kuchyne'], ['skrine', 'Skrine a chodby'], ['izby', 'Detské izby'], ['kupelne', 'Kúpeľne'], ['byty', 'Celé byty a domy'], ['firmy', 'Firmy'], ['ostatne', 'Ostatné']];
 const P = Object.fromEntries(projects.map((p) => [p.slug, p]));
 
 // ---------------------------------------------------------------- services
