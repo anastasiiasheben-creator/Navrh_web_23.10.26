@@ -392,6 +392,10 @@ const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový
   </section>`;
 
 // Short call-to-action for informational pages (no form)
+// Numbers confirmed by the client (13. 11. 2026) — do not change without asking
+const STATS = [['12+', 'rokov skúseností s nábytkom na mieru'], ['~50', 'realizácií pod vlastnou značkou'], ['Stovky', 'projektov aj pre ďalšie firmy']];
+const statsList = () => `<div class="stats">${STATS.map(([n, t]) => `<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('')}</div>`;
+
 const ctaBand = (b, h, sub) => `
   <section class="cta-band">
     <div class="container cta-band__row">
@@ -511,17 +515,16 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
     </div>
   </section>
 
+  <section class="stats-strip" aria-label="Naše skúsenosti">
+    <div class="container">${statsList()}</div>
+  </section>
+
   <section class="section section--white">
     <div class="container about-short">
       <div>
         <span class="eyebrow eyebrow--line">Spoznajte nás</span>
         <h2>Za každým interiérom stojí skúsenosť a poctivá práca</h2>
-        <p class="lead">Už roky pomáhame zákazníkom vytvárať nábytok presne podľa ich predstáv. Od prvého návrhu až po finálnu montáž dbáme na kvalitu, funkčnosť a každý detail.</p>
-        <ul class="chips" style="margin-top:24px">
-          <li class="chip">Roky skúseností</li>
-          <li class="chip">Skutočné realizácie</li>
-          <li class="chip">Nábytok vytvorený pre vás</li>
-        </ul>
+        <p class="lead">Už 12 rokov pomáhame zákazníkom vytvárať nábytok presne podľa ich predstáv. Od prvého návrhu až po finálnu montáž dbáme na kvalitu, funkčnosť a každý detail.</p>
       </div>
       ${img('hero-kuchyna.jpg', b, 'Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans', '(max-width: 1023px) 100vw, 45vw')}
       <div class="actions about-cta"><a class="btn btn-outline" href="${b}o-nas/">Viac o nás ${ic('arrow')}</a></div>
@@ -585,13 +588,10 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
         <h2>Každá objednávka je pre nás jedinečný kúsok</h2>
         <p>Sme odborníci na výrobu nábytku na mieru, ktorí vnímajú každú objednávku ako príležitosť pre vytvorenie jedinečného kúska priamo podľa vašich predstáv. Či už ide o moderný dizajn, minimalistické línie alebo sofistikované detaily — váš nápad je našou inšpiráciou.</p>
         <p>S nami si môžete byť istí, že každý kus nábytku je originál, ktorý dokonale zapadne do vášho interiéru. Naša filozofia je jednoduchá — čo si dokážete predstaviť, to vieme vytvoriť.</p>
+        <p>Nábytku na mieru sa venujeme 12 rokov. Najprv sme realizovali stovky projektov pre iné firmy, posledné 2 roky pracujeme pod vlastnou značkou Interiéroví majstri — doteraz približne 50 realizácií v Bratislave a okolí.</p>
       </div>
       <div>
-        <div class="facts" style="margin-top:0">
-          <div class="fact"><b>Kuchyne aj celé domy</b><span>od jednej linky po kompletný interiér</span></div>
-          <div class="fact"><b>Bratislava a okolie</b><span>Dúbravka, Nivy, Vydrica, Chorvátsky Grob, Sládkovičovo…</span></div>
-          <div class="fact"><b>Od návrhu po montáž</b><span>konzultácia, návrh, výroba, doprava a montáž</span></div>
-        </div>
+        ${statsList()}
         <ul class="check-list">
           <li>${ic('check')}<span><b>Nábytok na mieru</b> — presne podľa vašich predstáv, od dizajnu po materiál.</span></li>
           <li>${ic('check')}<span><b>Kreatívne riešenia</b> — nebojíme sa inovácií.</span></li>
@@ -651,7 +651,7 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
         <div class="prose">
           <span class="eyebrow eyebrow--line">Konateľ, návrh a vizualizácia</span>
           <h2>Jozef Kutálek</h2>
-          <p>Jozef vedie spoločnosť BK Creative s. r. o., ktorá stojí za značkou Interiéroví majstri. Projekty však nielen riadi — sám ich navrhuje a pripravuje k nim vizualizácie. Od prvej konzultácie tak hovoríte priamo s človekom, ktorý váš nábytok navrhuje a ručí za výsledok.</p>
+          <p>Jozef sa nábytku na mieru venuje 12 rokov a vedie spoločnosť BK Creative s. r. o., ktorá stojí za značkou Interiéroví majstri. Projekty však nielen riadi — sám ich navrhuje a pripravuje k nim vizualizácie. Od prvej konzultácie tak hovoríte priamo s človekom, ktorý váš nábytok navrhuje a ručí za výsledok.</p>
           <p>Pri návrhu vychádza z toho, ako bude priestor naozaj slúžiť: kde treba čo najviac úložného miesta, čo musí byť po ruke a ako nábytok zladiť s celým interiérom. Výsledok uvidíte vo vizualizácii ešte pred výrobou.</p>
           <p class="person-label">Navrhol napríklad:</p>
           <div class="chips person-projects">${['vinicne', 'nivy', 'vydrica', 'pezinok', 'guthaus', 'dubravka-mensi-byt'].map((x) => `<a class="chip" href="${b}realizacie/${x}/">${P[x].loc.replace('Bratislava – ', '')}</a>`).join('')}</div>
