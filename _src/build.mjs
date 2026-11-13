@@ -519,7 +519,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
     <div class="container">${statsList()}</div>
   </section>
 
-  <section class="section section--white">
+  <section class="section section--surface">
     <div class="container about-short">
       <div>
         <span class="eyebrow eyebrow--line">Spoznajte nás</span>
