@@ -393,7 +393,7 @@ const finalCta = (b, selected = '', h = 'Zistite, koľko bude stáť váš nový
 
 // Short call-to-action for informational pages (no form)
 // Numbers confirmed by the client (13. 11. 2026) — do not change without asking
-const STATS = [['12+', 'rokov skúseností s nábytkom na mieru'], ['~50', 'realizácií pod vlastnou značkou'], ['Stovky', 'projektov aj pre ďalšie firmy']];
+const STATS = [['12+', 'rokov skúseností s nábytkom na mieru'], ['~50', 'realizácií pod vlastnou značkou'], ['100+', 'projektov predtým pre iné firmy']];
 const statsList = () => `<div class="stats">${STATS.map(([n, t]) => `<div class="stat"><b>${n}</b><span>${t}</span></div>`).join('')}</div>`;
 
 const ctaBand = (b, h, sub) => `
