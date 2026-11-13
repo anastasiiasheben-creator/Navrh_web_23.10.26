@@ -362,6 +362,15 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 .c-item small { display: block; color: var(--muted); }
 .map { width: 100%; height: 100%; min-height: 440px; border: 0; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
 .map iframe { display: block; width: 100%; height: 100%; min-height: 440px; border: 0; }
+.map-consent { position: relative; }
+.map-consent > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.map-off { position: relative; min-height: 440px; height: 100%; display: grid; place-content: center; justify-items: center; gap: 14px; padding: 28px; text-align: center; background: rgba(245, 242, 237, .78); }
+.map-off p { max-width: 380px; color: var(--muted); font-size: 15px; }
+.map-off strong { display: block; color: var(--ink); font-size: 18px; margin-bottom: 4px; }
+.map-off .link-more svg { width: 18px; height: 18px; }
+.link-btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.foot-bottom .link-btn { text-decoration: none; }
+.foot-bottom .link-btn:hover { color: var(--white); }
 @media (max-width: 860px) { .map, .map iframe { min-height: 340px; } }
 
 /* Objednávka: "Ako to funguje" steps and direct contacts (like montwell.sk) */
@@ -494,8 +503,8 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 /* Cookie bar (js/main.js), same as on montwell.sk */
 .cookie-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -8px 30px rgba(0, 0, 0, .08); padding: 16px var(--gutter) calc(16px + env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform .4s ease; }
 .cookie-bar.show { transform: translateY(0); }
-.cookie-inner { max-width: var(--container); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; }
-.cookie-inner p { font-size: 15px; color: var(--muted); }
+.cookie-inner { max-width: var(--container); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; }
+.cookie-inner p { font-size: 15px; color: var(--muted); max-width: 820px; }
 .cookie-inner a { color: var(--accent-strong); text-decoration: underline; }
 .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
 .cookie-btns .btn { min-height: 44px; padding: 10px 20px; font-size: 15px; }

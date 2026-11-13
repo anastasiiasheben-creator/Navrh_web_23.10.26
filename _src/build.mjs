@@ -327,7 +327,7 @@ const footer = (b) => `
         </ul>
       </div>
     </div>
-    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${privacy(b)}">Ochrana osobných údajov</a> · Bratislava a okolie</span></div>
+    <div class="foot-bottom"><span>© 2026 BK Creative s. r. o. · IČO: 56343744</span><span><a href="${privacy(b)}">Ochrana osobných údajov</a> · <button class="link-btn" type="button" data-cookies>Nastavenia cookies</button></span></div>
   </div>
 </footer>
 <div class="m-bar">
@@ -984,8 +984,13 @@ pages.push({ path: 'kontakt/', section: 'kontakt/', jsonld: [breadcrumbLd([['kon
         <div class="c-item"><span class="ic">${ic('clock')}</span><span><small>Pracovný čas</small><b>Po – Pi: 9:00 – 17:00</b><small>So – Ne: individuálne</small></span></div>
         <p class="small" style="color:var(--muted);padding:4px">BK Creative s. r. o. · IČO: 56343744 · DIČ: 2122278433 · IČ DPH: SK2122278433</p>
       </div>
-      <div class="map">
-        <iframe src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&amp;output=embed" title="Mapa — Landauova 3146/20, Bratislava" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map map-consent" data-map-src="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava&amp;output=embed" data-map-title="Mapa — Landauova 3146/20, Bratislava">
+        <img src="${b}images/mapa-kontakt.jpg" alt="" width="1040" height="880" loading="lazy">
+        <div class="map-off">
+          <p><strong>Landauova 3146/20, Bratislava</strong>Mapa Google sa načíta až po vašom súhlase, pretože Google pri jej zobrazení ukladá vlastné cookies.</p>
+          <button class="btn btn-primary" type="button" data-map-load>Zobraziť mapu</button>
+          <a class="link-more" href="https://www.google.com/maps?q=Landauova+3146%2F20,+841+01+Bratislava" target="_blank" rel="noopener">Otvoriť v Google Maps ${ic('arrow')}</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1042,13 +1047,13 @@ pages.push({ path: 'ochrana-sukromia/', section: null, jsonld: breadcrumbLd([['o
         <li>externá účtovná kancelária,</li>
         <li>orgány verejnej moci, ak to vyžaduje zákon.</li>
       </ul>
-      <p>Na stránke Kontakt zobrazujeme mapu Google Maps. Pri jej načítaní sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
+      <p>Na stránke Kontakt môžete s vaším súhlasom zobraziť mapu Google Maps. Pri jej načítaní sa vaša IP adresa odovzdá spoločnosti Google, ktorá môže údaje spracúvať aj v USA na základe rámca ochrany údajov EÚ – USA (Data Privacy Framework). Iný prenos údajov do tretích krajín neuskutočňujeme.</p>
 
       <h2>6. Ako dlho údaje uchovávame</h2>
       <p>Osobné údaje uchovávame len po dobu nevyhnutnú na účel, na ktorý boli získané, a po dobu, ktorú nám ukladajú právne predpisy. Potom ich vymažeme.</p>
 
       <h2>7. Súbory cookies</h2>
-      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom a na zapamätanie, že ste informáciu o cookies už videli. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame. Mapa Google Maps na stránke Kontakt môže ukladať vlastné cookies spoločnosti Google podľa jej <a href="https://policies.google.com/privacy?hl=sk" target="_blank" rel="noopener">zásad ochrany súkromia</a>.</p>
+      <p>Stránka používa len nevyhnutné cookies a úložisko prehliadača, ktoré sú potrebné na jej fungovanie, napríklad na ochranu formulárov pred spamom a na zapamätanie, že ste informáciu o cookies už videli. Na tieto cookies sa súhlas nevyžaduje. Analytické ani marketingové cookies nepoužívame. Mapu Google Maps na stránke Kontakt načítame až s vaším súhlasom (tlačidlo „Prijať všetky“ v lište cookies alebo „Zobraziť mapu“), pretože ukladá vlastné cookies spoločnosti Google podľa jej <a href="https://policies.google.com/privacy?hl=sk" target="_blank" rel="noopener">zásad ochrany súkromia</a>. Svoju voľbu môžete zmeniť cez odkaz <button class="link-btn" type="button" data-cookies>Nastavenia cookies</button> v päte stránky.</p>
 
       <h2>8. Zabezpečenie osobných údajov</h2>
       <p>Prijali sme primerané technické a organizačné opatrenia na ochranu vašich údajov. Komunikácia s webovou stránkou je šifrovaná (SSL) a k údajom majú prístup len poverené osoby.</p>

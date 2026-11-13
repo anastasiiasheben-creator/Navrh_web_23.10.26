@@ -146,28 +146,63 @@
 })();
 
 
-// Cookie bar (contract čl. XI), same as on montwell.sk: slides in from the bottom, the choice is kept in localStorage.
-// The site uses only necessary cookies, so both buttons just remember the choice.
+// Cookie bar (contract čl. XI), same look as on montwell.sk. "Prijať všetky" also allows the Google map on Kontakt;
+// "Len nevyhnutné" keeps only the picture of the map. The choice is kept in localStorage and can be changed
+// via "Nastavenia cookies" in the footer.
 (function () {
   var KEY = 'imj-cookies';
-  try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
-  var privacy = document.querySelector('.foot-bottom a[href*="ochrana-sukromia"]');
-  var bar = document.createElement('div');
-  bar.className = 'cookie-bar';
-  bar.setAttribute('role', 'region');
-  bar.setAttribute('aria-label', 'Cookies');
-  bar.innerHTML = '<div class="cookie-inner"><p>Táto stránka používa cookies.' +
-    (privacy ? ' Prečítajte si naše <a href="' + privacy.getAttribute('href') + '">Zásady ochrany osobných údajov</a>.' : '') + '</p>' +
-    '<div class="cookie-btns"><button class="btn btn-primary" type="button" data-c="all">Prijať všetky</button>' +
-    '<button class="btn btn-outline" type="button" data-c="necessary">Len nevyhnutné</button></div></div>';
-  document.body.appendChild(bar);
-  setTimeout(function () { bar.classList.add('show'); document.body.classList.add('has-cookie-bar'); }, 1000);
-  bar.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-c]');
-    if (!b) return;
-    try { localStorage.setItem(KEY, b.dataset.c); } catch (err) {}
-    bar.classList.remove('show');
-    document.body.classList.remove('has-cookie-bar');
-    setTimeout(function () { bar.remove(); }, 400);
+  var choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) {}
+
+  function loadMaps() {
+    document.querySelectorAll('[data-map-src]').forEach(function (box) {
+      if (box.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.src = box.dataset.mapSrc;
+      f.title = box.dataset.mapTitle || 'Mapa';
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      box.innerHTML = '';
+      box.appendChild(f);
+    });
+  }
+
+  var bar;
+  function save(c) {
+    choice = c;
+    try { localStorage.setItem(KEY, c); } catch (err) {}
+    if (c === 'all') loadMaps(); else if (document.querySelector('.map-consent iframe')) location.reload();
+    if (bar) {
+      bar.classList.remove('show');
+      document.body.classList.remove('has-cookie-bar');
+    }
+  }
+
+  function open() {
+    if (!bar) {
+      var privacy = document.querySelector('.foot-bottom a[href*="ochrana-sukromia"]');
+      bar = document.createElement('div');
+      bar.className = 'cookie-bar';
+      bar.setAttribute('role', 'region');
+      bar.setAttribute('aria-label', 'Cookies');
+      bar.innerHTML = '<div class="cookie-inner"><p>Táto stránka používa nevyhnutné cookies. S vaším súhlasom načítame aj mapu Google, ktorá ukladá vlastné cookies.' +
+        (privacy ? ' Prečítajte si naše <a href="' + privacy.getAttribute('href') + '">Zásady ochrany osobných údajov</a>.' : '') + '</p>' +
+        '<div class="cookie-btns"><button class="btn btn-primary" type="button" data-c="all">Prijať všetky</button>' +
+        '<button class="btn btn-outline" type="button" data-c="necessary">Len nevyhnutné</button></div></div>';
+      document.body.appendChild(bar);
+      bar.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-c]');
+        if (b) save(b.dataset.c);
+      });
+    }
+    requestAnimationFrame(function () { bar.classList.add('show'); document.body.classList.add('has-cookie-bar'); });
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-cookies]')) open();
+    if (e.target.closest('[data-map-load]')) save('all');
   });
+
+  if (choice === 'all') loadMaps();
+  if (!choice) setTimeout(open, 1000);
 })();
