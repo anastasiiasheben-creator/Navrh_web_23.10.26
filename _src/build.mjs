@@ -46,97 +46,97 @@ const photos = (slug, skip = []) => fs.readdirSync(path.join(projectImgDir, slug
 // Project texts are taken from the project pages on the old imajstri.sk (Zadanie, Riešenie, Projektové informácie).
 // Client names are left out until the client confirms we may publish them.
 const projects = [
-  { slug: 'vinicne', title: 'Kuchyňa drevo + čierno-biela', h1: 'Moderná kuchyňa v kombinácii dreva a čierno-bieleho dizajnu', loc: 'Viničné', main: 'kuchyne', cats: ['kuchyne'], type: 'Kuchyňa', rooms: 'Kuchyňa', time: '6 týždňov', by: 'Jozef', ours: true, cover: 3,
+  { slug: 'vinicne', title: 'Kuchyňa drevo + čierno-biela', h1: 'Moderná kuchyňa v kombinácii dreva a čierno-bieleho dizajnu', loc: 'Viničné', cats: ['kuchyne'], type: 'Kuchyňa', rooms: 'Kuchyňa', time: '6 týždňov', by: 'Jozef', ours: true, cover: 3,
     alt: 'Kuchyňa na mieru vo Viničnom s drevenou doskou a čiernymi skrinkami',
     task: 'Moderná kuchyňa na mieru, ktorá spojí prírodný dekor dreva s čierno-bielym dizajnom.',
     solution: 'Kombinácia prírodného dekoru dreva s čierno-bielymi prvkami vytvára elegantnú kuchyňu, ktorá sa hodí do moderných interiérov.',
     items: ['Moderný a nadčasový dizajn — prírodný dekor dreva s čierno-bielymi prvkami', 'Veľké zásuvky a rohový výsuvný systém LeMans pre jednoduchý prístup a maximálne využitie priestoru', 'Premyslené rozloženie pracovnej plochy, vstavané spotrebiče a čisté línie pre pohodlné každodenné používanie'] },
-  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', main: 'byty', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý byt', rooms: 'Chodba, kuchyňa, kúpeľňa, obývačka, spálňa', time: '7 týždňov', by: 'Jozef', ours: true, cover: 2,
+  { slug: 'zahorska-bystrica', title: 'Moderný byt na mieru', h1: 'Nábytok na mieru pre moderný byt v Záhorskej Bystrici', loc: 'Bratislava – Záhorská Bystrica', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý byt', rooms: 'Chodba, kuchyňa, kúpeľňa, obývačka, spálňa', time: '7 týždňov', by: 'Jozef', ours: true, cover: 2,
     alt: 'Obývačka s lamelovou TV stenou a kuchyňa s ostrovčekom v Záhorskej Bystrici',
     task: 'V byte v Záhorskej Bystrici bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Vytvorili sme unikátny interiér, ktorý spája eleganciu a funkčnosť. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
     items: ['Obývačková stena s lamelami, ktorá dodáva priestoru štýlový a sofistikovaný vzhľad', 'Kuchyňa s lamelami a ostrovčekom pre tých, ktorí ocenia moderný dizajn a praktickosť', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Kúpeľňová skrinka pod umývadlo'] },
-  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', main: 'byty', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý dom', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '7 týždňov', by: 'Dušana', ours: true, cover: 1,
+  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý dom', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '7 týždňov', by: 'Dušana', ours: true, cover: 1,
     alt: 'Kuchyňa a interiér rodinného domu v Chorvátskom Grobe',
     task: 'Dostali sme za úlohu zariadiť novostavbu v Chorvátskom Grobe.',
     solution: 'Projekt rodinného domu zahŕňa nábytok na mieru do všetkých miestností — od kuchyne až po detskú izbu.',
     items: ['Kuchyňa v drevodekore s prepojenou textúrou na dvierkach', 'Chodba plynule prepojená s kuchyňou', 'Spálňa so vstavanými skriňami a šatníkom', 'Kúpeľňa', 'Detská izba pre dvoch súrodencov — poschodová posteľ s čalúnením, schody s úložným priestorom, vstavaná skriňa a písací stôl', 'Minimalistická obývačka s lamelovým plátom, zladená do farieb kuchyne'] },
-  { slug: 'guthaus', title: 'Kuchyňa s ostrovčekom a TV stena', h1: 'Kuchyňa, obývačka, kúpeľňa a chodba na mieru – Guthaus', loc: 'Bratislava – Guthaus', main: 'byty', cats: ['byty', 'kuchyne', 'obyvacky', 'kupelne', 'chodby'], type: 'Byt', rooms: 'Chodba, kuchyňa, kúpeľňa, obývačka', time: '3 týždne', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'guthaus', title: 'Kuchyňa s ostrovčekom a TV stena', h1: 'Kuchyňa, obývačka, kúpeľňa a chodba na mieru – Guthaus', loc: 'Bratislava – Guthaus', cats: ['byty', 'kuchyne', 'obyvacky', 'kupelne', 'chodby'], type: 'Byt', rooms: 'Chodba, kuchyňa, kúpeľňa, obývačka', time: '3 týždne', by: 'Jozef', ours: true, cover: 1,
     alt: 'Biela kuchyňa s dubovými skrinkami a ostrovčekom v byte Guthaus',
     task: 'Zariadiť nový byt nábytkom na mieru v kombinácii dubového dekoru a bielej.',
     solution: 'Kuchyňu, obývačku, kúpeľňu aj chodbu sme navrhli v jednom štýle — biele matné plochy dopĺňa teplý dubový dekor. Byt tak pôsobí čisto a útulne zároveň.',
     items: ['Kuchyňa v tvare L s ostrovčekom a vstavanými spotrebičmi', 'TV stena s podsvietením a výklopnými skrinkami', 'Kúpeľňový nábytok s doskou nad práčkou a zrkadlovými skrinkami', 'Chodbová skriňa so sedením a vešiakmi'] },
-  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', main: 'kuchyne', cats: ['kuchyne', 'obyvacky', 'kupelne'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1, skip: [5],
+  { slug: 'nivy', title: 'Kuchyňa a obývačka pri Nivách', h1: 'Kuchyňa a obývačka na mieru pri Nivách', loc: 'Bratislava – Nivy', cats: ['kuchyne', 'obyvacky', 'kupelne'], type: 'Kuchyňa a obývačka', rooms: 'Kuchyňa, obývačka, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1, skip: [5],
     alt: 'Kuchyňa so systémom Smart-Cube a čiernou policou pri Nivách',
     task: 'V byte pri Nivách bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Moderná kuchyňa na mieru sa pýši výrazným Smart-Cube systémom s podsvietením, ktorý dodáva interiéru sofistikovaný a technologicky pokročilý vzhľad. Dokonalý kontrast vytvárajú čierne dvere s tmavým sklom Lacobel. Každý detail je premyslený tak, aby kuchyňa nebola len miestom na varenie, ale aj priestorom, kde sa budete cítiť výnimočne.',
     items: ['Kuchyňa so Smart-Cube systémom s podsvietením', 'Čierne dvere s tmavým sklom Lacobel', 'Vysoká skriňa s výsuvnými zásuvkami a vstavanými spotrebičmi', 'Knižnica okolo dverí a pracovný stôl so zásuvkami v obývačke', 'Skriňa v kúpeľni, ktorá ukrýva kotol a inštalácie, s podsvietenou nikou'] },
-  { slug: 'detska-izba-s-poschodovou-postelou', title: 'Detská izba s posteľou na poschodí', h1: 'Detská izba s posteľami na poschodí a úložnými schodmi', loc: 'Okolie Bratislavy', main: 'izby', cats: ['izby', 'chodby', 'skrine'], type: 'Detská izba', rooms: 'Chodba, detská izba', time: '6 týždňov', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'detska-izba-s-poschodovou-postelou', title: 'Detská izba s posteľou na poschodí', h1: 'Detská izba s posteľami na poschodí a úložnými schodmi', loc: 'Okolie Bratislavy', cats: ['izby', 'chodby', 'skrine'], type: 'Detská izba', rooms: 'Chodba, detská izba', time: '6 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Detská izba na mieru s posteľou na poschodí a úložnými schodmi',
     task: 'Navrhnúť detskú izbu pre dve deti tak, aby malo každé svoje miesto na spanie, učenie aj hru.',
     solution: 'Postele sme umiestnili na poschodie a pod nimi vznikli pracovné stoly s policami. Do postelí sa vystupuje po schodoch, ktoré sú zároveň skrinkami a zásuvkami. Farebné dvierka dávajú každej časti izby vlastný charakter. Súčasťou realizácie je aj chodbová skriňa s posuvnými dverami.',
     items: ['Dve postele na poschodí so zábradlím', 'Schody s úložnými skrinkami a zásuvkami', 'Písacie stoly a police pod posteľami', 'Chodbová skriňa s posuvnými dverami a otvoreným regálom'] },
-  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', main: 'byty', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'skrine'], type: 'Celý byt', rooms: 'Kuchyňa, kúpeľňa, obývačka, spálňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'vydrica', title: 'Zariadenie bytu Vydrica', h1: 'Zariadenie bytu Vydrica – Bratislava', loc: 'Bratislava – Vydrica', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'skrine'], type: 'Celý byt', rooms: 'Kuchyňa, kúpeľňa, obývačka, spálňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Svetlá kuchyňa na mieru v byte vo Vydrici',
     task: 'Kompletné vybavenie bytu nábytkom na mieru.',
     solution: 'Tentokrát sme vytvorili kompletné vybavenie bytu na mieru. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
     items: ['Kuchyňa', 'Minimalistická obývačková stena', 'Vstavaná skriňa v spálni', 'Čelo postele so stolíkmi', 'Kúpeľňa — skrinka pod umývadlo a vysoká skriňa nad práčkou a WC'] },
-  { slug: 'pezinok', title: 'Kuchyňa pod schodmi', h1: 'Kuchyňa na mieru so skrinkami pod schodmi – Pezinok', loc: 'Pezinok', main: 'kuchyne', cats: ['kuchyne'], type: 'Kuchyňa', rooms: 'Kuchyňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'pezinok', title: 'Kuchyňa pod schodmi', h1: 'Kuchyňa na mieru so skrinkami pod schodmi – Pezinok', loc: 'Pezinok', cats: ['kuchyne'], type: 'Kuchyňa', rooms: 'Kuchyňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 1,
     alt: 'Krémová kuchyňa so skrinkami pod schodiskom v Pezinku',
     task: 'Navrhnúť kuchyňu do domu, v ktorom časť priestoru zaberá schodisko.',
     solution: 'Kuchyňu sme prispôsobili šikmine schodiska — skrinky pod schodmi kopírujú jeho tvar a ukrývajú výsuvné zásuvky. Rámové dvierka v krémovej farbe dávajú kuchyni klasický vzhľad a LED pásik pri podlahe ju jemne osvetľuje.',
     items: ['Skrinky a zásuvky na mieru pod schodiskom', 'Rámové dvierka v krémovej farbe', 'Vstavaná rúra a mikrovlnka vo vysokej skrini', 'LED podsvietenie pri podlahe a pod skrinkami'] },
-  { slug: 'metropolis', title: 'Kuchyňa s drevenými portálmi', h1: 'Kuchyňa a skrine podľa návrhu architektov – Metropolis', loc: 'Bratislava – Metropolis', main: 'kuchyne', cats: ['kuchyne', 'kupelne', 'skrine'], type: 'Kuchyňa', rooms: 'Kuchyňa, kúpeľňa', time: '3 týždne', by: 'TooL architects', ours: false, cover: 1,
+  { slug: 'metropolis', title: 'Kuchyňa s drevenými portálmi', h1: 'Kuchyňa a skrine podľa návrhu architektov – Metropolis', loc: 'Bratislava – Metropolis', cats: ['kuchyne', 'kupelne', 'skrine'], type: 'Kuchyňa', rooms: 'Kuchyňa, kúpeľňa', time: '3 týždne', by: 'TooL architects', ours: false, cover: 1,
     alt: 'Kuchyňa s portálmi v tmavom drevodekore v byte Metropolis',
     task: 'Výroba a montáž nábytku do bytu v projekte Metropolis podľa návrhu architektov.',
     solution: 'Tmavý drevodekor tvorí v byte výrazné portály, ktoré rámujú vstup do kuchyne a skrývajú úložný priestor. Svetlé skrinky kuchyne ich vyvažujú. V kúpeľni sme práčku a police ukryli za dvierka v rovnakom dekore.',
     items: ['Portály a vysoké skrine v tmavom drevodekore', 'Svetlá kuchynská linka so vstavanými spotrebičmi', 'Skriňa na práčku a úložné police v kúpeľni'] },
-  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', main: 'byty', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'skrine'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
+  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'skrine', 'chodby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
     alt: 'Knižnica a obývačka na mieru v trojizbovom byte v Dúbravke',
     task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
     solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
     items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
-  { slug: 'dubravka-mensi-byt', title: 'Menší byt v Dúbravke', h1: 'Kuchyňa, chodba, detská izba a kúpeľňa na mieru – Dúbravka', loc: 'Bratislava – Dúbravka', main: 'byty', cats: ['byty', 'kuchyne', 'chodby', 'izby', 'kupelne'], type: 'Byt', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 7,
+  { slug: 'dubravka-mensi-byt', title: 'Menší byt v Dúbravke', h1: 'Kuchyňa, chodba, detská izba a kúpeľňa na mieru – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'chodby', 'izby', 'kupelne'], type: 'Byt', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
     task: 'Zariadiť funkčne menší byt v Dúbravke — kuchyňu, chodbu, detskú izbu a kúpeľňu.',
     solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
     items: ['Kuchyňa na mieru do malého priestoru', 'Vyššia úložná kapacita', 'Dizajnové obloženie chodby s vešiakovou stenou', 'Detská izba — posteľ s úložným priestorom, písací stôl, police a vysoké skrine', 'Kúpeľňa — skrinka pod umývadlo s miestom pre práčku'] },
-  { slug: 'devinska-nova-ves', title: 'Biela kuchyňa s drevenou zástenou', h1: 'Kuchyňa a chodba na mieru – Devínska Nová Ves', loc: 'Bratislava – Devínska Nová Ves', main: 'kuchyne', cats: ['kuchyne', 'chodby', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '4 týždne', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'devinska-nova-ves', title: 'Biela kuchyňa s drevenou zástenou', h1: 'Kuchyňa a chodba na mieru – Devínska Nová Ves', loc: 'Bratislava – Devínska Nová Ves', cats: ['kuchyne', 'chodby', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '4 týždne', by: 'Jozef', ours: true, cover: 1,
     alt: 'Biela kuchyňa s drevenou zástenou a barovým pultom v Devínskej Novej Vsi',
     task: 'Navrhnúť do rodinného domu priestrannú kuchyňu a praktickú chodbu.',
     solution: 'Biele bezúchytkové skrinky sme doplnili drevodekorom na pracovnej doske, zástene a stĺpe s barovým pultom. Na chodbe vznikla vysoká skriňa s botníkom a lavicou v rovnakom štýle.',
     items: ['Kuchyňa s vysokými skriňami na spotrebiče', 'Pracovná doska a zástena v drevodekore', 'Stĺp s barovým pultom', 'Chodbová skriňa s botníkom a lavicou'] },
-  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', main: 'kuchyne', cats: ['kuchyne', 'skrine'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 1,
+  { slug: 'slnecnice', title: 'Kuchyňa a vstavané skrine', h1: 'Kuchyňa a vstavané skrine – Slnečnice', loc: 'Bratislava – Slnečnice', cats: ['kuchyne', 'skrine', 'chodby'], type: 'Kuchyňa a skrine', rooms: 'Chodba, kuchyňa', time: '1 mesiac', cover: 1,
     alt: 'Moderná kuchyňa s tmavou zástenou v byte v Slnečniciach',
     task: 'V byte v projekte Slnečnice bolo potrebné navrhnúť funkčnú a štýlovú kuchyňu na mieru a vstavané skrine.',
     solution: 'Vytvorili sme modernú kuchyňu s praktickým usporiadaním a vstavané skrine, ktoré efektívne využívajú priestor a dodávajú interiéru nadčasový vzhľad.',
     items: ['Moderná kuchyňa s praktickým usporiadaním', 'Vstavané skrine, ktoré efektívne využívajú priestor'] },
-  { slug: 'sladkovicovo', title: 'Vstavané skrine', h1: 'Vstavané skrine – Sládkovičovo', loc: 'Sládkovičovo', main: 'skrine', cats: ['skrine', 'chodby'], type: 'Vstavané skrine', rooms: 'Šatník', time: '4 týždne', by: 'Jozef', ours: true, cover: 2,
+  { slug: 'sladkovicovo', title: 'Vstavané skrine', h1: 'Vstavané skrine – Sládkovičovo', loc: 'Sládkovičovo', cats: ['skrine', 'chodby'], type: 'Vstavané skrine', rooms: 'Šatník', time: '4 týždne', by: 'Jozef', ours: true, cover: 2,
     alt: 'Vstavaná skriňa s posuvnými dverami a otvoreným vnútorným vybavením',
     task: 'Ďalší úložný priestor v domácnosti — vstavané skrine do troch miestností.',
     solution: 'Výroba a montáž vstavaných skríň pre klienta v Sládkovičove.',
     items: ['Spálňa', 'Hosťovská izba', 'Vstupná chodba'] },
-  { slug: 'zavod', title: 'Kúpeľne a TV stena v Závode', h1: 'Kúpeľňový nábytok, TV stena a chodba – Závod', loc: 'Závod', main: 'kupelne', cats: ['byty', 'kupelne', 'obyvacky', 'chodby'], type: 'Kúpeľne a obývačka', rooms: 'Chodba, kúpeľňa, obývačka', time: '4 týždne', by: 'Jozef', ours: true, cover: 3,
+  { slug: 'zavod', title: 'Kúpeľne a TV stena v Závode', h1: 'Kúpeľňový nábytok, TV stena a chodba – Závod', loc: 'Závod', cats: ['byty', 'kupelne', 'obyvacky', 'chodby'], type: 'Kúpeľne a obývačka', rooms: 'Chodba, kúpeľňa, obývačka', time: '4 týždne', by: 'Jozef', ours: true, cover: 3,
     alt: 'TV stena s lamelami a skrinkami v rodinnom dome v Závode',
     task: 'Zariadiť dve kúpeľne, obývačku a chodbu v rodinnom dome.',
     solution: 'Do kúpeľní sme navrhli závesné skrinky pod umývadlá s veľkými zásuvkami a vysokú skriňu, ktorá ukrýva kotol. V obývačke vznikla TV stena s lamelami a skrinkami, na chodbe lamelový obklad s policami.',
     items: ['Závesné skrinky pod umývadlo so zásuvkami', 'Vysoká skriňa so skrytým kotlom', 'TV stena s lamelami a úložným priestorom', 'Lamelový obklad na chodbe'] },
-  { slug: 'petrzalka', title: 'Kuchyňa a chodba v Petržalke', h1: 'Kuchyňa a chodba na mieru – Petržalka', loc: 'Bratislava – Petržalka', main: 'kuchyne', cats: ['kuchyne', 'chodby', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '4 týždne', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'petrzalka', title: 'Kuchyňa a chodba v Petržalke', h1: 'Kuchyňa a chodba na mieru – Petržalka', loc: 'Bratislava – Petržalka', cats: ['kuchyne', 'chodby', 'skrine'], type: 'Kuchyňa a chodba', rooms: 'Chodba, kuchyňa', time: '4 týždne', by: 'Jozef', ours: true, cover: 1,
     alt: 'Kuchyňa až po strop vo svetlom drevodekore v Petržalke',
     task: 'Vymeniť kuchyňu v byte a lepšie využiť úzku vstupnú chodbu.',
     solution: 'Kuchyňa vo svetlom drevodekore siaha až po strop, takže ponúka veľa úložného priestoru. Na chodbe sme nad dverami a pozdĺž steny vytvorili skrine, botník a vešiakovú časť.',
     items: ['Kuchyňa až po strop so vstavanými spotrebičmi', 'Skrinky nad dverami', 'Botník a vešiaková časť na chodbe'] },
-  { slug: 'velke-levare', title: 'Chodba s botníkom pod oknom', h1: 'Nábytok do chodby na mieru – Veľké Leváre', loc: 'Veľké Leváre', main: 'skrine', cats: ['chodby', 'skrine'], type: 'Chodba', rooms: 'Chodba', time: '3 týždne', by: 'Jozef', ours: true, cover: 1,
+  { slug: 'velke-levare', title: 'Chodba s botníkom pod oknom', h1: 'Nábytok do chodby na mieru – Veľké Leváre', loc: 'Veľké Leváre', cats: ['chodby', 'skrine'], type: 'Chodba', rooms: 'Chodba', time: '3 týždne', by: 'Jozef', ours: true, cover: 1,
     alt: 'Botník a kryt radiátora pod oknom na chodbe vo Veľkých Levároch',
     task: 'Využiť dlhú chodbu rodinného domu na odkladanie obuvi a oblečenia.',
     solution: 'Pod oknom vznikla nízka zostava s výklopnými botníkmi a mriežkou, ktorá zakrýva radiátor a nechá teplo prúdiť do miestnosti. Šatník s posuvnými zrkadlovými dverami opticky zväčšuje priestor.',
     items: ['Výklopné botníky', 'Kryt radiátora v rovnakom dekore', 'Šatník s posuvnými zrkadlovými dverami'] },
-  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Kozmetický salón Anima', loc: 'Bratislava', main: 'firmy', cats: ['firmy', 'skrine'], type: 'Komerčný priestor', rooms: 'Komerčné priestory', time: '3 týždne', by: 'ToøL. interior architects', ours: false, cover: 1,
+  { slug: 'salon-anima', title: 'Kozmetický salón Anima', h1: 'Kozmetický salón Anima', loc: 'Bratislava', cats: ['firmy', 'skrine'], type: 'Komerčný priestor', rooms: 'Komerčné priestory', time: '3 týždne', by: 'ToøL. interior architects', ours: false, cover: 1,
     alt: 'Vstavané skrine a recepcia v kozmetickom salóne Anima',
     task: 'Realizácia nábytku pre salón krásy Anima podľa návrhu architektov.',
     solution: 'Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby priestoru a zákazníka, s cieľom vytvoriť harmonický komerčný priestor.',
     items: ['Vstavaná skriňa s množstvom úložného priestoru — dvere elegantne zakrývajú sokle a vytvárajú čistý, jednotný vzhľad', 'Minikuchynka pre pracovníkov salónu', 'Zrkadlová skriňa, ktorá opticky zväčšuje priestor'] },
-  { slug: 'herny-stol', title: 'Herný stôl s podsvietením', h1: 'Herný stôl na mieru s podsvietenou plochou', loc: 'Bratislava', main: 'ostatne', cats: ['ostatne'], type: 'Atypický nábytok', rooms: 'Obývačka', time: '', cover: 1,
+  { slug: 'herny-stol', title: 'Herný stôl s podsvietením', h1: 'Herný stôl na mieru s podsvietenou plochou', loc: 'Bratislava', cats: ['ostatne'], type: 'Atypický nábytok', rooms: 'Obývačka', time: '', cover: 1,
     alt: 'Herný stôl na mieru s podsvietenou plochou na skladanie puzzle',
     task: 'Stôl na skladanie puzzle, stavebníc a spoločenské hry.',
     solution: 'Herná plocha je zapustená a podsvietená, takže sa z nej nič nestratí a večer netreba ďalšie svetlo. Pod ňou je polica na rozložené hry.',
@@ -144,8 +144,8 @@ const projects = [
 ];
 projects.forEach((p) => { p.photos = photos(p.slug, p.skip); p.coverImg = p.photos[p.cover - 1]; });
 
-// Realizácie filter: every project has one main category
-const FILTERS = [['kuchyne', 'Kuchyne'], ['skrine', 'Skrine a chodby'], ['izby', 'Detské izby'], ['kupelne', 'Kúpeľne'], ['byty', 'Celé byty a domy'], ['firmy', 'Firmy'], ['ostatne', 'Ostatné']];
+// Realizácie filter, same names as the services; a project appears under every category it contains
+const FILTERS = [['kuchyne', 'Kuchyne na mieru'], ['skrine', 'Vstavané skrine a šatníky'], ['obyvacky', 'Obývačky a TV steny'], ['izby', 'Detské izby a spálne'], ['kupelne', 'Kúpeľňový nábytok'], ['chodby', 'Chodby a predsiene'], ['byty', 'Kompletné interiéry'], ['firmy', 'Komerčné interiéry'], ['ostatne', 'Ostatné']];
 const P = Object.fromEntries(projects.map((p) => [p.slug, p]));
 
 // ---------------------------------------------------------------- services
@@ -445,7 +445,7 @@ const faqBlock = (items, h = 'Na čo sa nás najčastejšie pýtate') => `
     </div>
   </section>`;
 
-const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" data-c="${p.main}">
+const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" data-c="${p.cats.join(' ')}">
           <a class="card-img" href="${b}realizacie/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.coverImg, b, p.alt)}</a>
           <div class="card-body">
             <div class="chips"><span class="chip">${p.loc}</span>${p.time ? `<span class="chip">${ic('clock')}Realizácia: ${p.time}</span>` : ''}</div>
@@ -793,7 +793,7 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
     <div class="container">
       <div class="filters" role="group" aria-label="Filter realizácií">
         <button type="button" data-f="all" aria-pressed="true">Všetko</button>
-        ${FILTERS.filter(([k]) => projects.some((p) => p.main === k)).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="false">${l}</button>`).join('\n        ')}
+        ${FILTERS.filter(([k]) => projects.some((p) => p.cats.includes(k))).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="false">${l}</button>`).join('\n        ')}
       </div>
       <div class="grid-3">
         ${projects.map((p) => projectCard(p, b)).join('\n        ')}
