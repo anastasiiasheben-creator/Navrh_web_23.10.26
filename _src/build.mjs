@@ -620,10 +620,10 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
     </div>
   </section>
 
-  <section class="section section--white">
+  <section class="section section--dark">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow eyebrow--line">Postup krok po kroku</span><h2>Jednoduchý proces, úžasné výsledky</h2></div></div>
-${steps()}
+${steps(true)}
     </div>
   </section>
 ${brands(b)}
