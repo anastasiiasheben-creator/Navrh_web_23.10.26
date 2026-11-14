@@ -229,7 +229,9 @@ a.chip:hover { background: var(--accent); color: var(--white); }
 .stat b { display: block; font-family: var(--font-head); font-size: clamp(34px, 3.4vw, 46px); font-weight: 700; line-height: 1.1; color: var(--accent-strong); }
 .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 15px; }
 .split .stats { gap: 14px; }
-.split .stat { padding: 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); }
+.split .stat { padding: 18px; border-radius: var(--radius); background: var(--dark); }
+.split .stat b { color: var(--accent-light); }
+.split .stat span { color: var(--muted-dark); }
 .split .stat b { font-size: 34px; }
 @media (max-width: 767px) { .stats { grid-template-columns: 1fr; } .stats-strip { padding-block: 28px; } }
 .fact { padding: 18px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--border); }
