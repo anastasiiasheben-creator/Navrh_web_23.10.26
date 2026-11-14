@@ -237,7 +237,7 @@ const services = [
 // ---------------------------------------------------------------- shared markup
 
 // Gallery layout = one big photo + 3 beside it + rows of 3 (a last row of 2 is stretched), so there is never a lone photo
-const fullRows = (list) => list.slice(0, [10, 9, 7, 6, 4, 1].find((n) => n <= list.length) || 0);
+const fullRows = (list) => list.slice(0, [10, 9, 7, 6, 4, 2, 1].find((n) => n <= list.length) || 0);
 
 const img = (base, b, alt, sizes = '(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw', eager = false, style = '') =>
   base.endsWith('.jpg')
