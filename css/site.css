@@ -134,7 +134,7 @@ small, .small { font-size: 14px; line-height: 1.5; }
 .hero { overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 48fr 52fr; align-items: stretch; min-height: max(clamp(620px, 76svh, 780px), calc(100svh - var(--header-h))); }
 .hero-text { align-self: center; padding-block: 64px; padding-right: 32px; }
-.hero h1 span { display: block; font-weight: 300; color: #6A4C37; font-size: .82em; margin-top: 8px; letter-spacing: -.025em; }
+.hero h1 span { display: block; font-weight: 300; color: var(--accent-strong); font-size: .82em; margin-top: 8px; letter-spacing: -.025em; }
 .hero-sub { font-size: 20px; color: #3F403C; margin-top: 24px; max-width: 470px; }
 .hero-feats { display: grid; gap: 14px; margin-top: 32px; }
 .feat { display: flex; align-items: center; gap: 16px; font-weight: 500; }
@@ -182,7 +182,7 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 .card-foot .go { font-weight: 600; color: var(--accent-strong); display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
 .card-foot .go svg { width: 16px; height: 16px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: var(--surface); color: #4A3A2D; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: var(--surface); color: var(--accent-strong); }
 .chip svg { width: 13px; height: 13px; }
 
 /* Featured project */
@@ -360,7 +360,7 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 [data-c].is-hidden { display: none; }
 
 /* Blog */
-.soon { align-self: flex-start; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--surface); color: #4A3A2D; text-transform: uppercase; letter-spacing: .04em; }
+.soon { align-self: flex-start; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--surface); color: var(--accent-strong); text-transform: uppercase; letter-spacing: .04em; }
 
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: stretch; }
