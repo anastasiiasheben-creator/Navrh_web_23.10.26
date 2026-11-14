@@ -173,7 +173,9 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 .card--link .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .card--link:hover .go { text-decoration: underline; text-underline-offset: 4px; }
 .card-img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface); }
-.card-img img { width: 100%; height: 100%; object-fit: cover; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.card--link:hover .card-img img, a.card:hover .card-img img { transform: scale(1.05); }
+@media (prefers-reduced-motion: reduce) { .card-img img { transition: none; } }
 .card-body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .card-body p { color: var(--muted); font-size: 16px; }
 .card-foot { margin-top: auto; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; border-top: 1px solid var(--border); }
