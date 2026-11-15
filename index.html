@@ -17,7 +17,7 @@
   <script>try{var q=new URLSearchParams(location.search).get('logo');if(q)sessionStorage.setItem('imj-logo',q);var l=q||sessionStorage.getItem('imj-logo');if(l==='klient')document.documentElement.setAttribute('data-logo','klient');else if(l==='novy')document.documentElement.removeAttribute('data-logo')}catch(e){}</script>
   <link rel="preload" href="css/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/site.css?v=07eae2d0">
+  <link rel="stylesheet" href="css/site.css?v=caa55a06">
   <link rel="preload" as="image" href="images/hero-kuchyna-ostrov.jpg" fetchpriority="high">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Interiéroví majstri","legalName":"BK Creative s. r. o.","url":"https://www.imajstri.sk/","logo":"https://www.imajstri.sk/images/logo-mark.png","image":"https://www.imajstri.sk/images/hero-kuchyna.jpg","telephone":"+421918638713","email":"info@imajstri.sk","vatID":"SK2122278433","address":{"@type":"PostalAddress","streetAddress":"Landauova 3146/20","postalCode":"841 01","addressLocality":"Bratislava","addressCountry":"SK"},"areaServed":"Bratislava a okolie","openingHours":"Mo-Fr 09:00-17:00","sameAs":["https://www.instagram.com/imajstri/","https://www.facebook.com/profile.php?id=61573057973324"]}</script>
 </head>
@@ -93,7 +93,7 @@
         </ul>
         <div class="actions">
           <a class="btn btn-primary" href="objednavka/">Získať nezáväznú ponuku <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn-text play" href="realizacie/"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Pozrieť realizácie</a>
+          <a class="link-more" href="realizacie/">Pozrieť realizácie →</a>
         </div>
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
       </div>
@@ -115,7 +115,7 @@
         <p class="lead">Už 12 rokov pomáhame zákazníkom vytvárať nábytok presne podľa ich predstáv. Od prvého návrhu až po finálnu montáž dbáme na kvalitu, funkčnosť a každý detail.</p>
       </div>
       <img src="images/hero-kuchyna.jpg" alt="Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans" loading="lazy">
-      <div class="actions about-cta"><a class="btn btn-outline" href="o-nas/">Viac o nás <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      <div class="actions about-cta"><a class="link-more" href="o-nas/">Viac o nás →</a></div>
     </div>
   </section>
 
@@ -127,9 +127,9 @@
           <h2>Skutočné príbehy, skutočné výsledky</h2>
           <p class="lead">Kuchyne, byty aj celé domy, ktoré sme navrhli a namontovali v Bratislave a okolí.</p>
         </div>
-        <a class="btn btn-outline" href="realizacie/">Pozrieť realizácie <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link-more" href="realizacie/">Všetky realizácie →</a>
       </div>
-      <div class="grid-3">
+      <div class="grid-3 home-projects">
         <article class="card card--link" data-c="kuchyne">
           <a class="card-img" href="realizacie/vinicne/" tabindex="-1" aria-hidden="true"><img src="images/projekty/vinicne/kuchyna-na-mieru-vinicne-03-700.jpg" srcset="images/projekty/vinicne/kuchyna-na-mieru-vinicne-03-700.jpg 700w, images/projekty/vinicne/kuchyna-na-mieru-vinicne-03-1400.jpg 1400w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" alt="Kuchyňa na mieru vo Viničnom s drevenou doskou a čiernymi skrinkami" loading="lazy"></a>
           <div class="card-body">
@@ -233,7 +233,7 @@
   <a class="btn btn-outline" href="tel:+421918638713"><svg aria-hidden="true"><use href="#i-phone"/></svg>Zavolať</a>
   <a class="btn btn-primary" href="objednavka/">Nezáväzná ponuka</a>
 </div>
-<script src="js/main.js?v=f3abf178" defer></script>
+<script src="js/main.js?v=81edf681" defer></script>
 <div class="logo-switch" role="group" aria-label="Náhľad loga"><span>Logo:</span><button type="button" data-l="novy">Nové</button><button type="button" data-l="klient">Pôvodné</button></div>
 <script>document.querySelectorAll('.logo-switch button').forEach(function(x){x.addEventListener('click',function(){try{sessionStorage.setItem('imj-logo',x.dataset.l)}catch(e){}if(x.dataset.l==='klient')document.documentElement.setAttribute('data-logo','klient');else document.documentElement.removeAttribute('data-logo')})})</script>
 </body>

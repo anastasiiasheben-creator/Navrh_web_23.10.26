@@ -83,6 +83,16 @@
       items.forEach(function (it) {
         var cats = it.dataset.c.split(' ');
         it.classList.toggle('is-hidden', b.dataset.f !== 'all' && cats.indexOf(b.dataset.f) === -1);
+        // tiles of multi-room projects show the room of the chosen category (data-imgs), otherwise their cover
+        var im = it.dataset.imgs && it.querySelector('img');
+        if (!im) return;
+        if (!im.dataset.src0) { im.dataset.src0 = im.getAttribute('src'); im.dataset.srcset0 = im.getAttribute('srcset') || ''; }
+        var map = {};
+        try { map = JSON.parse(it.dataset.imgs); } catch (e) {}
+        var pick = map[b.dataset.f];
+        im.setAttribute('src', pick ? pick[0] : im.dataset.src0);
+        if (pick ? pick[1] : im.dataset.srcset0) im.setAttribute('srcset', pick ? pick[1] : im.dataset.srcset0);
+        else im.removeAttribute('srcset');
       });
     });
   });

@@ -56,7 +56,7 @@ const projects = [
     task: 'V byte v Záhorskej Bystrici bolo potrebné navrhnúť moderný nábytok na mieru.',
     solution: 'Vytvorili sme unikátny interiér, ktorý spája eleganciu a funkčnosť. Každý kus nábytku bol navrhnutý s ohľadom na individuálne potreby zákazníka, s cieľom vytvoriť harmonický a moderný domov.',
     items: ['Obývačková stena s lamelami, ktorá dodáva priestoru štýlový a sofistikovaný vzhľad', 'Kuchyňa s lamelami a ostrovčekom pre tých, ktorí ocenia moderný dizajn a praktickosť', 'Vstavaná skriňa s komodou a nočnými stolíkmi', 'Chodbová skriňa so sedením pri vstupe', 'Kúpeľňová skrinka pod umývadlo'] },
-  { slug: 'chorvatsky-grob', title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý dom', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '7 týždňov', by: 'Dušana', ours: true, cover: 1,
+  { slug: 'chorvatsky-grob', skip: [10], title: 'Celý dom na mieru', h1: 'Zariadenie celého domu na mieru v Chorvátskom Grobe', loc: 'Chorvátsky Grob', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'kupelne', 'chodby', 'skrine'], type: 'Celý dom', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa, obývačka, šatník, spálňa', time: '7 týždňov', by: 'Dušana', ours: true, cover: 1,
     alt: 'Kuchyňa a interiér rodinného domu v Chorvátskom Grobe',
     task: 'Dostali sme za úlohu zariadiť novostavbu v Chorvátskom Grobe.',
     solution: 'Projekt rodinného domu zahŕňa nábytok na mieru do všetkých miestností — od kuchyne až po detskú izbu.',
@@ -91,12 +91,12 @@ const projects = [
     task: 'Výroba a montáž nábytku do bytu v projekte Metropolis podľa návrhu architektov.',
     solution: 'Tmavý drevodekor tvorí v byte výrazné portály, ktoré rámujú vstup do kuchyne a skrývajú úložný priestor. Svetlé skrinky kuchyne ich vyvažujú. V kúpeľni sme práčku a police ukryli za dvierka v rovnakom dekore.',
     items: ['Portály a vysoké skrine v tmavom drevodekore', 'Svetlá kuchynská linka so vstavanými spotrebičmi', 'Skriňa na práčku a úložné police v kúpeľni'] },
-  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'obyvacky', 'izby', 'skrine', 'chodby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
+  { slug: 'dubravka-landauova', title: 'Trojizbový byt pre rodinu', h1: 'Trojizbový byt pre rodinu s dieťaťom – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'obyvacky', 'izby', 'skrine', 'chodby'], type: 'Celý byt', rooms: 'Chodba, izba, kuchyňa, obývačka, šatník, spálňa', time: '2 mesiace', cover: 1,
     alt: 'Knižnica a obývačka na mieru v trojizbovom byte v Dúbravke',
     task: 'Návrh a výroba nábytku na mieru pre rodinu s malým dieťaťom v trojizbovom byte v Dúbravke. Cieľom bolo vytvoriť praktický a útulný domov, ktorý vyhovuje špecifickým potrebám rodiny a zabezpečí dostatok úložného priestoru.',
     solution: 'Každú miestnosť sme navrhli podľa toho, ako ju rodina používa — s dôrazom na úložný priestor, bezpečnosť a prehľadnosť.',
     items: ['Spálňa — vstavané skrine a minimalistický dizajn pre pokojné prostredie na odpočinok', 'Detská izba pre 5-ročné dieťa — bezpečnosť, flexibilita a praktické úložné riešenia', 'Obývačka s pracovňou — pohodlný a moderný priestor na spoločné chvíle rodiny', 'Kuchyňa a jedáleň — efektívne využitý priestor, vstavané spotrebiče a dostatok pracovnej plochy', 'Chodba — vstavané skrine, ktoré využívajú každý centimeter', 'Práčovňa — úložné riešenia pre práčku, sušičku a ďalšie vybavenie, skryté úložné priestory'] },
-  { slug: 'dubravka-mensi-byt', title: 'Menší byt v Dúbravke', h1: 'Kuchyňa, chodba, detská izba a kúpeľňa na mieru – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'chodby', 'izby', 'kupelne'], type: 'Byt', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 7,
+  { slug: 'dubravka-mensi-byt', skip: [3], title: 'Menší byt v Dúbravke', h1: 'Kuchyňa, chodba, detská izba a kúpeľňa na mieru – Dúbravka', loc: 'Bratislava – Dúbravka', cats: ['byty', 'kuchyne', 'chodby', 'izby', 'kupelne'], type: 'Byt', rooms: 'Chodba, detská izba, kuchyňa, kúpeľňa', time: '5 týždňov', by: 'Jozef', ours: true, cover: 7,
     alt: 'Kuchyňa na mieru do malého priestoru v Dúbravke',
     task: 'Zariadiť funkčne menší byt v Dúbravke — kuchyňu, chodbu, detskú izbu a kúpeľňu.',
     solution: 'Realizovali sme funkčné a moderné riešenie kuchyne na mieru, ktoré efektívne využíva dostupný priestor a zvyšuje úložnú kapacitu. Súčasťou realizácie bolo aj dizajnové obloženie chodby s vešiakovou stenou, ktoré spája praktickosť s estetickým vzhľadom.',
@@ -148,6 +148,32 @@ projects.forEach((p) => { p.photos = photos(p.slug, p.skip); p.coverImg = p.phot
 const FILTERS = [['kuchyne', 'Kuchyne na mieru'], ['skrine', 'Vstavané skrine a šatníky'], ['obyvacky', 'Obývačky a TV steny'], ['izby', 'Detské izby a spálne'], ['kupelne', 'Kúpeľňový nábytok'], ['chodby', 'Chodby a predsiene'], ['byty', 'Kompletné interiéry'], ['firmy', 'Komerčné interiéry'], ['ostatne', 'Ostatné']];
 const P = Object.fromEntries(projects.map((p) => [p.slug, p]));
 
+// Realizácie filter: the photo a tile shows under a category (file numbers, e.g. 10 = …-10-700.jpg).
+// Without an entry the tile keeps its cover — so a flat with a bathroom shows the bathroom under "Kúpeľňový nábytok".
+const TILE_PHOTOS = {
+  'zahorska-bystrica': { kuchyne: 4, izby: 12, kupelne: 10, chodby: 9, skrine: 11 },
+  'chorvatsky-grob': { obyvacky: 8, izby: 5, kupelne: 7, chodby: 12, skrine: 6 },
+  guthaus: { obyvacky: 4, kupelne: 5, chodby: 8 },
+  nivy: { obyvacky: 7, kupelne: 14 },
+  metropolis: { kuchyne: 2, kupelne: 6 },
+  'devinska-nova-ves': { chodby: 8, skrine: 7 },
+  petrzalka: { chodby: 3, skrine: 5 },
+  'velke-levare': { skrine: 4 },
+  'detska-izba-s-poschodovou-postelou': { chodby: 6, skrine: 7 },
+  'dubravka-landauova': { obyvacky: 2, izby: 5, skrine: 8, chodby: 7 },
+  'dubravka-mensi-byt': { chodby: 2, izby: 9, kupelne: 14 },
+  slnecnice: { skrine: 8, chodby: 10 },
+  sladkovicovo: { chodby: 7 },
+  zavod: { obyvacky: 1, chodby: 8 },
+  vydrica: { obyvacky: 12, izby: 3, kupelne: 10, skrine: 5 },
+};
+const tilePhotos = (p) => Object.fromEntries(Object.entries(TILE_PHOTOS[p.slug] || {}).map(([c, n]) => {
+  const ph = p.photos.find((x) => x.endsWith(`-${String(n).padStart(2, '0')}`));
+  if (!ph) throw new Error(`TILE_PHOTOS: ${p.slug} has no photo ${n}`);
+  if (!p.cats.includes(c)) throw new Error(`TILE_PHOTOS: ${p.slug} is not in ${c}`);
+  return [c, ph];
+}));
+
 // ---------------------------------------------------------------- services
 
 const services = [
@@ -179,7 +205,7 @@ const services = [
     forWhom: ['Chcete TV stenu bez viditeľných káblov', 'Potrebujete knižnicu alebo úložný priestor do obývačky', 'Máte otvorený priestor s kuchyňou a chcete jednotný štýl'],
     variants: [['Lamelová TV stena', 'Drevené lamely s nízkou komodou.'], ['Knižnice', 'Od podlahy po strop, aj okolo dverí.'], ['Pracovný kút', 'Stôl a police do obývačky alebo spálne.'], ['Nízke skrinky a komody', 'Úložný priestor pod televízorom.']],
     materials: ['Dosky Egger', 'Drevené lamely', 'Kovanie Blum', 'Skryté vedenie káblov'],
-    projects: ['zahorska-bystrica', ['guthaus', [3, 4]], 'nivy', ['zavod', [1, 2]], 'dubravka-landauova', 'chorvatsky-grob', 'vydrica'],
+    projects: ['zahorska-bystrica', ['guthaus', [4]], 'nivy', ['zavod', [1, 2]], 'dubravka-landauova', 'chorvatsky-grob', 'vydrica'],
     faq: [['Dá sa skryť kabeláž od televízora?', 'Áno, vedenie káblov navrhujeme priamo do TV steny.'], ['Môže obývačka ladiť s kuchyňou?', 'Áno, navrhujeme ich spolu s rovnakými dekormi — ako v Záhorskej Bystrici.'], ['Robíte aj samotné lamelové obklady?', 'Áno, lamely vyrábame a montujeme ako súčasť TV steny alebo samostatne.']] },
   { slug: 'detske-izby-a-spalne', key: 'izba', name: 'Detské izby a spálne', h1: 'Nábytok do spálne a detskej izby', img: 'projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-04', price: '1 500 €', icon: 'bed',
     title: 'Nábytok do spálne a detskej izby na mieru | Interiéroví majstri',
@@ -189,7 +215,7 @@ const services = [
     forWhom: ['Dve deti v jednej izbe', 'Malá spálňa, v ktorej chýba úložný priestor', 'Chcete čelo postele, nočné stolíky a skriňu v jednom štýle'],
     variants: [['Posteľ na poschodí', 'Aj čalúnená, so schodiskom s úložným priestorom.'], ['Šatníky a skrine', 'Na mieru do spálne aj detskej izby.'], ['Čelá postelí', 'S nočnými stolíkmi v jednom celku.'], ['Písacie stoly', 'Pracovné miesto pre školákov.']],
     materials: ['Dosky Egger', 'Kovanie Blum', 'Čalúnenie', 'Úložné schody a zásuvky'],
-    projects: [['detska-izba-s-poschodovou-postelou', [1, 2]], ['chorvatsky-grob', [9, 10]], ['dubravka-mensi-byt', [9, 11]], ['zahorska-bystrica', [11]]],
+    projects: [['detska-izba-s-poschodovou-postelou', [1, 2]], ['chorvatsky-grob', [5, 9]], ['dubravka-mensi-byt', [9, 11]], ['zahorska-bystrica', [11]]],
     faq: [['Je posteľ na poschodí bezpečná?', 'Navrhujeme ju s ohľadom na vek detí — so zábradlím a stabilným schodiskom.'], ['Dá sa nábytok neskôr upraviť?', 'Pri návrhu myslíme na to, ako bude izba rásť s dieťaťom.'], ['Robíte aj samotné šatníky?', 'Áno, aj samostatné šatníky a vstavané skrine.']] },
   // Kúpeľne and Chodby added at the client's request (Nov 2026); texts are a draft for the client to confirm.
   { slug: 'kupelnovy-nabytok', key: 'kupelna', name: 'Kúpeľňový nábytok', h1: 'Kúpeľňový nábytok na mieru', img: 'projekty/chorvatsky-grob/dom-na-mieru-chorvatsky-grob-07', price: null, icon: 'cube',
@@ -202,7 +228,7 @@ const services = [
     materials: ['Materiály vhodné do vlhkého prostredia', 'Kovanie Blum', 'Zrkadlá a sklo', 'LED osvetlenie'],
     projects: [['guthaus', [5, 6]], ['zavod', [3, 5]], ['dubravka-mensi-byt', [13, 14]], ['vydrica', [9]], ['zahorska-bystrica', [10]], ['metropolis', [6]]],
     faq: [['Vydrží nábytok vlhkosť v kúpeľni?', 'Na kúpeľňový nábytok používame materiály a hrany určené do vlhkého prostredia.'], ['Viete nábytok prispôsobiť umývadlu a batérii?', 'Áno, rozmery aj výrezy navrhneme podľa konkrétneho umývadla a batérie.'], ['Robíte aj skrine na práčku a sušičku?', 'Áno, aj vstavané skrine pre práčku a sušičku nad sebou.']] },
-  { slug: 'chodby-a-predsiene', key: 'chodba', name: 'Chodby a predsiene', h1: 'Nábytok do chodby a predsiene na mieru', img: 'projekty/dubravka-mensi-byt/mensi-byt-dubravka-02', price: null, icon: 'wardrobe',
+  { slug: 'chodby-a-predsiene', key: 'chodba', name: 'Chodby a predsiene', h1: 'Nábytok do chodby a predsiene na mieru', img: 'projekty/devinska-nova-ves/kuchyna-na-mieru-devinska-nova-ves-08', price: null, icon: 'wardrobe',
     title: 'Nábytok do chodby a predsiene na mieru | Interiéroví majstri',
     desc: 'Vstavané skrine, botníky, vešiakové steny a sedenie pri vstupe na mieru. Návrh, výroba a montáž od jedného tímu.',
     short: 'Vstavané skrine, botníky, vešiaky a sedenie pri vstupe.',
@@ -455,6 +481,21 @@ const projectCard = (p, b, cls = '') => `<article class="card card--link${cls}" 
           </div>
         </article>`;
 
+// Realizácie list: compact photo tile (photo, title, location); all details stay on the project page
+// data-imgs: {category: [src, srcset]} — the filter swaps the photo to the room of that category
+const tileImgs = (p, b) => {
+  const m = Object.fromEntries(Object.entries(tilePhotos(p)).map(([c, ph]) => [c, [`${b}images/${ph}-700.jpg`, `${b}images/${ph}-700.jpg 700w, ${b}images/${ph}-1400.jpg 1400w`]]));
+  return Object.keys(m).length ? ` data-imgs="${esc(JSON.stringify(m))}"` : '';
+};
+const projectTile = (p, b) => `<article class="card card--link tile" data-c="${p.cats.join(' ')}"${tileImgs(p, b)}>
+          <a class="card-img" href="${b}realizacie/${p.slug}/" tabindex="-1" aria-hidden="true">${img(p.coverImg, b, p.alt)}</a>
+          <div class="card-body">
+            <h3><a class="card-link" href="${b}realizacie/${p.slug}/">${p.title}</a></h3>
+            <p class="tile-loc">${p.loc}</p>
+            <span class="go" aria-hidden="true">Pozrieť projekt ${ic('arrow')}</span>
+          </div>
+        </article>`;
+
 // showPrice=false on the homepage, where prices have their own "Orientačné ceny" block
 const serviceCard = (s, b, showPrice = true) => `<a class="card" href="${b}${s.slug}/">
           <div class="card-img">${img(s.img, b, s.name)}</div>
@@ -505,7 +546,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
         </ul>
         <div class="actions">
           <a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a>
-          <a class="btn-text play" href="${b}realizacie/"><i>${ic('play')}</i>Pozrieť realizácie</a>
+          <a class="link-more" href="${b}realizacie/">Pozrieť realizácie →</a>
         </div>
         <p class="hero-note">Prvým krokom je bezplatná konzultácia vašich predstáv, priestoru a možností.</p>
       </div>
@@ -527,7 +568,7 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
         <p class="lead">Už 12 rokov pomáhame zákazníkom vytvárať nábytok presne podľa ich predstáv. Od prvého návrhu až po finálnu montáž dbáme na kvalitu, funkčnosť a každý detail.</p>
       </div>
       ${img('hero-kuchyna.jpg', b, 'Kuchyňa na mieru vo Viničnom s otvorenými zásuvkami a rohovým systémom LeMans', '(max-width: 1023px) 100vw, 45vw')}
-      <div class="actions about-cta"><a class="btn btn-outline" href="${b}o-nas/">Viac o nás ${ic('arrow')}</a></div>
+      <div class="actions about-cta"><a class="link-more" href="${b}o-nas/">Viac o nás →</a></div>
     </div>
   </section>
 
@@ -539,9 +580,9 @@ pages.push({ path: '', section: '', preload: 'hero-kuchyna-ostrov.jpg', jsonld: 
           <h2>Skutočné príbehy, skutočné výsledky</h2>
           <p class="lead">Kuchyne, byty aj celé domy, ktoré sme navrhli a namontovali v Bratislave a okolí.</p>
         </div>
-        <a class="btn btn-outline" href="${b}realizacie/">Pozrieť realizácie ${ic('arrow')}</a>
+        <a class="link-more" href="${b}realizacie/">Všetky realizácie →</a>
       </div>
-      <div class="grid-3">
+      <div class="grid-3 home-projects">
         ${['vinicne', 'zahorska-bystrica', 'chorvatsky-grob'].map((s) => projectCard(P[s], b)).join('\n        ')}
       </div>
     </div>
@@ -612,10 +653,10 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
         
       </div>
       <div class="benefits">
-        <div class="benefit"><i>${ic('cube')}</i><h3>Návrh, ktorý uvidíte vopred</h3><p>Nábytok si pozriete vo vizualizácii ešte pred výrobou. Upravujeme, kým nebude presne podľa vás.</p></div>
-        <div class="benefit"><i>${ic('ruler')}</i><h3>Presne do vášho priestoru</h3><p>Využijeme aj šikminy, výklenky a ťažko dostupné rohy. Žiadne kompromisy z katalógu.</p></div>
-        <div class="benefit"><i>${ic('shield')}</i><h3>Kvalitné materiály</h3><p>Pracujeme s overenými značkami — dosky Egger, kovanie Blum, drezy BLANCO.</p></div>
-        <div class="benefit"><i>${ic('doc')}</i><h3>Jasná dohoda</h3><p>Rozsah, materiály a cenu preberieme vopred — ešte predtým, ako sa začne vyrábať.</p></div>
+        <div class="benefit"><i>${ic('cube')}</i><h3>Návrh, ktorý uvidíte vopred</h3><p><span class="step-copy--desktop">Nábytok si pozriete vo vizualizácii ešte pred výrobou. Upravujeme, kým nebude presne podľa vás.</span><span class="step-copy--mobile">Vizualizáciu uvidíte ešte pred výrobou.</span></p></div>
+        <div class="benefit"><i>${ic('ruler')}</i><h3>Presne do vášho priestoru</h3><p><span class="step-copy--desktop">Využijeme aj šikminy, výklenky a ťažko dostupné rohy. Žiadne kompromisy z katalógu.</span><span class="step-copy--mobile">Využijeme aj šikminy a ťažké rohy.</span></p></div>
+        <div class="benefit"><i>${ic('shield')}</i><h3>Kvalitné materiály</h3><p><span class="step-copy--desktop">Pracujeme s overenými značkami — dosky Egger, kovanie Blum, drezy BLANCO.</span><span class="step-copy--mobile">Overené značky: Egger, Blum, BLANCO.</span></p></div>
+        <div class="benefit"><i>${ic('doc')}</i><h3>Jasná dohoda</h3><p><span class="step-copy--desktop">Rozsah, materiály a cenu preberieme vopred — ešte predtým, ako sa začne vyrábať.</span><span class="step-copy--mobile">Cenu a rozsah dohodneme vopred.</span></p></div>
       </div>
     </div>
   </section>
@@ -671,7 +712,7 @@ pages.push({ path: 'nas-tim/', section: 'nas-tim/', jsonld: breadcrumbLd([['nas-
         <span class="eyebrow eyebrow--line">Spolupráca</span>
         <h2>Pracujeme aj s architektmi</h2>
         <p>Ak už máte návrh od architekta, vyrobíme a namontujeme nábytok presne podľa neho. Takto vznikol napríklad kozmetický salón Anima podľa návrhu ToøL. interior architects.</p>
-        <div class="actions" style="margin-top:24px"><a class="btn btn-outline" href="${b}realizacie/salon-anima/">Pozrieť projekt ${ic('arrow')}</a></div>
+        <div class="actions" style="margin-top:24px"><a class="link-more" href="${b}realizacie/salon-anima/">Pozrieť projekt →</a></div>
       </div>
     </div>
   </section>
@@ -686,15 +727,23 @@ pages.push({ path: 'sluzby/', section: 'sluzby/', jsonld: breadcrumbLd([['sluzby
     <div class="container">
       ${crumbs(b, [[null, 'Služby']])}
       <h1>Nábytok na mieru do každej miestnosti</h1>
-      <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu. Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
+      <p class="lead">Každý kúsok, ktorý vyrobíme, je odrazom vášho štýlu.<br>Či už hľadáte štýlový nábytok do obývačky, kuchyňu na mieru alebo unikátne úložné riešenia, sme tu pre vás.</p>
       <div class="actions"><a class="btn btn-primary" href="${b}objednavka/">Získať nezáväznú ponuku ${ic('arrow')}</a><a class="btn-text" href="tel:${PHONE}">${ic('phone')}${PHONE_TXT}</a></div>
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <div class="grid-3">
-        ${services.map((s) => serviceCard(s, b)).join('\n        ')}
-      </div>
+      <ul class="svc-list">
+        ${services.map((s) => `<li class="svc">
+          <span class="svc-ico">${ic(s.icon)}</span>
+          <div class="svc-main">
+            <div class="svc-head"><h2><a href="${b}${s.slug}/">${s.name}</a></h2><span class="svc-price">${s.price ? `od <b>${s.price}</b>` : '<b>individuálne</b>'}</span></div>
+            <p>${s.short}</p>
+            <ul class="svc-points">${s.variants.map(([v]) => `<li>${v}</li>`).join('')}</ul>
+            <div class="svc-actions"><a class="btn btn-outline" href="${b}${s.slug}/">Viac o službe ${ic('arrow')}</a><a class="btn btn-primary" href="${b}objednavka/?typ=${s.key}">Dopytovať ${ic('arrow')}</a></div>
+          </div>
+        </li>`).join('\n        ')}
+      </ul>
     </div>
   </section>
   <section class="section section--dark">
@@ -713,7 +762,14 @@ ${ctaBand(b, 'Neviete, čo presne potrebujete?', 'Poradíme vám na bezplatnej k
 // Service pages — one template (brief section 05)
 for (const s of services) {
   const rel = s.projects.map((x) => (Array.isArray(x) ? [P[x[0]], x[1]] : [P[x], null]));
-  const gallery = fullRows(rel.flatMap(([p, nums]) => (nums ? nums.map((n) => p.photos[n - 1]) : p.photos.slice(0, rel.length === 1 ? 7 : 2)).map((ph) => [ph, p])).slice(0, 7));
+  // projects without chosen photos show the room photo of the Realizácie filter (TILE_PHOTOS), else their first photos;
+  // even grid of 3 per row: 6 or 3 photos
+  const term = (FILTERS.find(([, l]) => l === s.name) || [])[0];
+  const all = rel.flatMap(([p, nums]) => {
+    const room = !nums && term && tilePhotos(p)[term];
+    return (nums ? nums.map((n) => p.photos[n - 1]) : room ? [room] : p.photos.slice(0, rel.length === 1 ? 7 : 2)).map((ph) => [ph, p]);
+  });
+  const gallery = all.slice(0, all.length >= 6 ? 6 : all.length >= 3 ? 3 : all.length);
   pages.push({ path: `${s.slug}/`, section: 'sluzby/', og: s.img.endsWith('.jpg') ? s.img : `${s.img}-1400.jpg`, jsonld: breadcrumbLd([['sluzby/', 'Služby'], [`${s.slug}/`, s.name]]),
     title: s.title, desc: s.desc,
     body: (b) => `
@@ -744,7 +800,7 @@ for (const s of services) {
 ${gallery.length ? `  <section class="section section--white">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow eyebrow--line">Naše práce</span><h2>Z našich realizácií</h2></div><a class="link-more" href="${b}realizacie/">Všetky realizácie →</a></div>
-      <div class="gallery">
+      <div class="gallery gallery--even">
         ${gallery.map(([ph, p]) => `<a href="${b}realizacie/${p.slug}/">${img(ph, b, `${p.title} — ${p.loc}`)}</a>`).join('\n        ')}
       </div>
     </div>
@@ -795,8 +851,8 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
         <button type="button" data-f="all" aria-pressed="true">Všetko</button>
         ${FILTERS.filter(([k]) => projects.some((p) => p.cats.includes(k))).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="false">${l}</button>`).join('\n        ')}
       </div>
-      <div class="grid-3">
-        ${projects.map((p) => projectCard(p, b)).join('\n        ')}
+      <div class="grid-3 tiles">
+        ${projects.map((p) => projectTile(p, b)).join('\n        ')}
       </div>
     </div>
   </section>
