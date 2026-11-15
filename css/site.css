@@ -205,6 +205,7 @@ a.card:hover, .card:has(a.card-link:hover) { transform: translateY(-3px); box-sh
 .step-num svg { width: 26px; height: 26px; }
 .step h3 { font-size: 21px; }
 .step p { color: var(--muted); font-size: 16px; margin-top: 8px; }
+.step-copy--mobile { display: none; }
 .section--dark .step p { color: var(--muted-dark); }
 
 /* About teaser / split */
@@ -506,6 +507,8 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   /* home: no form on phones, the sticky bar offers call + Nezáväzná ponuka */
   .hide-mobile { display: none; }
   .sec-head { margin-bottom: 32px; }
+  .step-copy--desktop { display: none; }
+  .step-copy--mobile { display: inline; }
   .map { min-height: 300px; }
 }
 

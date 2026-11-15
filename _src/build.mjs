@@ -409,11 +409,11 @@ const ctaBand = (b, h, sub) => `
 
 const steps = (dark = false) => `
       <ol class="steps">
-        <li class="step"><div class="step-num">${ic('chat')}01</div><h3>Konzultácia</h3><p>Porozprávame sa o vašich predstavách a požiadavkách. Prvá konzultácia je bezplatná.</p></li>
-        <li class="step"><div class="step-num">${ic('ruler')}02</div><h3>Zameranie</h3><p>Priestor presne zameriame, aby nábytok sedel na milimeter.</p></li>
-        <li class="step"><div class="step-num">${ic('cube')}03</div><h3>Návrh a vizualizácia</h3><p>Spoločne navrhneme nábytok, ktorý bude presne zodpovedať vašim požiadavkám a štýlu.</p></li>
-        <li class="step"><div class="step-num">${ic('factory')}04</div><h3>Výroba</h3><p>Po schválení návrhu prejdeme k výrobe, pričom každý detail je starostlivo spracovaný.</p></li>
-        <li class="step"><div class="step-num">${ic('truck')}05</div><h3>Doprava a montáž</h3><p>Nábytok doručíme a namontujeme priamo u vás doma, aby ste sa mohli ihneď tešiť z výsledku.</p></li>
+        <li class="step"><div class="step-num">${ic('chat')}01</div><h3>Konzultácia</h3><p><span class="step-copy--desktop">Porozprávame sa o vašich predstavách a požiadavkách. Prvá konzultácia je bezplatná.</span><span class="step-copy--mobile">Prejdeme si vaše predstavy. Konzultácia je zadarmo.</span></p></li>
+        <li class="step"><div class="step-num">${ic('ruler')}02</div><h3>Zameranie</h3><p><span class="step-copy--desktop">Priestor presne zameriame, aby nábytok sedel na milimeter.</span><span class="step-copy--mobile">Priestor zameriame presne na milimeter.</span></p></li>
+        <li class="step"><div class="step-num">${ic('cube')}03</div><h3>Návrh a vizualizácia</h3><p><span class="step-copy--desktop">Spoločne navrhneme nábytok, ktorý bude presne zodpovedať vašim požiadavkám a štýlu.</span><span class="step-copy--mobile">Návrh prispôsobíme vašim potrebám a štýlu.</span></p></li>
+        <li class="step"><div class="step-num">${ic('factory')}04</div><h3>Výroba</h3><p><span class="step-copy--desktop">Po schválení návrhu prejdeme k výrobe, pričom každý detail je starostlivo spracovaný.</span><span class="step-copy--mobile">Po schválení návrhu nábytok starostlivo vyrobíme.</span></p></li>
+        <li class="step"><div class="step-num">${ic('truck')}05</div><h3>Doprava a montáž</h3><p><span class="step-copy--desktop">Nábytok doručíme a namontujeme priamo u vás doma, aby ste sa mohli ihneď tešiť z výsledku.</span><span class="step-copy--mobile">Nábytok dovezieme a namontujeme u vás doma.</span></p></li>
       </ol>`;
 
 const brands = (b) => `
