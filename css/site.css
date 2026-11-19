@@ -132,7 +132,9 @@ small, .small { font-size: 14px; line-height: 1.5; }
 
 /* Home hero: 48% text / 52% photo, photo bleeds to the right edge */
 .hero { overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: 48fr 52fr; align-items: stretch; min-height: max(clamp(620px, 76svh, 780px), calc(100svh - var(--header-h))); }
+.hero-grid { display: grid; grid-template-columns: 48fr 52fr; align-items: stretch; min-height: min(max(clamp(620px, 76svh, 780px), calc(100svh - var(--header-h))), max(560px, 56vw)); }
+/* the photo's height follows the window width, so on a narrower window it shrinks instead of only being cropped */
+@media (min-width: 1024px) and (max-width: 1279px) { .hero-text { padding-block: 40px; } }
 .hero-text { align-self: center; padding-block: 64px; padding-right: 32px; }
 .hero h1 span { display: block; font-weight: 300; color: var(--accent-strong); font-size: .82em; margin-top: 8px; letter-spacing: -.025em; }
 .hero-sub { font-size: 20px; color: #3F403C; margin-top: 24px; max-width: 470px; }
@@ -431,6 +433,7 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
 /* Mobile bar */
 .m-bar { display: none; position: fixed; inset: auto 0 0 0; z-index: 60; background: var(--white); border-top: 1px solid var(--border); padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); gap: 10px; }
 .m-bar .btn { flex: 1; min-height: 48px; padding: 12px 10px; font-size: 15px; white-space: nowrap; }
+.filters .f-short, .filters-toggle { display: none; }
 @media (max-width: 350px) { .m-bar { gap: 6px; padding-inline: 8px; } .m-bar .btn { font-size: 13px; padding-inline: 6px; } .m-bar .btn svg { display: none; } }
 .m-bar .btn-primary { flex: 1.4; }
 
@@ -553,7 +556,16 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .tile .card-body p.tile-loc { font-size: 12px; }
   .filters { gap: 6px; margin-bottom: 20px; }
   .home-projects .card:not(:has(a[href*="zahorska-bystrica"])) { display: none; } /* phones: one project only — the flat with the sofa */
-  .filters button { min-height: 36px; padding: 5px 12px; font-size: 13px; }
+  /* phones: one "Kategória: …" button; tapping it opens the short-label filter buttons below */
+  .filters-toggle { display: flex; align-items: center; gap: 6px; width: 100%; min-height: 48px; margin-bottom: 12px; padding: 10px 16px; border: 1px solid var(--border); border-radius: var(--radius-btn); background: var(--white); font: inherit; font-size: 15px; font-weight: 600; color: var(--muted); cursor: pointer; }
+  .filters-toggle b { color: var(--ink); }
+  .filters-toggle i { margin-left: auto; width: 9px; height: 9px; border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: translateY(-3px) rotate(45deg); transition: transform var(--t) var(--ease); }
+  .filters-toggle[aria-expanded="true"] i { transform: translateY(2px) rotate(-135deg); }
+  .filters { justify-content: flex-start; }
+  .filters-toggle[aria-expanded="false"] + .filters { display: none; }
+  .filters button { min-height: 38px; padding: 6px 14px; font-size: 14px; }
+  .filters .f-long { display: none; }
+  .filters .f-short { display: inline; }
   .prices { grid-template-columns: 1fr; gap: 10px; }
   .price { padding: 16px 18px; }
   .price svg { width: 36px; height: 36px; }
@@ -567,7 +579,12 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .hide-mobile { display: none; }
   .sec-head { margin-bottom: 32px; }
   .step-copy--desktop { display: none; }
-  .step-copy--mobile { display: inline; }
+  /* phones: step cards are one row, icon + title, no description line */
+  .step { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
+  .step-num { margin-bottom: 0; font-size: 0; gap: 0; } /* icon only, the number 01–05 is hidden */
+  .step-num svg { width: 28px; height: 28px; flex: none; }
+  .step h3 { font-size: 19px; }
+  .step p { display: none; }
   .map { min-height: 300px; }
 }
 

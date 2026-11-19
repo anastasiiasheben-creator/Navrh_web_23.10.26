@@ -145,7 +145,8 @@ const projects = [
 projects.forEach((p) => { p.photos = photos(p.slug, p.skip); p.coverImg = p.photos[p.cover - 1]; });
 
 // Realizácie filter, same names as the services; a project appears under every category it contains
-const FILTERS = [['kuchyne', 'Kuchyne na mieru'], ['skrine', 'Vstavané skrine a šatníky'], ['obyvacky', 'Obývačky a TV steny'], ['izby', 'Detské izby a spálne'], ['kupelne', 'Kúpeľňový nábytok'], ['chodby', 'Chodby a predsiene'], ['byty', 'Kompletné interiéry'], ['firmy', 'Komerčné interiéry'], ['ostatne', 'Ostatné']];
+// [key, label, short label for the phone filter row]
+const FILTERS = [['kuchyne', 'Kuchyne na mieru', 'Kuchyne'], ['skrine', 'Vstavané skrine a šatníky', 'Skrine'], ['obyvacky', 'Obývačky a TV steny', 'Obývačky'], ['izby', 'Detské izby a spálne', 'Spálne'], ['kupelne', 'Kúpeľňový nábytok', 'Kúpeľne'], ['chodby', 'Chodby a predsiene', 'Chodby'], ['byty', 'Kompletné interiéry', 'Celé byty'], ['firmy', 'Komerčné interiéry', 'Komerčné'], ['ostatne', 'Ostatné', 'Ostatné']];
 const P = Object.fromEntries(projects.map((p) => [p.slug, p]));
 
 // Realizácie filter: the photo a tile shows under a category (file numbers, e.g. 10 = …-10-700.jpg).
@@ -847,9 +848,10 @@ pages.push({ path: 'realizacie/', section: 'realizacie/', jsonld: breadcrumbLd([
   </section>
   <section class="section">
     <div class="container">
-      <div class="filters" role="group" aria-label="Filter realizácií">
+      <button class="filters-toggle" type="button" aria-expanded="false" aria-controls="filters">Kategória: <b>Všetko</b><i aria-hidden="true"></i></button>
+      <div class="filters" id="filters" role="group" aria-label="Filter realizácií">
         <button type="button" data-f="all" aria-pressed="true">Všetko</button>
-        ${FILTERS.filter(([k]) => projects.some((p) => p.cats.includes(k))).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="false">${l}</button>`).join('\n        ')}
+        ${FILTERS.filter(([k]) => projects.some((p) => p.cats.includes(k))).map(([k, l, sh]) => `<button type="button" data-f="${k}" aria-pressed="false"><span class="f-long">${l}</span><span class="f-short">${sh}</span></button>`).join('\n        ')}
       </div>
       <div class="grid-3 tiles">
         ${projects.map((p) => projectTile(p, b)).join('\n        ')}

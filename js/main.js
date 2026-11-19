@@ -76,8 +76,18 @@
 (function () {
   var buttons = document.querySelectorAll('.filters button');
   var items = document.querySelectorAll('[data-c]');
+  // phones: "Kategória: …" button opens/closes the filter buttons and shows the chosen one
+  var toggle = document.querySelector('.filters-toggle');
+  if (toggle) toggle.addEventListener('click', function () {
+    toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+  });
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
+      if (toggle) {
+        var sh = b.querySelector('.f-short');
+        toggle.querySelector('b').textContent = (sh || b).textContent;
+        toggle.setAttribute('aria-expanded', 'false');
+      }
       buttons.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
       b.setAttribute('aria-pressed', 'true');
       items.forEach(function (it) {
