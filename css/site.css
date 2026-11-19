@@ -583,6 +583,7 @@ label.consent { display: flex; gap: 10px; align-items: flex-start; }
   .step { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
   .step-num { margin-bottom: 0; font-size: 0; gap: 0; } /* icon only, the number 01–05 is hidden */
   .step-num svg { width: 28px; height: 28px; flex: none; }
+  .steps--num .step-num { font-size: 15px; gap: 10px; } /* O nás "Postup krok po kroku": the order matters, keep 01–05 */
   .step h3 { font-size: 19px; }
   .step p { display: none; }
   /* phones: "Prečo si vybrať nás" cards the same way, icon + title */

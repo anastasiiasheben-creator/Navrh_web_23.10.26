@@ -434,8 +434,8 @@ const ctaBand = (b, h, sub) => `
     </div>
   </section>`;
 
-const steps = (dark = false) => `
-      <ol class="steps">
+const steps = (dark = false, numbered = false) => `
+      <ol class="steps${numbered ? ' steps--num' : ''}">
         <li class="step"><div class="step-num">${ic('chat')}01</div><h3>Konzultácia</h3><p><span class="step-copy--desktop">Porozprávame sa o vašich predstavách a požiadavkách. Prvá konzultácia je bezplatná.</span><span class="step-copy--mobile">Prejdeme si vaše predstavy. Konzultácia je zadarmo.</span></p></li>
         <li class="step"><div class="step-num">${ic('ruler')}02</div><h3>Zameranie</h3><p><span class="step-copy--desktop">Priestor presne zameriame, aby nábytok sedel na milimeter.</span><span class="step-copy--mobile">Priestor zameriame presne na milimeter.</span></p></li>
         <li class="step"><div class="step-num">${ic('cube')}03</div><h3>Návrh a vizualizácia</h3><p><span class="step-copy--desktop">Spoločne navrhneme nábytok, ktorý bude presne zodpovedať vašim požiadavkám a štýlu.</span><span class="step-copy--mobile">Návrh prispôsobíme vašim potrebám a štýlu.</span></p></li>
@@ -665,7 +665,7 @@ pages.push({ path: 'o-nas/', section: 'o-nas/', jsonld: breadcrumbLd([['o-nas/',
   <section class="section section--dark">
     <div class="container">
       <div class="sec-head"><div><span class="eyebrow eyebrow--line">Postup krok po kroku</span><h2>Jednoduchý proces, úžasné výsledky</h2></div></div>
-${steps(true)}
+${steps(true, true)}
     </div>
   </section>
 ${brands(b)}
